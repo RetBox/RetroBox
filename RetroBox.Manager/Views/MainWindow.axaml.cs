@@ -1,11 +1,12 @@
 using Avalonia.Controls;
 
-namespace RetroBox.Manager.Views;
-
-public partial class MainWindow : Window
+namespace RetroBox.Manager.Views
 {
-    public MainWindow()
+    public partial class MainWindow : Window
     {
-        InitializeComponent();
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
     }
 }

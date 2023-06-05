@@ -1,6 +1,7 @@
-﻿namespace RetroBox.Manager.ViewModels;
-
-public class MainWindowViewModel : ViewModelBase
+﻿namespace RetroBox.Manager.ViewModels
 {
-    public string Greeting => "Welcome to Avalonia!";
+    public class MainWindowViewModel : ViewModelBase
+    {
+        public string Greeting => "Welcome to Avalonia!";
+    }
 }

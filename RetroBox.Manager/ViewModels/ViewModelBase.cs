@@ -1,7 +1,8 @@
 ﻿using ReactiveUI;
 
-namespace RetroBox.Manager.ViewModels;
-
-public class ViewModelBase : ReactiveObject
+namespace RetroBox.Manager.ViewModels
 {
+    public class ViewModelBase : ReactiveObject
+    {
+    }
 }
