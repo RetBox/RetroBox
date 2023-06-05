@@ -7,7 +7,7 @@
         x:Class="RetroBox.Manager.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="RetroBox.Manager">
+        Title="RetroBox">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
