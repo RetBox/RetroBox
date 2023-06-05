@@ -1,33 +1,34 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:RetroBox.Manager.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        d:DesignWidth="300" d:DesignHeight="300"
-        Width="300" Height="300"
+        d:DesignWidth="400" d:DesignHeight="440"
+        Width="400" Height="440"
         WindowStartupLocation="CenterScreen"
         SystemDecorations="None" Topmost="True"
         x:Class="RetroBox.Manager.Views.SplashScreen"
+        x:DataType="vm:SplashScreenViewModel"
+        Icon="/Assets/app-logo.ico"
         Title="RetroBox">
-    <Border BorderBrush="Black" BorderThickness="2">
+    <Border BorderBrush="Black" BorderThickness="1">
         <Grid RowDefinitions="*,Auto" ColumnDefinitions="*,Auto">
-            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                   FontSize="18" Background="AliceBlue"
+            <Image Source="/Assets/splash.png" 
+                   Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
                    HorizontalAlignment="Stretch"
-                   VerticalAlignment="Stretch"
-                   HorizontalContentAlignment="Center"
-                   VerticalContentAlignment="Center">
-                Launching Application...
-            </Label>
+                   VerticalAlignment="Stretch" />
             <Label Grid.Row="1" Grid.Column="0" DockPanel.Dock="Bottom"
                    Content="{Binding StartupMessage}"
-                   FontSize="12" Background="LightYellow"
+                   FontSize="16" Background="White" 
+                   FontWeight="Bold"
                    HorizontalAlignment="Stretch"
-                   VerticalAlignment="Stretch"
+                   VerticalAlignment="Stretch" 
                    HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center" />
             <Button Grid.Row="1" Grid.Column="1" DockPanel.Dock="Bottom"
-                    Command="{Binding Cancel}">
+                    Command="{Binding Cancel}"
+                    Margin="5">
                 Cancel
             </Button>
         </Grid>

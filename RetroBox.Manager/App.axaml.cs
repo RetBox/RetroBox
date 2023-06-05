@@ -29,10 +29,6 @@ namespace RetroBox.Manager
                 {
                     splashModel.StartupMessage = "Searching for devices...";
                     await Task.Delay(1000, splashModel.CancellationToken);
-                    
-                    await Dialogs.ShowMessageBox("Do you really want to delete?", 
-                        "Warning", Icon.Warning, ButtonEnum.OkAbort, splash);
-                    
                     splashModel.StartupMessage = "Connecting to device #1...";
                     await Task.Delay(2000, splashModel.CancellationToken);
                     splashModel.StartupMessage = "Configuring device...";
