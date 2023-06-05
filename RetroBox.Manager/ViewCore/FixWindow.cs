@@ -12,9 +12,14 @@ namespace RetroBox.Manager.ViewCore
         protected override void OnOpened(EventArgs e)
         {
             base.OnOpened(e);
+            
+            RepeatStart(this);
+        }
 
-            var impl = Owner?.PlatformImpl;
-            StartMeth.Invoke(this, new object?[] { impl });
+        internal static void RepeatStart(Window window)
+        {
+            var impl = window.Owner?.PlatformImpl;
+            StartMeth.Invoke(window, new object?[] { impl });
         }
     }
 }

@@ -4,6 +4,8 @@ using Avalonia.Markup.Xaml;
 using RetroBox.Manager.ViewModels;
 using RetroBox.Manager.Views;
 using System.Threading.Tasks;
+using MessageBox.Avalonia.Enums;
+using RetroBox.Manager.ViewCore;
 
 namespace RetroBox.Manager
 {
@@ -27,6 +29,10 @@ namespace RetroBox.Manager
                 {
                     splashModel.StartupMessage = "Searching for devices...";
                     await Task.Delay(1000, splashModel.CancellationToken);
+                    
+                    await Dialogs.ShowMessageBox("Do you really want to delete?", 
+                        "Warning", Icon.Warning, ButtonEnum.OkAbort, splash);
+                    
                     splashModel.StartupMessage = "Connecting to device #1...";
                     await Task.Delay(2000, splashModel.CancellationToken);
                     splashModel.StartupMessage = "Configuring device...";
