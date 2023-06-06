@@ -19,7 +19,7 @@ namespace RetroBox.Manager.ViewModels
             _cts.Cancel();
         }
 
-        private readonly CancellationTokenSource _cts = new CancellationTokenSource();
+        private readonly CancellationTokenSource _cts = new();
 
         public CancellationToken CancellationToken => _cts.Token;
     }

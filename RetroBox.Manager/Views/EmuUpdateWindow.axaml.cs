@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Avalonia.Interactivity;
+using MessageBox.Avalonia.Enums;
 using RetroBox.API;
 using RetroBox.API.Update;
 using RetroBox.Manager.ViewCore;
@@ -22,17 +23,17 @@ namespace RetroBox.Manager.Views
 
         private void BtnCancel_OnClick(object? sender, RoutedEventArgs e)
         {
-            Close(false);
+            Close(ButtonResult.Cancel);
         }
 
         private void BtnDownload_OnClick(object? sender, RoutedEventArgs e)
         {
-            var emus = ViewHelper.GetChecked<Release>(lvEmus).ToArray();
-            var roms = ViewHelper.GetChecked<Release>(lvRoms).ToArray();
+            var emus = lvEmus.GetChecked<Release>().ToArray();
+            var roms = lvRoms.GetChecked<Release>().ToArray();
 
             // TODO Download and extract ?!
 
-            Close(true);
+            Close(ButtonResult.Ok);
         }
 
         private async void TopLevel_OnOpened(object? sender, EventArgs e)

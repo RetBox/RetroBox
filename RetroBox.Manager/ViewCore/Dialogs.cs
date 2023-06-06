@@ -11,6 +11,15 @@ namespace RetroBox.Manager.ViewCore
 {
     public static class Dialogs
     {
+        public static async Task<ButtonResult?> ShowDialogFor(this Window window, Window parent)
+        {
+            window.Icon = parent.Icon;
+            window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            window.Topmost = true;
+            var res = await window.ShowDialog<ButtonResult?>(parent);
+            return res;
+        }
+
         public static async Task<ButtonResult> ShowMessageBox(string message, string title,
             Icon icon = Icon.Info, ButtonEnum buttons = ButtonEnum.OkCancel, Window? parent = null)
         {
