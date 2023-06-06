@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using HtmlAgilityPack;
 using RetroBox.API;
 using RetroBox.API.Update;
@@ -9,8 +8,6 @@ namespace RetroBox.Update
 {
     public sealed class GithubFetcher : IReleaseFetcher
     {
-        private static readonly HttpClient Client = new();
-
         private readonly string _emuUrl;
         private readonly string _romUrl;
         private readonly string _baseUrl;
@@ -22,23 +19,21 @@ namespace RetroBox.Update
             _romUrl = $"{baseUrl}/86Box/roms/releases";
         }
 
-        public Release[] FetchEmuReleases()
+        public IAsyncEnumerable<Release> FetchEmuReleases()
         {
             var res = FetchWebReleases(_emuUrl, _baseUrl);
-
-            throw new System.NotImplementedException();
+            return res;
         }
 
-        public Release[] FetchRomReleases()
+        public IAsyncEnumerable<Release> FetchRomReleases()
         {
             var res = FetchWebReleases(_romUrl, _baseUrl);
-
-            throw new System.NotImplementedException();
+            return res;
         }
 
         private static async IAsyncEnumerable<Release> FetchWebReleases(string url, string baseUrl)
         {
-            var stream = await Client.GetStreamAsync(url);
+            var stream = await WebCache.GetStreamAsync(url);
             var doc = new HtmlDocument();
             doc.Load(stream);
             var node = doc.DocumentNode.Descendants(1).FirstOrDefault(n => n.HasClass("repository-content"));
@@ -60,7 +55,7 @@ namespace RetroBox.Update
                 if (relLazy == null)
                     continue;
                 var relId = relLazy.Split('/').Last();
-                var lazyStream = await Client.GetStreamAsync(relLazy);
+                var lazyStream = await WebCache.GetStreamAsync(relLazy);
                 var lazyDoc = new HtmlDocument();
                 lazyDoc.Load(lazyStream);
                 var relLinks = lazyDoc.DocumentNode.Descendants(1)

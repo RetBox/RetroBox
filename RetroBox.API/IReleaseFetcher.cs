@@ -1,11 +1,12 @@
-﻿using RetroBox.API.Update;
+﻿using System.Collections.Generic;
+using RetroBox.API.Update;
 
 namespace RetroBox.API
 {
     public interface IReleaseFetcher
     {
-        Release[] FetchEmuReleases();
+        IAsyncEnumerable<Release> FetchEmuReleases();
 
-        Release[] FetchRomReleases();
+        IAsyncEnumerable<Release> FetchRomReleases();
     }
 }
