@@ -4,8 +4,6 @@ using Avalonia.Markup.Xaml;
 using RetroBox.Manager.ViewModels;
 using RetroBox.Manager.Views;
 using System.Threading.Tasks;
-using MessageBox.Avalonia.Enums;
-using RetroBox.Manager.ViewCore;
 
 namespace RetroBox.Manager
 {
