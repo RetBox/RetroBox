@@ -16,6 +16,9 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+	<StackPanel>
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Name="btnUpdate" Click="BtnUpdate_OnClick">Install</Button>
+    </StackPanel>
 
 </Window>

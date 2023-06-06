@@ -31,5 +31,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RetroBox.Fabric\RetroBox.Fabric.csproj" />
+    <ProjectReference Include="..\RetroBox.Update\RetroBox.Update.csproj" />
   </ItemGroup>
 </Project>
