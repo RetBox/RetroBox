@@ -5,4 +5,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RetroBox.Common\RetroBox.Common.csproj" />
+  </ItemGroup>
+
 </Project>
