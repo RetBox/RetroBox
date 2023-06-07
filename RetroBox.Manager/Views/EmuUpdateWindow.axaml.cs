@@ -1,16 +1,13 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Handlers;
-using System.Threading;
 using Avalonia.Interactivity;
 using MessageBox.Avalonia.Enums;
 using RetroBox.API;
 using RetroBox.API.Update;
 using RetroBox.Fabric;
 using RetroBox.Manager.Models;
+using RetroBox.Manager.Updates;
 using RetroBox.Manager.ViewCore;
 using RetroBox.Manager.ViewModels;
 using RetroBox.Update;
@@ -39,14 +36,14 @@ namespace RetroBox.Manager.Views
             var roms = lvRoms.GetChecked<Release>().ToArray();
 
             var configDir = Platforms.Sys.GetDefaultConfigPath();
-            var emuDir = IOPath.Combine(configDir, "emulators");
-            var romDir = IOPath.Combine(configDir, "roms");
+            var emuDir = IOPath.Combine(configDir, "emu");
+            var romDir = IOPath.Combine(configDir, "rom");
 
             var list = new List<DownloadTask>();
             foreach (var item in emus)
-                list.Add(new(item, emuDir));
+                list.Add(new(item, emuDir, new string[1]));
             foreach (var item in roms)
-                list.Add(new(item, romDir));
+                list.Add(new(item, romDir, new string[1]));
 
             if (list.Count >= 1)
             {
@@ -59,77 +56,29 @@ namespace RetroBox.Manager.Views
                 var progress = new ProgressWindow { DataContext = model };
                 var token = progress.CancellationToken;
 
-                using var worker = new BackgroundWorker();
-                worker.RunWorkerCompleted += (_, s) =>
+                using var dlWorker = new DownloadWorker();
+                model.TaskType = ProgTaskType.Download;
+                dlWorker.RunWorkerCompleted += (_, ds) =>
                 {
-                    if (!s.Cancelled)
+                    if (ds.Cancelled)
+                        return;
+                    using var exWorker = new ExtractWorker();
+                    model.TaskType = ProgTaskType.Extract;
+                    exWorker.RunWorkerCompleted += (_, es) =>
+                    {
+                        if (es.Cancelled)
+                            return;
                         progress.Close(ButtonResult.Ok);
+                    };
+                    var exList = ExtractWorker.Convert(list);
+                    exWorker.RunWorkerAsync((model, exList, token));
                 };
-                worker.DoWork += DoWork;
-                worker.RunWorkerAsync((model, list, token));
+                dlWorker.RunWorkerAsync((model, list, token));
 
                 await progress.ShowDialogFor(this);
             }
 
-            // TODO Download and extract ?!
-
             Close(ButtonResult.Ok);
-        }
-
-        private void DoWork(object? sender, DoWorkEventArgs e)
-        {
-            var (model, list, token) = (ValueTuple<ProgressViewModel, List<DownloadTask>, CancellationToken>)
-                e.Argument!;
-            var all = list.Count;
-            var count = 0;
-            var lastPercent = 0d;
-
-            void Handler(HttpRequestMessage _, HttpProgressEventArgs a)
-            {
-                var total = a.TotalBytes ?? 46_999_999;
-                var percent = a.BytesTransferred / (total * 1d);
-                model.CurrentValue = (int)(percent * 100);
-                if (percent - lastPercent >= 0.03)
-                {
-                    model.PaperCol++;
-                    lastPercent = percent;
-                }
-                if (model.PaperCol >= 5)
-                    model.PaperCol = 0;
-            }
-
-            foreach (var task in list)
-            {
-                var relId = task.Release.Id;
-                var art = task.Release.Artifacts.First();
-                var artName = art.Url.Split('/').Last();
-                var artUrl = art.Url;
-                var artFile = IOPath.Combine(task.Target, relId, artName);
-
-                model.CurrentTitle = $"Downloading '{artName}'...";
-                model.CurrentValue = 0;
-                UpdateAll(model, count, all);
-                model.PaperVis = true;
-                model.PaperCol = 0;
-
-                var tmp = WebLoader.Download(artUrl, artFile, Handler, token);
-                tmp.GetAwaiter().GetResult();
-                count++;
-
-                model.CurrentTitle = $"Downloaded '{artName}'!";
-                model.CurrentValue = 100;
-                UpdateAll(model, count, all);
-                model.PaperVis = false;
-                model.PaperCol = 4;
-
-                lastPercent = 0;
-            }
-        }
-
-        private static void UpdateAll(ProgressViewModel model, int count, int all)
-        {
-            model.AllValue = (int)(count / (all * 1d) * 100);
-            model.AllTitle = $"{count} of {all} tasks finished";
         }
 
         private async void TopLevel_OnOpened(object? sender, EventArgs e)

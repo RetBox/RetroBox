@@ -1,4 +1,5 @@
 ﻿using ReactiveUI;
+using RetroBox.Manager.Models;
 
 namespace RetroBox.Manager.ViewModels
 {
@@ -52,6 +53,22 @@ namespace RetroBox.Manager.ViewModels
             set => this.RaiseAndSetIfChanged(ref _allValue, value);
         }
 
+        private ProgTaskType _taskType;
+
+        public ProgTaskType TaskType
+        {
+            get => _taskType;
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _taskType, value);
+                this.RaisePropertyChanged(nameof(ShowZip));
+                this.RaisePropertyChanged(nameof(ShowNet));
+            }
+        }
+
+        public bool ShowZip => TaskType == ProgTaskType.Extract;
+        public bool ShowNet => TaskType == ProgTaskType.Download;
+
         public ProgressViewModel()
         {
             _paperCol = 2;
@@ -60,6 +77,7 @@ namespace RetroBox.Manager.ViewModels
             _currentValue = 34;
             _allTitle = "Saving the Internet itself...";
             _allValue = 77;
+            _taskType = ProgTaskType.Download;
         }
     }
 }

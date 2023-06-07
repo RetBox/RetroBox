@@ -33,7 +33,9 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Image Grid.Row="0" Grid.Column="0" Width="76" Height="76" Margin="0,20,0,0" Source="/Assets/icon-globe.png" />
+        <Image Grid.Row="0" Grid.Column="0" Width="76" Height="76" Margin="0,20,0,0" Source="/Assets/icon-globe.png" IsVisible="{Binding ShowNet}" />
+        <Image Grid.Row="0" Grid.Column="0" Width="76" Height="76" Margin="0,20,0,0" Source="/Assets/icon-zip.png" IsVisible="{Binding ShowZip}" />
+
         <Image Grid.Row="0" Grid.Column="{Binding PaperCol}" ZIndex="1" Width="50" Height="50" Margin="0,20,0,0" Source="/Assets/icon-paper.png" IsVisible="{Binding PaperVis}" />
 		<Image Grid.Row="0" Grid.Column="4" Width="64" Height="64" Margin="0,20,0,0" Source="/Assets/icon-folder.png" />
 

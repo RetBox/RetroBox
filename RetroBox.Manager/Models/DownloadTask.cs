@@ -2,5 +2,6 @@
 
 namespace RetroBox.Manager.Models
 {
-    internal record DownloadTask(Release Release, string Target);
+    internal record DownloadTask(Release Release, string Folder, string[] Result)
+        : IProgTask;
 }

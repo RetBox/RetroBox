@@ -6,11 +6,11 @@ namespace RetroBox.Update
 {
     public static class WebLoader
     {
-        public static async Task Download(string? reqUri, string filePath,
+        public static async Task<string> Download(string? reqUri, string filePath,
             WebReceiveHandler receive, CancellationToken token)
         {
             if (File.Exists(filePath))
-                return;
+                return filePath;
             var dirPath = Path.GetDirectoryName(filePath)!;
             if (!Directory.Exists(dirPath))
                 Directory.CreateDirectory(dirPath);
@@ -18,6 +18,7 @@ namespace RetroBox.Update
             var stream = await client.GetStreamAsync(reqUri, token);
             await using var file = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None);
             await stream.CopyToAsync(file, token);
+            return filePath;
         }
     }
 }
