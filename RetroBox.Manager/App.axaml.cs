@@ -4,7 +4,6 @@ using Avalonia.Markup.Xaml;
 using RetroBox.Manager.ViewModels;
 using RetroBox.Manager.Views;
 using System.Threading.Tasks;
-using RetroBox.Manager.ViewCore;
 
 namespace RetroBox.Manager
 {
@@ -27,11 +26,11 @@ namespace RetroBox.Manager
                 try
                 {
                     splashModel.StartupMessage = "Searching for devices...";
-                    await Task.Delay(1000, splashModel.CancellationToken);
+                    await Task.Delay(10, splashModel.CancellationToken);
                     splashModel.StartupMessage = "Connecting to device #1...";
-                    await Task.Delay(2000, splashModel.CancellationToken);
+                    await Task.Delay(20, splashModel.CancellationToken);
                     splashModel.StartupMessage = "Configuring device...";
-                    await Task.Delay(2000, splashModel.CancellationToken);
+                    await Task.Delay(20, splashModel.CancellationToken);
                 }
                 catch (TaskCanceledException)
                 {

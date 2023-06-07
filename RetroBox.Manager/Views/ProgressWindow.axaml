@@ -1,0 +1,48 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:RetroBox.Manager.ViewModels"
+        mc:Ignorable="d"
+        d:DesignWidth="500" d:DesignHeight="300"
+        Width="500" Height="300"
+        x:Class="RetroBox.Manager.Views.ProgressWindow"
+        x:DataType="viewModels:ProgressViewModel"
+        Title="Progress Monitor"
+        WindowStartupLocation="CenterOwner"
+        Topmost="True">
+
+    <Design.DataContext>
+		<viewModels:ProgressViewModel/>
+	</Design.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+			<RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Row="0" Grid.Column="0" Width="76" Height="76" Margin="0,20,0,0" Source="/Assets/icon-globe.png" />
+        <Image Grid.Row="0" Grid.Column="{Binding PaperCol}" ZIndex="1" Width="50" Height="50" Margin="0,20,0,0" Source="/Assets/icon-paper.png" IsVisible="{Binding PaperVis}" />
+		<Image Grid.Row="0" Grid.Column="4" Width="64" Height="64" Margin="0,20,0,0" Source="/Assets/icon-folder.png" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Margin="20,14,20,0" Text="{Binding CurrentTitle}" />
+        <ProgressBar Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" Margin="20,0,20,0" Height="24" Minimum="0" Maximum="100" Value="{Binding CurrentValue}" />
+        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Margin="20,10,20,0" Text="{Binding AllTitle}" />
+		<ProgressBar Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" Margin="20,0,20,0" Height="24" Minimum="0" Maximum="100" Value="{Binding AllValue}" />
+
+		<Button Name="btnCancel" Grid.Row="5" Grid.Column="4" HorizontalAlignment="Right" 
+                Margin="0,0,15,5" Click="BtnCancel_OnClick">Cancel</Button>
+    </Grid>
+</Window>

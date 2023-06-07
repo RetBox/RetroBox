@@ -14,7 +14,7 @@ namespace RetroBox.Manager.Views
         private async void BtnUpdate_OnClick(object? sender, RoutedEventArgs e)
         {
             var emu = new EmuUpdateWindow { DataContext = new EmuUpdateViewModel() };
-            await emu.ShowDialog(this);
+            await emu.ShowDialogFor(this);
         }
     }
 }

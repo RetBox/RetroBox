@@ -1,13 +1,11 @@
 ﻿using System;
 using System.IO;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace RetroBox.Update
 {
     internal static class WebCache
     {
-        private static readonly HttpClient Client = new();
         private static readonly string Root;
 
         static WebCache()
@@ -27,7 +25,8 @@ namespace RetroBox.Update
                 return File.OpenRead(cacheFile);
             }
 
-            var bytes = await Client.GetByteArrayAsync(url);
+            var client = HttpCentral.GetClient(null);
+            var bytes = await client.GetByteArrayAsync(url);
             await File.WriteAllBytesAsync(cacheFile, bytes);
             return new MemoryStream(bytes);
         }
