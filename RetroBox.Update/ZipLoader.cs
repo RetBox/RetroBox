@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using ICSharpCode.SharpZipLib.Core;
 using ICSharpCode.SharpZipLib.Zip;
+using Mono.Unix;
 using ZipFile = ICSharpCode.SharpZipLib.Zip.ZipFile;
 
 namespace RetroBox.Update
@@ -82,9 +83,13 @@ namespace RetroBox.Update
             var interval = TimeSpan.FromSeconds(1);
             StreamUtils.Copy(fileIn, fileOut, buffer, receive, interval, holder, rawName);
 
+            var exeInfo = UnixFileSystemInfo.GetFileSystemEntry(outName);
+            exeInfo.FileAccessPermissions |= FileAccessPermissions.UserExecute;
+
             var linkName = rawName.Split('-', 2).First();
             var outLink = Path.Combine(outPath, linkName);
-            File.CreateSymbolicLink(outLink, outName);
+            if (!File.Exists(outLink))
+                File.CreateSymbolicLink(outLink, outName);
 
             return outPath;
         }
