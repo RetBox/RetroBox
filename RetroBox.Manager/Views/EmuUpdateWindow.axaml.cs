@@ -5,7 +5,7 @@ using Avalonia.Interactivity;
 using MessageBox.Avalonia.Enums;
 using RetroBox.API;
 using RetroBox.API.Update;
-using RetroBox.Fabric;
+using RetroBox.Fabric.Config;
 using RetroBox.Manager.Models;
 using RetroBox.Manager.Updates;
 using RetroBox.Manager.ViewCore;

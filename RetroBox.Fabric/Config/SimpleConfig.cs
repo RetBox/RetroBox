@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace RetroBox.Fabric
+namespace RetroBox.Fabric.Config
 {
     internal sealed class SimpleConfig : IConfig
     {

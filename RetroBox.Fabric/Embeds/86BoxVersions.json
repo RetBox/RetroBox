@@ -1,0 +1,82 @@
+{
+    "b3600": {
+        "FileMajorPart": 3,
+        "FileMinorPart": 2,
+        "FileBuildPart": 0,
+        "FilePrivatePart": 3600,
+        "FileVersion": "3.2",
+        "ReleaseId": "v3.2"
+    },
+    "b3602": {
+        "FileMajorPart": 3,
+        "FileMinorPart": 2,
+        "FileBuildPart": 1,
+        "FilePrivatePart": 3602,
+        "FileVersion": "3.2.1",
+        "ReleaseId": "v3.2.1"
+    },
+    "b3700": {
+        "FileMajorPart": 3,
+        "FileMinorPart": 3,
+        "FileBuildPart": 0,
+        "FilePrivatePart": 3700,
+        "FileVersion": "3.3",
+        "ReleaseId": "v3.3"
+    },
+    "b3737": {
+        "FileMajorPart": 3,
+        "FileMinorPart": 4,
+        "FileBuildPart": 0,
+        "FilePrivatePart": 3737,
+        "FileVersion": "3.4",
+        "ReleaseId": "v3.4"
+    },
+    "b3738": {
+        "FileMajorPart": 3,
+        "FileMinorPart": 4,
+        "FileBuildPart": 1,
+        "FilePrivatePart": 3738,
+        "FileVersion": "3.4.1",
+        "ReleaseId": "v3.4.1"
+    },
+    "b3777": {
+        "FileMajorPart": 3,
+        "FileMinorPart": 5,
+        "FileBuildPart": 0,
+        "FilePrivatePart": 3777,
+        "FileVersion": "3.5",
+        "ReleaseId": "v3.5"
+    },
+    "b3850": {
+        "FileMajorPart": 3,
+        "FileMinorPart": 6,
+        "FileBuildPart": 0,
+        "FilePrivatePart": 3850,
+        "FileVersion": "3.6",
+        "ReleaseId": "v3.6"
+    },
+    "b4008": {
+        "FileMajorPart": 3,
+        "FileMinorPart": 7,
+        "FileBuildPart": 0,
+        "FilePrivatePart": 4008,
+        "FileVersion": "3.7",
+        "ReleaseId": "v3.7"
+    },
+    "b4032": {
+        "FileMajorPart": 3,
+        "FileMinorPart": 7,
+        "FileBuildPart": 1,
+        "FilePrivatePart": 4032,
+        "FileVersion": "3.7.1",
+        "ReleaseId": "v3.7.1"
+    },
+    "b4311": {
+        "FileMajorPart": 3,
+        "FileMinorPart": 11,
+        "FileBuildPart": 0,
+        "FilePrivatePart": 4311,
+        "FileVersion": "3.11",
+        "ReleaseId": "v3.11"
+    }
+}

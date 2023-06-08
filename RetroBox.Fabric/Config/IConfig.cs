@@ -1,4 +1,4 @@
-﻿namespace RetroBox.Fabric
+﻿namespace RetroBox.Fabric.Config
 {
     public interface IConfig
     {
