@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using RetroBox.API;
+using RetroBox.API.Xplat;
 using RetroBox.Linux;
 using RetroBox.Mac;
 using RetroBox.Windows;
@@ -9,7 +9,7 @@ namespace RetroBox.Fabric
 {
     public static class Platforms
     {
-        public static IPlatform Sys { get; } = LoadPlatform();
+        public static IPlatform My { get; } = LoadPlatform();
 
         private static IPlatform LoadPlatform()
         {

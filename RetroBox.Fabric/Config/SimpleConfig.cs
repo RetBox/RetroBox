@@ -6,7 +6,7 @@ namespace RetroBox.Fabric.Config
     {
         public SimpleConfig()
         {
-            var sys = Platforms.Sys;
+            var sys = Platforms.My.Folders;
             AppData = sys.GetDefaultConfigPath();
             HomePath = sys.GetDefaultHomePath();
             TempPath = sys.GetDefaultTempPath();

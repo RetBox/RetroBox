@@ -1,6 +1,6 @@
-﻿namespace RetroBox.API
+namespace RetroBox.API.Xplat
 {
-    public interface IPlatform
+    public interface IPlatFolder
     {
         string GetDefaultConfigPath();
 
