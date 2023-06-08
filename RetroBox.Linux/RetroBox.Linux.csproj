@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RetroBox.Common\RetroBox.Common.csproj" />
+    <ProjectReference Include="..\RetroBox.Unix\RetroBox.Unix.csproj" />
   </ItemGroup>
 
 </Project>

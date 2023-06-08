@@ -6,17 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Embeds\*.json" />
-    <EmbeddedResource Include="Embeds\*.json">
-      <LogicalName>%(Filename)%(Extension)</LogicalName>
-    </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\RetroBox.Linux\RetroBox.Linux.csproj" />
     <ProjectReference Include="..\RetroBox.Mac\RetroBox.Mac.csproj" />
     <ProjectReference Include="..\RetroBox.Windows\RetroBox.Windows.csproj" />

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace RetroBox.Fabric
+namespace RetroBox.Common
 {
     public static class Resources
     {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace RetroBox.Fabric.Data
+namespace RetroBox.Common.Data
 {
     public static class Statics
     {

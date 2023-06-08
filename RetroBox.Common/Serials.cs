@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace RetroBox.Fabric
+namespace RetroBox.Common
 {
     public static class Serials
     {

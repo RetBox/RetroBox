@@ -9,4 +9,15 @@
     <ProjectReference Include="..\RetroBox.API\RetroBox.API.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Embeds\*.json" />
+    <EmbeddedResource Include="Embeds\*.json">
+      <LogicalName>%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
 </Project>
