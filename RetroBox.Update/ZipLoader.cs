@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using ICSharpCode.SharpZipLib.Core;
@@ -29,10 +31,11 @@ namespace RetroBox.Update
             }
 
             using var zipFile = new ZipFile(inputFile);
+            var (allSize, skip) = Prepare(zipFile);
 
             var holder = new ZipHolder
             {
-                UncompressedSize = zipFile.OfType<ZipEntry>().Sum(e => e.Size),
+                UncompressedSize = allSize,
                 ProcessedBytes = 0L
             };
 
@@ -44,10 +47,10 @@ namespace RetroBox.Update
                 token.ThrowIfCancellationRequested();
 
                 var rawName = entry.Name;
-                var name = rawName;
-                var tmp = SystemFix.Correct(rawName).Split(SystemFix.Slash, 2);
-                if (tmp.Length == 2)
-                    name = tmp.Last();
+                var tmp = rawName.Substring(Math.Min(rawName.Length, skip.Length));
+                tmp = SystemFix.Correct(tmp);
+                tmp = tmp.TrimStart(SystemFix.Slash);
+                var name = tmp;
 
                 if (entry.IsDirectory)
                 {
@@ -60,12 +63,62 @@ namespace RetroBox.Update
 
                 await using var stream = zipFile.GetInputStream(entry);
                 var outName = Path.Combine(outPath, name);
-                await using var fileOut = File.Create(outName);
 
+                if (entry.CompressionMethod == CompressionMethod.Stored && entry.Size <= 32)
+                {
+                    var linkBuff = new byte[entry.Size];
+                    StreamUtils.ReadFully(stream, linkBuff);
+                    var linkTgt = Encoding.UTF8.GetString(linkBuff).Trim();
+                    if (!File.Exists(outName))
+                        File.CreateSymbolicLink(outName, linkTgt);
+                    continue;
+                }
+
+                await using var fileOut = File.Create(outName);
                 var interval = TimeSpan.FromSeconds(1);
                 StreamUtils.Copy(stream, fileOut, buffer, receive, interval, holder, rawName);
+
+                if (outName.Contains(Path.Combine("Contents", "MacOS")))
+                    FixMacPackage(outName, outPath);
             }
             return outPath;
+        }
+
+        private static void FixMacPackage(string name, string outPath)
+        {
+            var exeInfo = UnixFileSystemInfo.GetFileSystemEntry(name);
+            exeInfo.FileAccessPermissions |= FileAccessPermissions.UserExecute;
+
+            var exeName = Path.GetFileNameWithoutExtension(name);
+            var lnkName = Path.Combine(outPath, exeName);
+            if (!File.Exists(lnkName))
+                File.CreateSymbolicLink(lnkName, exeInfo.FullName);
+        }
+
+        private static (long, string) Prepare(ZipFile zipFile)
+        {
+            var tmp = new Dictionary<int, ISet<string>>();
+            var sep = '/';
+            var size = 0L;
+            foreach (var entry in zipFile.Cast<ZipEntry>())
+            {
+                size += entry.Size;
+                var parts = entry.Name.Split(sep);
+                for (var i = 0; i < parts.Length; i++)
+                {
+                    if (!tmp.TryGetValue(i, out var list))
+                        tmp[i] = list = new HashSet<string>();
+                    var part = parts[i];
+                    if (string.IsNullOrWhiteSpace(part))
+                        continue;
+                    list.Add(part);
+                }
+            }
+            var skip = tmp.TakeWhile(t => t.Value.Count <= 1 &&
+                    !t.Value.First().EndsWith(".app"))
+                .Select(t => t.Value.FirstOrDefault());
+            var pre = string.Join(sep, skip);
+            return (size, pre);
         }
 
         private static async Task<string> LinkAppImage(string inputFile, string outPath, ProgressHandler receive)
