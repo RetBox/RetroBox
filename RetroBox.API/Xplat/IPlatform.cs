@@ -4,6 +4,6 @@
     {
         IPlatFolder Folders { get; }
         
-        IPlatExecutable Executables { get; }
+        IPlatExec Execs { get; }
     }
 }

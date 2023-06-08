@@ -7,6 +7,6 @@ namespace RetroBox.Windows
     {
         public IPlatFolder Folders { get; } = new WinFolders();
 
-        public IPlatExecutable Executables => throw new InvalidOperationException();
+        public IPlatExec Execs => throw new InvalidOperationException();
     }
 }

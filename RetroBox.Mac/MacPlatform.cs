@@ -7,6 +7,6 @@ namespace RetroBox.Mac
     {
         public IPlatFolder Folders { get; } = new MacFolders();
 
-        public IPlatExecutable Executables => throw new InvalidOperationException();
+        public IPlatExec Execs => throw new InvalidOperationException();
     }
 }

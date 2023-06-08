@@ -6,6 +6,6 @@ namespace RetroBox.Linux
     {
         public IPlatFolder Folders { get; } = new LinuxFolders();
 
-        public IPlatExecutable Executables { get; } = new LinuxExecutables();
+        public IPlatExec Execs { get; } = new LinuxExecs();
     }
 }
