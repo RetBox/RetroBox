@@ -1,9 +1,12 @@
-﻿using RetroBox.API.Xplat;
+﻿using System;
+using RetroBox.API.Xplat;
 
 namespace RetroBox.Windows
 {
     public sealed class WinPlatform : IPlatform
     {
         public IPlatFolder Folders { get; } = new WinFolders();
+
+        public IPlatExecutable Executables => throw new InvalidOperationException();
     }
 }

@@ -3,7 +3,7 @@ using RetroBox.Common;
 
 namespace RetroBox.Mac
 {
-    public sealed class MacFolders : IPlatFolder
+    internal sealed class MacFolders : IPlatFolder
     {
         public string GetDefaultConfigPath()
         {

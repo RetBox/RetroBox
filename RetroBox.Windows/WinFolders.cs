@@ -3,7 +3,7 @@ using RetroBox.Common;
 
 namespace RetroBox.Windows
 {
-    public sealed class WinFolders : IPlatFolder
+    internal sealed class WinFolders : IPlatFolder
     {
         public string GetDefaultConfigPath()
         {

@@ -3,7 +3,7 @@ using RetroBox.Common;
 
 namespace RetroBox.Linux
 {
-    public sealed class LinuxFolders : IPlatFolder
+    internal sealed class LinuxFolders : IPlatFolder
     {
         public string GetDefaultConfigPath()
         {

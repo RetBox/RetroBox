@@ -3,5 +3,7 @@
     public interface IPlatform
     {
         IPlatFolder Folders { get; }
+        
+        IPlatExecutable Executables { get; }
     }
 }
