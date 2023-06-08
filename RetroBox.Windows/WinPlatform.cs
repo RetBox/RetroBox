@@ -1,5 +1,4 @@
-﻿using System;
-using RetroBox.API.Xplat;
+﻿using RetroBox.API.Xplat;
 
 namespace RetroBox.Windows
 {
@@ -7,6 +6,6 @@ namespace RetroBox.Windows
     {
         public IPlatFolder Folders { get; } = new WinFolders();
 
-        public IPlatExec Execs => throw new InvalidOperationException();
+        public IPlatExec Execs { get; } = new WinExecs();
     }
 }

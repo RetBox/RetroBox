@@ -13,7 +13,7 @@ namespace RetroBox.Linux
         public override IEnumerable<FoundExe> FindExe(string folder)
         {
             const string emuName = "86Box";
-            var files = Directory.GetFiles(folder, "*.AppImage", SearchOption.AllDirectories);
+            var files = Directory.GetFiles(folder, $"{emuName}*.AppImage", SearchOption.AllDirectories);
             foreach (var rawFile in files)
             {
                 var file = rawFile;
