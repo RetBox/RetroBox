@@ -34,7 +34,7 @@
 			<ListBox.ItemTemplate>
 				<DataTemplate>
 					<WrapPanel HorizontalAlignment="Left" Margin="25,0,0,0">
-                        <CheckBox Name="{Binding Id}"
+                        <CheckBox Tag="{Binding Id}"
                                   Margin="0,0,20,0"
                                   VerticalAlignment="Center" />
                         <TextBlock Text="{Binding Name}"
@@ -60,7 +60,7 @@
 			<ListBox.ItemTemplate>
 				<DataTemplate>
                     <WrapPanel HorizontalAlignment="Left" Margin="25,0,0,0">
-                        <CheckBox Name="{Binding Id}"
+                        <CheckBox Tag="{Binding Id}"
                                   Margin="0,0,20,0"
                                   VerticalAlignment="Center" />
                         <TextBlock Text="{Binding Name}"
