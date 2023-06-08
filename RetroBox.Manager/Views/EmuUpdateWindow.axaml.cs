@@ -11,7 +11,6 @@ using RetroBox.Manager.Updates;
 using RetroBox.Manager.ViewCore;
 using RetroBox.Manager.ViewModels;
 using RetroBox.Update;
-using IOPath = System.IO.Path;
 
 namespace RetroBox.Manager.Views
 {
@@ -22,7 +21,8 @@ namespace RetroBox.Manager.Views
         public EmuUpdateWindow()
         {
             InitializeComponent();
-            _github = new GithubFetcher();
+            var cache = new WebCache(Configs.Default.CacheRoot);
+            _github = new GithubFetcher(cache);
         }
 
         private void BtnCancel_OnClick(object? sender, RoutedEventArgs e)
@@ -35,9 +35,9 @@ namespace RetroBox.Manager.Views
             var emus = lvEmus.GetChecked<Release>().ToArray();
             var roms = lvRoms.GetChecked<Release>().ToArray();
 
-            var configDir = Platforms.Sys.GetDefaultConfigPath();
-            var emuDir = IOPath.Combine(configDir, "emu");
-            var romDir = IOPath.Combine(configDir, "rom");
+            var config = Configs.Default;
+            var emuDir = config.EmuRoot;
+            var romDir = config.RomRoot;
 
             var list = new List<DownloadTask>();
             foreach (var item in emus)

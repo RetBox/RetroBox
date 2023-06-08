@@ -64,7 +64,7 @@ namespace RetroBox.Update
                 await using var stream = zipFile.GetInputStream(entry);
                 var outName = Path.Combine(outPath, name);
 
-                if (entry.CompressionMethod == CompressionMethod.Stored && entry.Size <= 32)
+                if (entry is { CompressionMethod: CompressionMethod.Stored, Size: <= 32 } && !outName.EndsWith(".txt"))
                 {
                     var linkBuff = new byte[entry.Size];
                     StreamUtils.ReadFully(stream, linkBuff);

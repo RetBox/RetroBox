@@ -4,20 +4,21 @@ using System.Threading.Tasks;
 
 namespace RetroBox.Update
 {
-    internal static class WebCache
+    public sealed class WebCache
     {
-        private static readonly string Root;
+        private readonly string _root;
 
-        static WebCache()
+        public WebCache(string root)
         {
-            Root = Directory.CreateDirectory(nameof(WebCache)).FullName;
+            var dir = Path.Combine(root, "web");
+            _root = Directory.CreateDirectory(dir).FullName;
         }
 
-        public static async Task<Stream> GetStreamAsync(string url)
+        public async Task<Stream> GetStreamAsync(string url)
         {
             var cacheFile = url.Split(":", 2)[1].TrimStart('/')
                 .Replace(".", "-").Replace("/", "_");
-            cacheFile = Path.Combine(Root, cacheFile);
+            cacheFile = Path.Combine(_root, cacheFile);
 
             if (File.Exists(cacheFile) &&
                 DateTime.UtcNow - File.GetLastWriteTimeUtc(cacheFile) <= TimeSpan.FromHours(4))

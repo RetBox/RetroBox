@@ -10,7 +10,8 @@
         x:Class="RetroBox.Manager.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/app-logo.ico"
-        Title="RetroBox">
+        Title="RetroBox"
+        Opened="Main_OnOpened">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>

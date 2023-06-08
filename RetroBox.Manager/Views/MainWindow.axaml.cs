@@ -1,3 +1,4 @@
+using System;
 using Avalonia.Interactivity;
 using RetroBox.Manager.ViewCore;
 using RetroBox.Manager.ViewModels;
@@ -9,6 +10,10 @@ namespace RetroBox.Manager.Views
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Main_OnOpened(object? sender, EventArgs e)
+        {
         }
 
         private async void BtnUpdate_OnClick(object? sender, RoutedEventArgs e)

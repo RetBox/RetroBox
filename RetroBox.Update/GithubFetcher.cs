@@ -8,12 +8,14 @@ namespace RetroBox.Update
 {
     public sealed class GithubFetcher : IReleaseFetcher
     {
+        private readonly WebCache _cache;
         private readonly string _emuUrl;
         private readonly string _romUrl;
         private readonly string _baseUrl;
 
-        public GithubFetcher(string baseUrl = "https://github.com")
+        public GithubFetcher(WebCache cache, string baseUrl = "https://github.com")
         {
+            _cache = cache;
             _baseUrl = baseUrl;
             _emuUrl = $"{baseUrl}/86Box/86Box/releases";
             _romUrl = $"{baseUrl}/86Box/roms/releases";
@@ -31,9 +33,9 @@ namespace RetroBox.Update
             return res;
         }
 
-        private static async IAsyncEnumerable<Release> FetchWebReleases(string url, string baseUrl)
+        private async IAsyncEnumerable<Release> FetchWebReleases(string url, string baseUrl)
         {
-            var stream = await WebCache.GetStreamAsync(url);
+            var stream = await _cache.GetStreamAsync(url);
             var doc = new HtmlDocument();
             doc.Load(stream);
             var node = doc.DocumentNode.Descendants(1).FirstOrDefault(n => n.HasClass("repository-content"));
@@ -55,7 +57,7 @@ namespace RetroBox.Update
                 if (relLazy == null)
                     continue;
                 var relId = relLazy.Split('/').Last();
-                var lazyStream = await WebCache.GetStreamAsync(relLazy);
+                var lazyStream = await _cache.GetStreamAsync(relLazy);
                 var lazyDoc = new HtmlDocument();
                 lazyDoc.Load(lazyStream);
                 var relLinks = lazyDoc.DocumentNode.Descendants(1)
