@@ -1,5 +1,4 @@
-﻿using System;
-using RetroBox.API.Xplat;
+﻿using RetroBox.API.Xplat;
 
 namespace RetroBox.Mac
 {
@@ -7,6 +6,6 @@ namespace RetroBox.Mac
     {
         public IPlatFolder Folders { get; } = new MacFolders();
 
-        public IPlatExec Execs => throw new InvalidOperationException();
+        public IPlatExec Execs { get; } = new MacExecs();
     }
 }
