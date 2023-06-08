@@ -3,7 +3,6 @@ using RetroBox.API.Data;
 using System.Collections.Generic;
 using System.IO;
 using RetroBox.Common.Xplat;
-using Microsoft.VisualBasic;
 using System.Linq;
 using System.Text;
 using RetroBox.Common.Data;
@@ -27,7 +26,7 @@ namespace RetroBox.Mac
                 var infoTxt = infoLine.First().Split('>', '<');
                 var verTxt = infoTxt.Skip(2).First();
                 var verObj = Version.Parse(verTxt);
-                var exeBuild = "b" + verObj.Revision;
+                var exeBuild = $"b{verObj.Revision}";
                 var exeVer = Statics.FindByBuild(exeBuild);
                 if (exeVer == null)
                     continue;
