@@ -22,7 +22,7 @@ foreach (var file in files2)
     Console.WriteLine($" * {JsonConvert.SerializeObject(file)}");
 }
 
-var files3 = Machines.FindMachine("/home/john/Desktop").OrderBy(n => n.Name);
+var files3 = Machines.FindMachine(@"C:\Users\Hans\Desktop").OrderBy(n => n.Name);
 foreach (var file in files3)
 {
     Console.WriteLine($" * {JsonConvert.SerializeObject(file)}");

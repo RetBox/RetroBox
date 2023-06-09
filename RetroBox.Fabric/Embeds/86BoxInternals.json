@@ -1,0 +1,7876 @@
+﻿{
+  "cdrom": {
+    "mcd": {
+      "Label": "Mitsumi CD-ROM interface",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    }
+  },
+  "chipset": {
+    "acc2168": {
+      "Label": "ACC 2046/2168",
+      "Types": [
+        "0"
+      ]
+    },
+    "ali1217": {
+      "Label": "ALi M1217",
+      "Types": [
+        "DEVICE_AT"
+      ]
+    },
+    "ali1429": {
+      "Label": "ALi M1429",
+      "Types": [
+        "0"
+      ]
+    },
+    "ali1429g": {
+      "Label": "ALi M1429G",
+      "Types": [
+        "0"
+      ]
+    },
+    "ali1435": {
+      "Label": "Intel ALi M1435",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ali1489": {
+      "Label": "ALi M1489",
+      "Types": [
+        "0"
+      ]
+    },
+    "ali1531": {
+      "Label": "ALi M1531 CPU-to-PCI Bridge",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ali1541": {
+      "Label": "ALi M1541 CPU-to-PCI Bridge",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ali1543": {
+      "Label": "ALi M1543 Desktop South Bridge",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ali1543c": {
+      "Label": "ALi M1543C Desktop South Bridge",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ali1621": {
+      "Label": "ALi M1621 CPU-to-PCI Bridge",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ali6117d": {
+      "Label": "ALi M6117D",
+      "Types": [
+        "DEVICE_AT"
+      ]
+    },
+    "amd640": {
+      "Label": "AMD 640 System Controller",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "contaq_82c596a": {
+      "Label": "Contaq 82C596A",
+      "Types": [
+        "0"
+      ]
+    },
+    "contaq_82c597": {
+      "Label": "Contaq 82C597",
+      "Types": [
+        "0"
+      ]
+    },
+    "cs4031": {
+      "Label": "Chips & Technogies CS4031",
+      "Types": [
+        "0"
+      ]
+    },
+    "cs8230": {
+      "Label": "C&T CS8230 (386/AT)",
+      "Types": [
+        "0"
+      ]
+    },
+    "ct_82c100": {
+      "Label": "C&T 82C100",
+      "Types": [
+        "0"
+      ]
+    },
+    "et6000": {
+      "Label": "ETEQ Cheetah ET6000",
+      "Types": [
+        "0"
+      ]
+    },
+    "gc100": {
+      "Label": "G2 GC100",
+      "Types": [
+        "0"
+      ]
+    },
+    "gc100a": {
+      "Label": "G2 GC100A",
+      "Types": [
+        "0"
+      ]
+    },
+    "headland_gc10x": {
+      "Label": "Headland GC101/102/103",
+      "Types": [
+        "0"
+      ]
+    },
+    "headland_gc113": {
+      "Label": "Headland GC101/102/113",
+      "Types": [
+        "0"
+      ]
+    },
+    "headland_ht18a": {
+      "Label": "Headland HT18 Rev. A",
+      "Types": [
+        "0"
+      ]
+    },
+    "headland_ht18b": {
+      "Label": "Headland HT18 Rev. B",
+      "Types": [
+        "0"
+      ]
+    },
+    "headland_ht18c": {
+      "Label": "Headland HT18 Rev. C",
+      "Types": [
+        "0"
+      ]
+    },
+    "headland_ht21": {
+      "Label": "Headland HT21 Rev. E",
+      "Types": [
+        "0"
+      ]
+    },
+    "headland_ht21cd": {
+      "Label": "Headland HT21 Rev. C/D",
+      "Types": [
+        "0"
+      ]
+    },
+    "i420ex": {
+      "Label": "Intel 82420EX",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i420ex_ide": {
+      "Label": "Intel 82420EX (With IDE)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i420tx": {
+      "Label": "Intel 82424TX",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i420zx": {
+      "Label": "Intel 82424ZX",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i430fx": {
+      "Label": "Intel SB82437FX-66",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i430fx_rev02": {
+      "Label": "Intel SB82437FX-66 (Rev. 02)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i430hx": {
+      "Label": "Intel 82439HX",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i430lx": {
+      "Label": "Intel 82434LX",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i430nx": {
+      "Label": "Intel 82434NX",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i430tx": {
+      "Label": "Intel 82439TX",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i430vx": {
+      "Label": "Intel 82437VX",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i440bx": {
+      "Label": "Intel 82443BX",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i440bx_no_agp": {
+      "Label": "Intel 82443BX",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i440ex": {
+      "Label": "Intel 82443EX",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i440fx": {
+      "Label": "Intel 82441FX",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i440gx": {
+      "Label": "Intel 82443GX",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i440lx": {
+      "Label": "Intel 82443LX",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i440zx": {
+      "Label": "Intel 82443ZX",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i450kx": {
+      "Label": "Intel 450KX (Mars)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ims8848": {
+      "Label": "IMS 8848/8849",
+      "Types": [
+        "0"
+      ]
+    },
+    "intel_82335": {
+      "Label": "Intel 82335",
+      "Types": [
+        "0"
+      ]
+    },
+    "neat": {
+      "Label": "C&T CS8121 (NEAT)",
+      "Types": [
+        "0"
+      ]
+    },
+    "olivetta_eva": {
+      "Label": "Olivetti EVA Gate Array",
+      "Types": [
+        "0"
+      ]
+    },
+    "opti283": {
+      "Label": "OPTi 82C283",
+      "Types": [
+        "0"
+      ]
+    },
+    "opti291": {
+      "Label": "OPTi 82C291",
+      "Types": [
+        "0"
+      ]
+    },
+    "opti391": {
+      "Label": "OPTi 82C391",
+      "Types": [
+        "0"
+      ]
+    },
+    "opti493": {
+      "Label": "OPTi 82C493",
+      "Types": [
+        "0"
+      ]
+    },
+    "opti495": {
+      "Label": "OPTi 82C495",
+      "Types": [
+        "0"
+      ]
+    },
+    "opti499": {
+      "Label": "OPTi 82C499",
+      "Types": [
+        "0"
+      ]
+    },
+    "opti5x7": {
+      "Label": "OPTi 82C5x6/82C5x7",
+      "Types": [
+        "0"
+      ]
+    },
+    "opti5x7_pci": {
+      "Label": "OPTi 82C5x6/82C5x7 (PCI)",
+      "Types": [
+        "0"
+      ]
+    },
+    "opti802g": {
+      "Label": "OPTi 82C802G",
+      "Types": [
+        "0"
+      ]
+    },
+    "opti802g_pci": {
+      "Label": "OPTi 82C802G (PCI)",
+      "Types": [
+        "0"
+      ]
+    },
+    "opti822": {
+      "Label": "OPTi 82C822 PCIB",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "opti895": {
+      "Label": "OPTi 82C895",
+      "Types": [
+        "0"
+      ]
+    },
+    "piix": {
+      "Label": "Intel 82371FB (PIIX)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "piix_no_mirq": {
+      "Label": "Intel 82371FB (PIIX) (No MIRQ)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "piix_rev02": {
+      "Label": "Intel 82371FB (PIIX) (Faulty BusMastering!!)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "piix3": {
+      "Label": "Intel 82371SB (PIIX3)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "piix3_ioapic": {
+      "Label": "Intel 82371SB (PIIX3) (Boards with I/O APIC)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "piix4": {
+      "Label": "Intel 82371AB/EB (PIIX4/PIIX4E)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "piix4e": {
+      "Label": "Intel 82371EB (PIIX4E)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "rabbit": {
+      "Label": "SiS Rabbit",
+      "Types": [
+        "0"
+      ]
+    },
+    "scat": {
+      "Label": "C&T SCAT (v1)",
+      "Types": [
+        "0"
+      ]
+    },
+    "scat_4": {
+      "Label": "C&T SCAT (v4)",
+      "Types": [
+        "0"
+      ]
+    },
+    "scat_sx": {
+      "Label": "C&T SCATsx",
+      "Types": [
+        "0"
+      ]
+    },
+    "sio": {
+      "Label": "Intel 82378IB (SIO)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "sio_zb": {
+      "Label": "Intel 82378ZB (SIO)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "sis_5511": {
+      "Label": "SiS 5511",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "sis_5571": {
+      "Label": "SiS 5571",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "sis_85c401": {
+      "Label": "SiS 85c401/85c402",
+      "Types": [
+        "0"
+      ]
+    },
+    "sis_85c460": {
+      "Label": "SiS 85c460",
+      "Types": [
+        "0"
+      ]
+    },
+    "sis_85c461": {
+      "Label": "SiS 85c461",
+      "Types": [
+        "0"
+      ]
+    },
+    "sis_85c471": {
+      "Label": "SiS 85c407/85c471",
+      "Types": [
+        "0"
+      ]
+    },
+    "sis_85c496": {
+      "Label": "SiS 85c496/85c497",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "sis_85c496_ls486e": {
+      "Label": "SiS 85c496/85c497 (Lucky Star LS-486E)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "sis_85c50x": {
+      "Label": "SiS 85C50x",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "slc90e66": {
+      "Label": "SMSC SLC90E66 (Victory66)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "stpc_atlas": {
+      "Label": "STPC Atlas",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "stpc_client": {
+      "Label": "STPC Client",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "stpc_consumer2": {
+      "Label": "STPC Consumer-II",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "stpc_elite": {
+      "Label": "STPC Elite",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "stpc_lpt": {
+      "Label": "STPC Parallel Port",
+      "Types": [
+        "0"
+      ]
+    },
+    "stpc_serial": {
+      "Label": "STPC Serial UARTs",
+      "Types": [
+        "0"
+      ]
+    },
+    "umc_8886af": {
+      "Label": "UMC 8886AF/8886BF",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "umc_8886f": {
+      "Label": "UMC 8886F",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "umc_hb4": {
+      "Label": "UMC HB4(8881F)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_apro": {
+      "Label": "VIA Apollo Pro",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_apro_133a": {
+      "Label": "VIA Apollo Pro133A",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_apro133": {
+      "Label": "VIA Apollo Pro133",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_mvp3": {
+      "Label": "VIA Apollo MVP3",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_vp3": {
+      "Label": "VIA Apollo VP3",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_vpx": {
+      "Label": "VIA Apollo VPX",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_vt8231": {
+      "Label": "VIA VT8231",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_vt82c49x": {
+      "Label": "VIA VT82C49X",
+      "Types": [
+        "0"
+      ]
+    },
+    "via_vt82c49x_ide": {
+      "Label": "VIA VT82C49X (With IDE)",
+      "Types": [
+        "0"
+      ]
+    },
+    "via_vt82c49x_pci": {
+      "Label": "VIA VT82C49X PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_vt82c49x_pci_ide": {
+      "Label": "VIA VT82C49X PCI (With IDE)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_vt82c505": {
+      "Label": "VIA VT82C505",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_vt82c586b": {
+      "Label": "VIA VT82C586B",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_vt82c596a": {
+      "Label": "VIA VT82C596A",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_vt82c596b": {
+      "Label": "VIA VT82C596B",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_vt82c686a": {
+      "Label": "VIA VT82C686A",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_vt82c686b": {
+      "Label": "VIA VT82C686B",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_vt8601": {
+      "Label": "VIA Apollo ProMedia",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "vl82c480": {
+      "Label": "VLSI VL82c480",
+      "Types": [
+        "0"
+      ]
+    },
+    "vl82c486": {
+      "Label": "VLSI VL82c486",
+      "Types": [
+        "0"
+      ]
+    },
+    "vlsi_scamp": {
+      "Label": "VLSI SCAMP",
+      "Types": [
+        "0"
+      ]
+    },
+    "wd76c10": {
+      "Label": "Western Digital WD76C10",
+      "Types": [
+        "0"
+      ]
+    }
+  },
+  "cpu": {
+    "286": {
+      "Label": "Intel 80286",
+      "Types": [
+        "6",
+        "8",
+        "10",
+        "12",
+        "16",
+        "20",
+        "25"
+      ]
+    },
+    "80186": {
+      "Label": "Intel 80186",
+      "Types": [
+        "6",
+        "7.16",
+        "8",
+        "9.54",
+        "10",
+        "12",
+        "16",
+        "20",
+        "25"
+      ]
+    },
+    "80188": {
+      "Label": "Intel 80188",
+      "Types": [
+        "6",
+        "7.16",
+        "8",
+        "9.54",
+        "10",
+        "12",
+        "16",
+        "20",
+        "25"
+      ]
+    },
+    "8086": {
+      "Label": "Intel 8086",
+      "Types": [
+        "7.16",
+        "8",
+        "9.54",
+        "10",
+        "12",
+        "16"
+      ]
+    },
+    "8088": {
+      "Label": "Intel 8088",
+      "Types": [
+        "4.77",
+        "7.16",
+        "8",
+        "10",
+        "12",
+        "16"
+      ]
+    },
+    "8088_europc": {
+      "Label": "Intel 8088",
+      "Types": [
+        "4.77",
+        "7.16",
+        "9.54"
+      ]
+    },
+    "am386dx": {
+      "Label": "AMD Am386DX",
+      "Types": [
+        "25",
+        "33",
+        "40"
+      ]
+    },
+    "am386sx": {
+      "Label": "AMD Am386SX",
+      "Types": [
+        "16",
+        "20",
+        "25",
+        "33",
+        "40"
+      ]
+    },
+    "am486dx": {
+      "Label": "AMD Am486DX",
+      "Types": [
+        "33",
+        "40"
+      ]
+    },
+    "am486dx2": {
+      "Label": "AMD Am486DX2",
+      "Types": [
+        "50",
+        "66",
+        "80"
+      ]
+    },
+    "am486dx2_slenh": {
+      "Label": "AMD Am486DX2 (Enhanced)",
+      "Types": [
+        "66",
+        "80"
+      ]
+    },
+    "am486dx4": {
+      "Label": "AMD Am486DX4",
+      "Types": [
+        "75",
+        "90",
+        "100",
+        "120"
+      ]
+    },
+    "am486dx4_slenh": {
+      "Label": "AMD Am486DX4 (Enhanced)",
+      "Types": [
+        "75",
+        "100",
+        "120"
+      ]
+    },
+    "am486dxl": {
+      "Label": "AMD Am486DXL",
+      "Types": [
+        "33",
+        "40"
+      ]
+    },
+    "am486dxl2": {
+      "Label": "AMD Am486DXL2",
+      "Types": [
+        "50",
+        "66",
+        "80"
+      ]
+    },
+    "am486sx": {
+      "Label": "AMD Am486SX",
+      "Types": [
+        "33",
+        "40"
+      ]
+    },
+    "am486sx2": {
+      "Label": "AMD Am486SX2",
+      "Types": [
+        "50",
+        "66"
+      ]
+    },
+    "am5x86": {
+      "Label": "AMD Am5x86",
+      "Types": [
+        "P75",
+        "P75+",
+        "P90"
+      ]
+    },
+    "c3_samuel": {
+      "Label": "VIA Cyrix III",
+      "Types": [
+        "66",
+        "100",
+        "133",
+        "166",
+        "200",
+        "233",
+        "266",
+        "300",
+        "333",
+        "366",
+        "400",
+        "433",
+        "450",
+        "466",
+        "500",
+        "533",
+        "550",
+        "600/100",
+        "600/133",
+        "650",
+        "667",
+        "700",
+        "733"
+      ]
+    },
+    "celeron_covington": {
+      "Label": "Intel Celeron (Covington)",
+      "Types": [
+        "66",
+        "100",
+        "133",
+        "166",
+        "200",
+        "233",
+        "266",
+        "300"
+      ]
+    },
+    "celeron_mendocino": {
+      "Label": "Intel Celeron (Mendocino)",
+      "Types": [
+        "66",
+        "100",
+        "133",
+        "166",
+        "200",
+        "233",
+        "266",
+        "300A",
+        "333",
+        "366",
+        "400",
+        "433",
+        "466",
+        "500",
+        "533"
+      ]
+    },
+    "cx486dlc": {
+      "Label": "Cyrix Cx486DLC",
+      "Types": [
+        "25",
+        "33",
+        "40"
+      ]
+    },
+    "cx486drx2": {
+      "Label": "Cyrix Cx486DRx2",
+      "Types": [
+        "32",
+        "40",
+        "50",
+        "66"
+      ]
+    },
+    "cx486dx": {
+      "Label": "Cyrix Cx486DX",
+      "Types": [
+        "33",
+        "40"
+      ]
+    },
+    "cx486dx2": {
+      "Label": "Cyrix Cx486DX2",
+      "Types": [
+        "50",
+        "66",
+        "80"
+      ]
+    },
+    "cx486dx4": {
+      "Label": "Cyrix Cx486DX4",
+      "Types": [
+        "75",
+        "100"
+      ]
+    },
+    "cx486s": {
+      "Label": "Cyrix Cx486S",
+      "Types": [
+        "25",
+        "33",
+        "40"
+      ]
+    },
+    "cx486slc": {
+      "Label": "Cyrix Cx486SLC",
+      "Types": [
+        "20",
+        "25",
+        "33"
+      ]
+    },
+    "cx486srx2": {
+      "Label": "Cyrix Cx486SRx2",
+      "Types": [
+        "32",
+        "40",
+        "50"
+      ]
+    },
+    "cx5x86": {
+      "Label": "Cyrix Cx5x86",
+      "Types": [
+        "80",
+        "100",
+        "120",
+        "133"
+      ]
+    },
+    "cx6x86": {
+      "Label": "Cyrix Cx6x86",
+      "Types": [
+        "P90",
+        "PR120+",
+        "PR133+",
+        "PR150+",
+        "PR166+",
+        "PR200+"
+      ]
+    },
+    "cx6x86l": {
+      "Label": "Cyrix Cx6x86L",
+      "Types": [
+        "PR133+",
+        "PR150+",
+        "PR166+",
+        "PR200+"
+      ]
+    },
+    "cx6x86mx": {
+      "Label": "Cyrix Cx6x86MX",
+      "Types": [
+        "PR166",
+        "PR200",
+        "PR233",
+        "PR266"
+      ]
+    },
+    "i386dx": {
+      "Label": "Intel i386DX",
+      "Types": [
+        "16",
+        "20",
+        "25",
+        "33",
+        "40"
+      ]
+    },
+    "i386sx": {
+      "Label": "Intel i386SX",
+      "Types": [
+        "16",
+        "20",
+        "25",
+        "33",
+        "40"
+      ]
+    },
+    "i486dx": {
+      "Label": "Intel i486DX",
+      "Types": [
+        "25",
+        "33",
+        "50"
+      ]
+    },
+    "i486dx_slenh": {
+      "Label": "Intel i486DX (SL-Enhanced)",
+      "Types": [
+        "33",
+        "50"
+      ]
+    },
+    "i486dx2": {
+      "Label": "Intel i486DX2",
+      "Types": [
+        "40",
+        "50",
+        "66"
+      ]
+    },
+    "i486dx2_pc330": {
+      "Label": "Intel i486DX2",
+      "Types": [
+        "50",
+        "66"
+      ]
+    },
+    "i486dx2_slenh": {
+      "Label": "Intel i486DX2 (SL-Enhanced)",
+      "Types": [
+        "40",
+        "50",
+        "66"
+      ]
+    },
+    "i486sx": {
+      "Label": "Intel i486SX",
+      "Types": [
+        "16",
+        "20",
+        "25",
+        "33"
+      ]
+    },
+    "i486sx_slenh": {
+      "Label": "Intel i486SX (SL-Enhanced)",
+      "Types": [
+        "25",
+        "33"
+      ]
+    },
+    "i486sx2": {
+      "Label": "Intel i486SX2",
+      "Types": [
+        "50",
+        "66 (Q0569)"
+      ]
+    },
+    "ibm386slc": {
+      "Label": "IBM 386SLC",
+      "Types": [
+        "16",
+        "20",
+        "25"
+      ]
+    },
+    "ibm486bl2": {
+      "Label": "IBM 486BL2",
+      "Types": [
+        "50",
+        "66"
+      ]
+    },
+    "ibm486bl3": {
+      "Label": "IBM 486BL3",
+      "Types": [
+        "75",
+        "100"
+      ]
+    },
+    "ibm486slc": {
+      "Label": "IBM 486SLC",
+      "Types": [
+        "33"
+      ]
+    },
+    "ibm486slc2": {
+      "Label": "IBM 486SLC2",
+      "Types": [
+        "40",
+        "50",
+        "66"
+      ]
+    },
+    "ibm486slc3": {
+      "Label": "IBM 486SLC3",
+      "Types": [
+        "60",
+        "75",
+        "100"
+      ]
+    },
+    "idx4": {
+      "Label": "Intel iDX4",
+      "Types": [
+        "75",
+        "100"
+      ]
+    },
+    "k5_5k86": {
+      "Label": "AMD K5 (5k86)",
+      "Types": [
+        "75 (P75)",
+        "90 (P90)",
+        "100 (P100)",
+        "90 (PR120)",
+        "100 (PR133)",
+        "105 (PR150)",
+        "116.5 (PR166)",
+        "133 (PR200)"
+      ]
+    },
+    "k5_ssa5": {
+      "Label": "AMD K5 (SSA/5)",
+      "Types": [
+        "75 (PR75)",
+        "90 (PR90)",
+        "100 (PR100)"
+      ]
+    },
+    "k6_2": {
+      "Label": "AMD K6-2",
+      "Types": [
+        "100",
+        "133",
+        "166",
+        "200",
+        "233",
+        "266",
+        "300",
+        "333",
+        "350",
+        "366",
+        "380",
+        "400/66",
+        "400/100",
+        "450",
+        "475",
+        "500",
+        "533",
+        "550"
+      ]
+    },
+    "k6_2p": {
+      "Label": "AMD K6-2+",
+      "Types": [
+        "100",
+        "133",
+        "166",
+        "200",
+        "233",
+        "266",
+        "300",
+        "333",
+        "350",
+        "366",
+        "380",
+        "400/66",
+        "400/100",
+        "450",
+        "475",
+        "500",
+        "533",
+        "550"
+      ]
+    },
+    "k6_3": {
+      "Label": "AMD K6-III",
+      "Types": [
+        "100",
+        "133",
+        "166",
+        "200",
+        "233",
+        "266",
+        "300",
+        "333",
+        "350",
+        "366",
+        "380",
+        "400",
+        "450"
+      ]
+    },
+    "k6_3p": {
+      "Label": "AMD K6-III+",
+      "Types": [
+        "100",
+        "133",
+        "166",
+        "200",
+        "233",
+        "266",
+        "300",
+        "333",
+        "350",
+        "366",
+        "380",
+        "400",
+        "450",
+        "475",
+        "500"
+      ]
+    },
+    "k6_m6": {
+      "Label": "AMD K6 (Model 6)",
+      "Types": [
+        "66",
+        "100",
+        "133",
+        "166",
+        "200",
+        "233"
+      ]
+    },
+    "k6_m7": {
+      "Label": "AMD K6 (Model 7)",
+      "Types": [
+        "100",
+        "133",
+        "166",
+        "200",
+        "233",
+        "266",
+        "300"
+      ]
+    },
+    "m6117": {
+      "Label": "ALi M6117",
+      "Types": [
+        "33",
+        "40"
+      ]
+    },
+    "mii": {
+      "Label": "Cyrix MII",
+      "Types": [
+        "PR300",
+        "PR333",
+        "PR366",
+        "PR400",
+        "PR433"
+      ]
+    },
+    "necv20": {
+      "Label": "NEC V20",
+      "Types": [
+        "4.77",
+        "7.16",
+        "10",
+        "12",
+        "16"
+      ]
+    },
+    "necv30": {
+      "Label": "NEC V30",
+      "Types": [
+        "5",
+        "8",
+        "10",
+        "12",
+        "16"
+      ]
+    },
+    "pentium_p24t": {
+      "Label": "Intel Pentium OverDrive",
+      "Types": [
+        "63",
+        "83"
+      ]
+    },
+    "pentium_p5": {
+      "Label": "Intel Pentium",
+      "Types": [
+        "50 (Q0399)",
+        "60",
+        "66"
+      ]
+    },
+    "pentium_p54c": {
+      "Label": "Intel Pentium",
+      "Types": [
+        "75",
+        "90",
+        "100/50",
+        "100/66",
+        "120",
+        "133",
+        "150",
+        "166",
+        "200"
+      ]
+    },
+    "pentium_p54c_od3v": {
+      "Label": "Intel Pentium OverDrive",
+      "Types": [
+        "125",
+        "150",
+        "166"
+      ]
+    },
+    "pentium_p54c_od5v": {
+      "Label": "Intel Pentium OverDrive",
+      "Types": [
+        "100",
+        "120",
+        "133"
+      ]
+    },
+    "pentium_p55c": {
+      "Label": "Intel Pentium MMX",
+      "Types": [
+        "166",
+        "200",
+        "233"
+      ]
+    },
+    "pentium_p55c_od": {
+      "Label": "Intel Pentium OverDrive MMX",
+      "Types": [
+        "75",
+        "125",
+        "150/60",
+        "166",
+        "180",
+        "200"
+      ]
+    },
+    "pentium_tillamook": {
+      "Label": "Intel Mobile Pentium MMX",
+      "Types": [
+        "120",
+        "133",
+        "150",
+        "166",
+        "200",
+        "233",
+        "266",
+        "300"
+      ]
+    },
+    "pentium2_deschutes": {
+      "Label": "Intel Pentium II (Deschutes)",
+      "Types": [
+        "66",
+        "100",
+        "133",
+        "166",
+        "200",
+        "233",
+        "266",
+        "300",
+        "333",
+        "350",
+        "400",
+        "450"
+      ]
+    },
+    "pentium2_klamath": {
+      "Label": "Intel Pentium II (Klamath)",
+      "Types": [
+        "66",
+        "100",
+        "133",
+        "166",
+        "200",
+        "233",
+        "266",
+        "300"
+      ]
+    },
+    "pentium2_od": {
+      "Label": "Intel Pentium II OverDrive",
+      "Types": [
+        "66",
+        "100",
+        "133",
+        "166",
+        "200",
+        "233",
+        "266",
+        "300",
+        "333"
+      ]
+    },
+    "pentium2_xeon": {
+      "Label": "Intel Pentium II Xeon",
+      "Types": [
+        "100",
+        "150",
+        "200",
+        "250",
+        "300",
+        "350",
+        "400",
+        "450"
+      ]
+    },
+    "pentiumpro": {
+      "Label": "Intel Pentium Pro",
+      "Types": [
+        "60",
+        "66",
+        "90",
+        "100",
+        "120",
+        "133",
+        "150",
+        "166",
+        "180",
+        "200"
+      ]
+    },
+    "rapidcad": {
+      "Label": "Intel RapidCAD",
+      "Types": [
+        "25",
+        "33",
+        "40"
+      ]
+    },
+    "stpc_dx": {
+      "Label": "ST STPC-DX",
+      "Types": [
+        "66",
+        "75"
+      ]
+    },
+    "stpc_dx2": {
+      "Label": "ST STPC-DX2",
+      "Types": [
+        "133"
+      ]
+    },
+    "winchip": {
+      "Label": "IDT WinChip",
+      "Types": [
+        "75",
+        "90",
+        "100",
+        "120",
+        "133",
+        "150",
+        "166",
+        "180",
+        "200",
+        "225",
+        "240"
+      ]
+    },
+    "winchip2": {
+      "Label": "IDT WinChip 2",
+      "Types": [
+        "200",
+        "225",
+        "240",
+        "250"
+      ]
+    },
+    "winchip2a": {
+      "Label": "IDT WinChip 2A",
+      "Types": [
+        "200",
+        "233",
+        "266",
+        "300"
+      ]
+    }
+  },
+  "device": {
+    "a6pak": {
+      "Label": "AST SixPakPlus",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ali5243_agp": {
+      "Label": "ALi M5243 AGP Bridge",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ali5247_agp": {
+      "Label": "ALi M5247 AGP Bridge",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ali7101_smbus": {
+      "Label": "ALi M7101-compatible SMBus Host Controller",
+      "Types": [
+        "DEVICE_AT"
+      ]
+    },
+    "as99127f_rev2": {
+      "Label": "ASUS AS99127F Rev. 2 Hardware Monitor",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "as99137f": {
+      "Label": "ASUS AS99127F Rev. 1 Hardware Monitor",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "brat": {
+      "Label": "BocaRAM/AT",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "bugger": {
+      "Label": "ISA/PCI Bus Bugger",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "cassette": {
+      "Label": "IBM PC/PCjr Cassette Device",
+      "Types": [
+        "0"
+      ]
+    },
+    "dec21150": {
+      "Label": "DEC 21150 PCI Bridge",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "dongle_savquest": {
+      "Label": "Protection Dongle for Savage Quest"
+    },
+    "ems5150": {
+      "Label": "Micro Mainframe EMS-5150(T)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ev159": {
+      "Label": "Everex EV-159 RAM 3000 Deluxe",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ev170": {
+      "Label": "Everex EV-170 Magic I/O",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "genericat": {
+      "Label": "Generic PC/AT Memory Expansion",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "genericxt": {
+      "Label": "Generic PC/XT Memory Expansion",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "gl518sm_2c": {
+      "Label": "Genesys Logic GL518SM Hardware Monitor",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "gl518sm_2d": {
+      "Label": "Genesys Logic GL518SM Hardware Monitor",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "i440bx_agp": {
+      "Label": "Intel 82443BX/ZX AGP Bridge",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i440gx_agp": {
+      "Label": "Intel 82443GX AGP Bridge",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "i440lx_agp": {
+      "Label": "Intel 82443LX/EX AGP Bridge",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "iab": {
+      "Label": "Intel AboveBoard",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ibm_5161": {
+      "Label": "IBM Expansion Unit (5161)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ibmat": {
+      "Label": "IBM PC/AT Memory Expansion",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ibmxt": {
+      "Label": "IBM PC/XT Memory Expansion",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "internal": {
+      "Label": "Internal",
+      "Types": [
+        "0"
+      ]
+    },
+    "isapnp": {
+      "Label": "ISA Plug and Play",
+      "Types": [
+        "0"
+      ]
+    },
+    "keyboard_at": {
+      "Label": "PC/AT Keyboard",
+      "Types": [
+        "DEVICE_KBC"
+      ]
+    },
+    "keyboard_at_ami": {
+      "Label": "PC/AT Keyboard (AMI)",
+      "Types": [
+        "DEVICE_KBC"
+      ]
+    },
+    "keyboard_at_ncr": {
+      "Label": "PC/AT Keyboard (NCR)",
+      "Types": [
+        "DEVICE_KBC"
+      ]
+    },
+    "keyboard_at_olivetti": {
+      "Label": "PC/AT Keyboard (Olivetti)",
+      "Types": [
+        "DEVICE_KBC"
+      ]
+    },
+    "keyboard_at_tg_ami": {
+      "Label": "PC/AT Keyboard (TriGem AMI)",
+      "Types": [
+        "DEVICE_KBC"
+      ]
+    },
+    "keyboard_at_toshiba": {
+      "Label": "PC/AT Keyboard (Toshiba)",
+      "Types": [
+        "DEVICE_KBC"
+      ]
+    },
+    "keyboard_pc": {
+      "Label": "IBM PC Keyboard (1981)",
+      "Types": [
+        "0"
+      ]
+    },
+    "keyboard_pc82": {
+      "Label": "IBM PC Keyboard (1982)",
+      "Types": [
+        "0"
+      ]
+    },
+    "keyboard_pravetz": {
+      "Label": "Pravetz Keyboard",
+      "Types": [
+        "0"
+      ]
+    },
+    "keyboard_ps2": {
+      "Label": "PS/2 Keyboard",
+      "Types": [
+        "DEVICE_KBC"
+      ]
+    },
+    "keyboard_ps2_acer_pci": {
+      "Label": "PS/2 Keyboard (Acer 90M002A)",
+      "Types": [
+        "DEVICE_KBC",
+        "DEVICE_PCI"
+      ]
+    },
+    "keyboard_ps2_ali_pci": {
+      "Label": "PS/2 Keyboard (ALi M5123/M1543C)",
+      "Types": [
+        "DEVICE_KBC",
+        "DEVICE_PCI"
+      ]
+    },
+    "keyboard_ps2_ami": {
+      "Label": "PS/2 Keyboard (AMI)",
+      "Types": [
+        "DEVICE_KBC"
+      ]
+    },
+    "keyboard_ps2_ami_pci": {
+      "Label": "PS/2 Keyboard (AMI)",
+      "Types": [
+        "DEVICE_KBC",
+        "DEVICE_PCI"
+      ]
+    },
+    "keyboard_ps2_intel_ami_pci": {
+      "Label": "PS/2 Keyboard (AMI)",
+      "Types": [
+        "DEVICE_KBC",
+        "DEVICE_PCI"
+      ]
+    },
+    "keyboard_ps2_mca_2": {
+      "Label": "PS/2 Keyboard",
+      "Types": [
+        "DEVICE_KBC"
+      ]
+    },
+    "keyboard_ps2_pci": {
+      "Label": "PS/2 Keyboard",
+      "Types": [
+        "DEVICE_KBC",
+        "DEVICE_PCI"
+      ]
+    },
+    "keyboard_ps2_ps1": {
+      "Label": "PS/2 Keyboard (IBM PS/1)",
+      "Types": [
+        "DEVICE_KBC"
+      ]
+    },
+    "keyboard_ps2_ps1_pci": {
+      "Label": "PS/2 Keyboard (IBM PS/1)",
+      "Types": [
+        "DEVICE_KBC",
+        "DEVICE_PCI"
+      ]
+    },
+    "keyboard_ps2_quadtel": {
+      "Label": "PS/2 Keyboard (Quadtel/MegaPC)",
+      "Types": [
+        "DEVICE_KBC"
+      ]
+    },
+    "keyboard_ps2_tg_ami": {
+      "Label": "PS/2 Keyboard (TriGem AMI)",
+      "Types": [
+        "DEVICE_KBC"
+      ]
+    },
+    "keyboard_ps2_tg_ami_pci": {
+      "Label": "PS/2 Keyboard (TriGem AMI)",
+      "Types": [
+        "DEVICE_KBC",
+        "DEVICE_PCI"
+      ]
+    },
+    "keyboard_ps2_xi8088": {
+      "Label": "PS/2 Keyboard (Xi8088)",
+      "Types": [
+        "DEVICE_KBC"
+      ]
+    },
+    "keyboard_tandy": {
+      "Label": "Tandy 1000 Keyboard",
+      "Types": [
+        "0"
+      ]
+    },
+    "keyboard_xt": {
+      "Label": "XT (1982) Keyboard",
+      "Types": [
+        "0"
+      ]
+    },
+    "keyboard_xt_compaq": {
+      "Label": "Compaq Portable Keyboard",
+      "Types": [
+        "0"
+      ]
+    },
+    "keyboard_xt_lxt3": {
+      "Label": "VTech Laser XT3 Keyboard",
+      "Types": [
+        "0"
+      ]
+    },
+    "keyboard_xt_olivetti": {
+      "Label": "Olivetti XT Keyboard",
+      "Types": [
+        "0"
+      ]
+    },
+    "keyboard_xt_t1x00": {
+      "Label": "Toshiba T1x00 Keyboard",
+      "Types": [
+        "0"
+      ]
+    },
+    "keyboard_xt_zenith": {
+      "Label": "Zenith XT Keyboard",
+      "Types": [
+        "0"
+      ]
+    },
+    "keyboard_xt86": {
+      "Label": "XT (1986) Keyboard",
+      "Types": [
+        "0"
+      ]
+    },
+    "keyboard_xtclone": {
+      "Label": "XT (Clone) Keyboard",
+      "Types": [
+        "0"
+      ]
+    },
+    "lm75_1_4a": {
+      "Label": "National Semiconductor LM75 Temperature Sensor",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "lm75_w83781d": {
+      "Label": "Winbond W83781D Secondary Temperature Sensor",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "lm78": {
+      "Label": "National Semiconductor LM78 Hardware Monitor",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "logibus": {
+      "Label": "Logitech/Microsoft Bus Mouse",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "logibus_onboard": {
+      "Label": "Logitech Bus Mouse (On-Board)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ltserial": {
+      "Label": "Logitech Serial Mouse",
+      "Types": [
+        "DEVICE_COM"
+      ]
+    },
+    "msbus": {
+      "Label": "Microsoft Bus Mouse (InPort)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "msramcard": {
+      "Label": "Microsoft RAMCard for IBM PC",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "msserial": {
+      "Label": "Microsoft Serial Mouse",
+      "Types": [
+        "DEVICE_COM"
+      ]
+    },
+    "mssystemcard": {
+      "Label": "Microsoft SystemCard",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "mssystems": {
+      "Label": "Mouse Systems Serial Mouse",
+      "Types": [
+        "DEVICE_COM"
+      ]
+    },
+    "ns16450": {
+      "Label": "National Semiconductor NS16450(-compatible) UART",
+      "Types": [
+        "0"
+      ]
+    },
+    "ns16550": {
+      "Label": "National Semiconductor NS16550(-compatible) UART",
+      "Types": [
+        "0"
+      ]
+    },
+    "ns16650": {
+      "Label": "Startech Semiconductor 16650(-compatible) UART",
+      "Types": [
+        "0"
+      ]
+    },
+    "ns16750": {
+      "Label": "Texas Instruments 16750(-compatible) UART",
+      "Types": [
+        "0"
+      ]
+    },
+    "ns16850": {
+      "Label": "Exar Corporation NS16850(-compatible) UART",
+      "Types": [
+        "0"
+      ]
+    },
+    "ns16950": {
+      "Label": "Oxford Semiconductor NS16950(-compatible) UART",
+      "Types": [
+        "0"
+      ]
+    },
+    "ns8250": {
+      "Label": "National Semiconductor 8250(-compatible) UART",
+      "Types": [
+        "0"
+      ]
+    },
+    "ns8250_pcjr": {
+      "Label": "National Semiconductor 8250(-compatible) UART for PCjr",
+      "Types": [
+        "DEVICE_PCJR"
+      ]
+    },
+    "p5pak": {
+      "Label": "Paradise Systems 5-PAK",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "phoenix_486_jumper": {
+      "Label": "Phoenix 486 Jumper Readout",
+      "Types": [
+        "0"
+      ]
+    },
+    "phoenix_486_jumper_pci": {
+      "Label": "Phoenix 486 Jumper Readout (PCI machines)",
+      "Types": [
+        "0"
+      ]
+    },
+    "pii147": {
+      "Label": "DTK PII-147 Hexa I/O Plus",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "piix4_smbus": {
+      "Label": "PIIX4-compatible SMBus Host Controller",
+      "Types": [
+        "DEVICE_AT"
+      ]
+    },
+    "postcard": {
+      "Label": "POST Card",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ps2": {
+      "Label": "Standard PS/2 Mouse",
+      "Types": [
+        "DEVICE_PS2"
+      ]
+    },
+    "rampage": {
+      "Label": "AST RAMpage/XT",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "vendex_xt_rtc": {
+      "Label": "National Semiconductor MM58167 (Vendex)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "via_apro_agp": {
+      "Label": "VIA Apollo Pro AGP Bridge",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_mvp3_agp": {
+      "Label": "VIA Apollo MVP3 AGP Bridge",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_smbus": {
+      "Label": "VIA VT82C686B SMBus Host Controller",
+      "Types": [
+        "DEVICE_AT"
+      ]
+    },
+    "via_vp3_agp": {
+      "Label": "VIA Apollo VP3 AGP Bridge",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "via_vt82c686_hwm": {
+      "Label": "VIA VT82C686 Integrated Hardware Monitor",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "via_vt8601_agp": {
+      "Label": "VIA Apollo ProMedia AGP Bridge",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "w83781d": {
+      "Label": "Winbond W83781D Hardware Monitor",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "w83781d_p5a": {
+      "Label": "Winbond W83781D Hardware Monitor (ASUS P5A)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "w83783d": {
+      "Label": "Winbond W83782D Hardware Monitor",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "wacom_serial": {
+      "Label": "Wacom SD-510C",
+      "Types": [
+        "DEVICE_COM"
+      ]
+    },
+    "wacom_serial_artpad": {
+      "Label": "Wacom ArtPad",
+      "Types": [
+        "DEVICE_COM"
+      ]
+    }
+  },
+  "disk": {
+    "esdi_at": {
+      "Label": "Western Digital WD1007V-SE1 (ESDI)",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "esdi_mca": {
+      "Label": "IBM PS/2 ESDI Fixed Disk Adapter (MCA)",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "ide_cmd640_pci": {
+      "Label": "CMD PCI-0640B PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ide_cmd640_pci_legacy_only": {
+      "Label": "CMD PCI-0640B PCI (Legacy Mode Only)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ide_cmd640_pci_single_channel": {
+      "Label": "CMD PCI-0640B PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ide_cmd640_vlb": {
+      "Label": "CMD PCI-0640B VLB",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "ide_cmd640_vlb_178": {
+      "Label": "CMD PCI-0640B VLB (Port 178h)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "ide_cmd646": {
+      "Label": "CMD PCI-0646",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ide_cmd646_legacy_only": {
+      "Label": "CMD PCI-0646 (Legacy Mode Only)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ide_cmd646_single_channel": {
+      "Label": "CMD PCI-0646",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ide_isa": {
+      "Label": "ISA PC/AT IDE Controller",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "ide_isa_2ch": {
+      "Label": "ISA PC/AT IDE Controller (Dual-Channel)",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "ide_opti611_vlb": {
+      "Label": "OPTi 82C611/82C611A VLB",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "ide_pci": {
+      "Label": "PCI IDE Controller",
+      "Types": [
+        "DEVICE_PCI",
+        "DEVICE_AT"
+      ]
+    },
+    "ide_pci_2ch": {
+      "Label": "PCI IDE Controller (Dual-Channel)",
+      "Types": [
+        "DEVICE_PCI",
+        "DEVICE_AT"
+      ]
+    },
+    "ide_qua": {
+      "Label": "Quaternary IDE Controller",
+      "Types": [
+        "DEVICE_AT"
+      ]
+    },
+    "ide_qua_pnp": {
+      "Label": "Quaternary IDE Controller (Plug and Play only)",
+      "Types": [
+        "DEVICE_AT"
+      ]
+    },
+    "ide_ter": {
+      "Label": "Tertiary IDE Controller",
+      "Types": [
+        "DEVICE_AT"
+      ]
+    },
+    "ide_ter_pnp": {
+      "Label": "Tertiary IDE Controller (Plug and Play only)",
+      "Types": [
+        "DEVICE_AT"
+      ]
+    },
+    "ide_vlb": {
+      "Label": "VLB IDE Controller",
+      "Types": [
+        "DEVICE_VLB",
+        "DEVICE_AT"
+      ]
+    },
+    "ide_vlb_2ch": {
+      "Label": "VLB IDE Controller (Dual-Channel)",
+      "Types": [
+        "DEVICE_VLB",
+        "DEVICE_AT"
+      ]
+    },
+    "internal": {
+      "Label": "Internal",
+      "Types": [
+        "0"
+      ]
+    },
+    "sff8038i": {
+      "Label": "SFF-8038i IDE Bus Master",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "st506_at": {
+      "Label": "WD1003 AT MFM/RLL Controller",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "st506_xt": {
+      "Label": "IBM PC Fixed Disk Adapter (MFM)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "st506_xt_dtc5150x": {
+      "Label": "DTC 5150X MFM Fixed Disk Adapter",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "st506_xt_gen": {
+      "Label": "Western Digital WDXT-GEN (MFM)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "st506_xt_st11_m": {
+      "Label": "ST-11M MFM Fixed Disk Adapter",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "st506_xt_st11_r": {
+      "Label": "ST-11R RLL Fixed Disk Adapter",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "st506_xt_toshiba_t1200": {
+      "Label": "Toshiba T1200 RLL Fixed Disk Adapter",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "st506_xt_victor_v86p": {
+      "Label": "Victor V86P RLL Fixed Disk Adapter",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "st506_xt_wd1002a_27x": {
+      "Label": "WD1002A-27X RLL Fixed Disk Adapter",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "st506_xt_wd1002a_wx1": {
+      "Label": "WD1002A-WX1 MFM Fixed Disk Adapter (No BIOS)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "st506_xt_wd1004_27x": {
+      "Label": "WD1004-27X RLL Fixed Disk Adapter",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "st506_xt_wd1004a_27x": {
+      "Label": "WD1004a-27X RLL Fixed Disk Adapter",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "st506_xt_wd1004a_wx1": {
+      "Label": "WD1004A-WX1 MFM Fixed Disk Adapter",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "xta_hd20": {
+      "Label": "EuroPC HD20 Fixed Disk Controller",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "xta_wdxt150": {
+      "Label": "WDXT-150 XTA Fixed Disk Controller",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "xtide": {
+      "Label": "PC/XT XTIDE",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "xtide_acculogic": {
+      "Label": "Acculogic XT IDE",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "xtide_at": {
+      "Label": "PC/AT XTIDE",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "xtide_at_386": {
+      "Label": "PC/AT XTIDE (386)",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "xtide_at_ps2": {
+      "Label": "PS/2 AT XTIDE (1.1.5)",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "xtide_plus": {
+      "Label": "PC/XT XTIDE (V20/V30/8018x)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    }
+  },
+  "floppy": {
+    "b215": {
+      "Label": "Magitronic B215",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "dtk_pii151b": {
+      "Label": "DTK PII-151B (MiniMicro) Floppy Drive Controller",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "dtk_pii158b": {
+      "Label": "DTK PII-158B (MiniMicro4) Floppy Drive Controller",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "fdc_at": {
+      "Label": "PC/AT Floppy Drive Controller",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc_at_actlow": {
+      "Label": "PC/AT Floppy Drive Controller (Active low)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc_at_ali": {
+      "Label": "PC/AT Floppy Drive Controller (ALi M512x/M1543C)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc_at_nsc": {
+      "Label": "PC/AT Floppy Drive Controller (NSC PC8730x)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc_at_ps1": {
+      "Label": "PC/AT Floppy Drive Controller (PS/1, PS/2 ISA)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc_at_qua": {
+      "Label": "PC/AT Floppy Drive Controller (Quaternary)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc_at_sec": {
+      "Label": "PC/AT Floppy Drive Controller (Secondary)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc_at_smc": {
+      "Label": "PC/AT Floppy Drive Controller (SM(s)C FDC37Cxxx)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc_at_ter": {
+      "Label": "PC/AT Floppy Drive Controller (Tertiary)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc_at_winbond": {
+      "Label": "PC/AT Floppy Drive Controller (Winbond W83x77F)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc_dp8473": {
+      "Label": "NS DP8473 Floppy Drive Controller",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc_pcjr": {
+      "Label": "PCjr Floppy Drive Controller",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc_um8398": {
+      "Label": "UMC UM8398 Floppy Drive Controller",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc_xt": {
+      "Label": "PC/XT Floppy Drive Controller",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc_xt_amstrad": {
+      "Label": "PC/XT Floppy Drive Controller (Amstrad)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc_xt_qua": {
+      "Label": "PC/XT Floppy Drive Controller (Quaternary)",
+      "Types": [
+        "FDC_FLAG_QUA"
+      ]
+    },
+    "fdc_xt_sec": {
+      "Label": "PC/XT Floppy Drive Controller (Secondary)",
+      "Types": [
+        "FDC_FLAG_SEC"
+      ]
+    },
+    "fdc_xt_t1x00": {
+      "Label": "PC/XT Floppy Drive Controller (Toshiba)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc_xt_tandy": {
+      "Label": "PC/XT Floppy Drive Controller (Tandy)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc_xt_ter": {
+      "Label": "PC/XT Floppy Drive Controller (Tertiary)",
+      "Types": [
+        "FDC_FLAG_TER"
+      ]
+    },
+    "internal": {
+      "Label": "Internal",
+      "Types": [
+        "0"
+      ]
+    },
+    "monster_fdc": {
+      "Label": "Monster FDC Floppy Drive Controller",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    }
+  },
+  "game": {
+    "2axis_2button": {
+      "Label": "2-axis, 2-button joystick(s)"
+    },
+    "2axis_4button": {
+      "Label": "2-axis, 4-button joystick"
+    },
+    "2axis_6button": {
+      "Label": "2-axis, 6-button joystick"
+    },
+    "2axis_8button": {
+      "Label": "2-axis, 8-button joystick"
+    },
+    "3axis_2button": {
+      "Label": "3-axis, 2-button joystick"
+    },
+    "3axis_4button": {
+      "Label": "3-axis, 4-button joystick"
+    },
+    "4axis_4button": {
+      "Label": "4-axis, 4-button joystick"
+    },
+    "ch_flightstick_pro": {
+      "Label": "CH Flightstick Pro"
+    },
+    "gameport": {
+      "Label": "Game port",
+      "Types": [
+        "0"
+      ]
+    },
+    "gameport_201": {
+      "Label": "Game port (Port 201h only)",
+      "Types": [
+        "0"
+      ]
+    },
+    "gameport_203": {
+      "Label": "Game port (Port 203h only)",
+      "Types": [
+        "0"
+      ]
+    },
+    "gameport_205": {
+      "Label": "Game port (Port 205h only)",
+      "Types": [
+        "0"
+      ]
+    },
+    "gameport_207": {
+      "Label": "Game port (Port 207h only)",
+      "Types": [
+        "0"
+      ]
+    },
+    "gameport_208": {
+      "Label": "Game port (Port 208h-20fh)",
+      "Types": [
+        "0"
+      ]
+    },
+    "gameport_209": {
+      "Label": "Game port (Port 209h only)",
+      "Types": [
+        "0"
+      ]
+    },
+    "gameport_20b": {
+      "Label": "Game port (Port 20Bh only)",
+      "Types": [
+        "0"
+      ]
+    },
+    "gameport_20d": {
+      "Label": "Game port (Port 20Dh only)",
+      "Types": [
+        "0"
+      ]
+    },
+    "gameport_20f": {
+      "Label": "Game port (Port 20Fh only)",
+      "Types": [
+        "0"
+      ]
+    },
+    "gameport_pnp": {
+      "Label": "Game port (Plug and Play only)",
+      "Types": [
+        "0"
+      ]
+    },
+    "gameport_pnp_6io": {
+      "Label": "Game port (Plug and Play only, 6 I/O ports)",
+      "Types": [
+        "0"
+      ]
+    },
+    "gameport_sio": {
+      "Label": "Game port (Super I/O, 1 I/O port)",
+      "Types": [
+        "0"
+      ]
+    },
+    "gameport_tmacm": {
+      "Label": "Game port (ThrustMaster ACM)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "sidewinder_pad": {
+      "Label": "Microsoft SideWinder Pad"
+    },
+    "thrustmaster_fcs": {
+      "Label": "Thrustmaster Flight Control System"
+    }
+  },
+  "machine": {
+    "3302": {
+      "Label": "[NEAT] NCR 3302",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "403tg": {
+      "Label": "[OPTi 895] Jetway J-403TG",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "403tg_d": {
+      "Label": "[OPTi 895] Jetway J-403TG Rev D",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "403tg_d_mr": {
+      "Label": "[OPTi 895] Jetway J-403TG Rev D (MR BIOS)",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "430nx": {
+      "Label": "[i430NX] Gigabyte GA-586IP",
+      "Types": [
+        "MACHINE_TYPE_SOCKET5"
+      ]
+    },
+    "430vx": {
+      "Label": "[i430VX] Shuttle HOT-557",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "486ap4": {
+      "Label": "[i420EX] ASUS PVI-486AP4",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "486sp3": {
+      "Label": "[i420TX] ASUS PCI/I-486SP3",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "486sp3c": {
+      "Label": "[SiS 496] ASUS PVI-486SP3C",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "486sp3g": {
+      "Label": "[i420ZX] ASUS PCI/I-486SP3G",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "486vchd": {
+      "Label": "[VIA VT82C495] FIC 486-VC-HD",
+      "Types": [
+        "MACHINE_TYPE_486"
+      ]
+    },
+    "486vipio2": {
+      "Label": "[VIA VT82C496G] FIC VIP-IO2",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "4dps": {
+      "Label": "[SiS 496] Zida Tomato 4DP",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "4saw2": {
+      "Label": "[SiS 496] Soyo 4SAW2",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "56a5": {
+      "Label": "[i430TX] Soltek SL-56A5",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "586mc1": {
+      "Label": "[i430LX] Micro Star 586MC1",
+      "Types": [
+        "MACHINE_TYPE_SOCKET4"
+      ]
+    },
+    "5aa": {
+      "Label": "[ALi ALADDiN V] Gigabyte GA-5AA",
+      "Types": [
+        "MACHINE_TYPE_SOCKETS7"
+      ]
+    },
+    "5ax": {
+      "Label": "[ALi ALADDiN V] Gigabyte GA-5AX",
+      "Types": [
+        "MACHINE_TYPE_SOCKETS7"
+      ]
+    },
+    "5emapro": {
+      "Label": "[VIA MVP3] Soyo 5EMA PRO",
+      "Types": [
+        "MACHINE_TYPE_SOCKETS7"
+      ]
+    },
+    "5ivg": {
+      "Label": "[i430VX] Azza PT-5IV",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "63a1": {
+      "Label": "[i440ZX] Soltek SL-63A1",
+      "Types": [
+        "MACHINE_TYPE_SOCKET370"
+      ]
+    },
+    "686bx": {
+      "Label": "[i440BX] Gigabyte GA-686BX",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "686nx": {
+      "Label": "[i440FX] Gigabyte GA-686NX",
+      "Types": [
+        "MACHINE_TYPE_SOCKET8"
+      ]
+    },
+    "6gxu": {
+      "Label": "[i440GX] Gigabyte GA-6GXU",
+      "Types": [
+        "MACHINE_TYPE_SLOT2"
+      ]
+    },
+    "6via90ap": {
+      "Label": "[VIA Apollo Pro 133A] Acorp 6VIA90AP",
+      "Types": [
+        "MACHINE_TYPE_SOCKET370"
+      ]
+    },
+    "8500tuc": {
+      "Label": "[i430HX] Biostar MB-8500TUC",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "8500tvxa": {
+      "Label": "[i430VX] Biostar MB-8500TVX-A",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "8600ttc": {
+      "Label": "[i440FX] Biostar MB-8600TTC",
+      "Types": [
+        "MACHINE_TYPE_SOCKET8"
+      ]
+    },
+    "abpb4": {
+      "Label": "[ALi M1489] ABIT AB-PB4",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "acc386": {
+      "Label": "[ACC 2168] AMI 386DX clone",
+      "Types": [
+        "MACHINE_TYPE_386DX"
+      ]
+    },
+    "acera1g": {
+      "Label": "[ALi M1429G] Acer A1G",
+      "Types": [
+        "MACHINE_TYPE_486_S2"
+      ]
+    },
+    "acerm3a": {
+      "Label": "[i430HX] Acer M3A",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "acerv10": {
+      "Label": "[SiS 461] Acer V10",
+      "Types": [
+        "MACHINE_TYPE_486_S2"
+      ]
+    },
+    "acerv30": {
+      "Label": "[i430FX] Acer V30",
+      "Types": [
+        "MACHINE_TYPE_SOCKET5"
+      ]
+    },
+    "acerv35n": {
+      "Label": "[i430HX] Acer V35N",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "acerv60n": {
+      "Label": "[i440FX] Acer V60N",
+      "Types": [
+        "MACHINE_TYPE_SOCKET8"
+      ]
+    },
+    "actionpc2600": {
+      "Label": "[UMC 8881] Epson Action PC 2600",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "adi386sx": {
+      "Label": "[Intel 82335] ADI 386SX",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "alfredo": {
+      "Label": "[i420TX] Intel Classic/PCI",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "ali1429": {
+      "Label": "[ALi M1429] Olystar LIL1429",
+      "Types": [
+        "MACHINE_TYPE_486"
+      ]
+    },
+    "ama932j": {
+      "Label": "[HT18] AMA-932J",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "ambradp60": {
+      "Label": "[i430LX] AMBRA DP60 PCI",
+      "Types": [
+        "MACHINE_TYPE_SOCKET4"
+      ]
+    },
+    "ambradp90": {
+      "Label": "[i430NX] AMBRA DP90 PCI",
+      "Types": [
+        "MACHINE_TYPE_SOCKET5"
+      ]
+    },
+    "ambx133": {
+      "Label": "[i440BX] AmazePC AM-BX133",
+      "Types": [
+        "MACHINE_TYPE_SOCKET370"
+      ]
+    },
+    "americxt": {
+      "Label": "[8088] American XT Computer",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "ami286": {
+      "Label": "[NEAT] DataExpert 286",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "ami471": {
+      "Label": "[SiS 471] Epox 486SX/DX Green",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "ami495": {
+      "Label": "[OPTi 495] DataExpert SX495",
+      "Types": [
+        "MACHINE_TYPE_386DX_486"
+      ]
+    },
+    "amixt": {
+      "Label": "[8088] AMI XT clone",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "an430tx": {
+      "Label": "[i430TX] Intel AN430TX",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "ap440fx": {
+      "Label": "[i440FX] Intel AP440FX",
+      "Types": [
+        "MACHINE_TYPE_SOCKET8"
+      ]
+    },
+    "ap53": {
+      "Label": "[i430HX] AOpen AP53",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "ap5s": {
+      "Label": "[SiS 5511] AOpen AP5S",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "ap5vm": {
+      "Label": "[i430VX] AOpen AP5VM",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "apas3": {
+      "Label": "[VIA Apollo Pro] PC Partner APAS3",
+      "Types": [
+        "MACHINE_TYPE_SOCKET370"
+      ]
+    },
+    "apollo": {
+      "Label": "[i430FX] AMI Apollo",
+      "Types": [
+        "MACHINE_TYPE_SOCKET5"
+      ]
+    },
+    "arb1374": {
+      "Label": "[ALi M1217] Acrosser AR-B1374",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "arb1423c": {
+      "Label": "[STPC Consumer-II] Acrosser AR-B1423C",
+      "Types": [
+        "MACHINE_TYPE_486_MISC"
+      ]
+    },
+    "arb1479": {
+      "Label": "[STPC Consumer-II] Acrosser AR-B1479",
+      "Types": [
+        "MACHINE_TYPE_486_MISC"
+      ]
+    },
+    "asus386": {
+      "Label": "[SiS 310] ASUS ISA-386C",
+      "Types": [
+        "MACHINE_TYPE_386DX"
+      ]
+    },
+    "atc1415": {
+      "Label": "[UMC 8881] A-Trend ATC-1415",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "atc6310bxii": {
+      "Label": "[SMSC VictoryBX-66] A-Trend ATC6310BXII",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "atc7020bxii": {
+      "Label": "[SMSC VictoryBX-66] A-Trend ATC7020BXII",
+      "Types": [
+        "MACHINE_TYPE_SOCKET370"
+      ]
+    },
+    "av4": {
+      "Label": "[SiS 460] ABIT AV4",
+      "Types": [
+        "MACHINE_TYPE_486"
+      ]
+    },
+    "award286": {
+      "Label": "[SCAT] Hyundai Solomon 286KP",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "award495": {
+      "Label": "[OPTi 495] Award 486 clone",
+      "Types": [
+        "MACHINE_TYPE_386DX_486"
+      ]
+    },
+    "awardsx": {
+      "Label": "[OPTi 291] DTK PPM-3333P",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "awo671r": {
+      "Label": "[i440BX] AEWIN AW-O671R",
+      "Types": [
+        "MACHINE_TYPE_SOCKET370"
+      ]
+    },
+    "ax59pro": {
+      "Label": "[VIA MVP3] AOpen AX59 Pro",
+      "Types": [
+        "MACHINE_TYPE_SOCKETS7"
+      ]
+    },
+    "ax6bc": {
+      "Label": "[i440BX] AOpen AX6BC",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "bf6": {
+      "Label": "[i440BX] ABIT BF6",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "borapro": {
+      "Label": "[i440ZX] Packard Bell Bora Pro",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "brio80xx": {
+      "Label": "[i430VX] HP Brio 80xx",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "bw230": {
+      "Label": "[8088] Bondwell BW230",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "cmdpc30": {
+      "Label": "[ISA] Commodore PC 30 III",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "cmdsl386sx16": {
+      "Label": "[NEAT] Commodore SL386SX-16",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "cmdsl386sx25": {
+      "Label": "[SCAMP] Commodore SL386SX-25",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "compaq_plasma": {
+      "Label": "Compaq Plasma",
+      "Types": [
+        "0"
+      ]
+    },
+    "cs4031": {
+      "Label": "[CS4031] AMI 486 CS4031",
+      "Types": [
+        "MACHINE_TYPE_486"
+      ]
+    },
+    "cubx": {
+      "Label": "[i440BX] ASUS CUBX",
+      "Types": [
+        "MACHINE_TYPE_SOCKET370"
+      ]
+    },
+    "cuv4xls": {
+      "Label": "[VIA Apollo Pro 133A] ASUS CUV4X-LS",
+      "Types": [
+        "MACHINE_TYPE_SOCKET370"
+      ]
+    },
+    "d824": {
+      "Label": "[VLSI 82C481] Siemens Nixdorf D824",
+      "Types": [
+        "MACHINE_TYPE_486"
+      ]
+    },
+    "dataexpert386sx": {
+      "Label": "[SCAMP] DataExpert 386SX",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "decpclpv": {
+      "Label": "[SiS 461] DEC DECpc LPV",
+      "Types": [
+        "MACHINE_TYPE_486_S2"
+      ]
+    },
+    "dellxp60": {
+      "Label": "[i430LX] Dell Dimension XPS P60",
+      "Types": [
+        "MACHINE_TYPE_SOCKET4"
+      ]
+    },
+    "deskmaster286": {
+      "Label": "[SCAT] Samsung Deskmaster 286",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "deskpro": {
+      "Label": "[8086] Compaq Deskpro",
+      "Types": [
+        "MACHINE_TYPE_8086"
+      ]
+    },
+    "deskpro386": {
+      "Label": "[ISA] Compaq Deskpro 386",
+      "Types": [
+        "MACHINE_TYPE_386DX"
+      ]
+    },
+    "dtk": {
+      "Label": "[8088] DTK PIM-TB10-Z",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "dtk386": {
+      "Label": "[NEAT] DTK 386SX clone",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "dtk486": {
+      "Label": "[SiS 471] DTK PKM-0038S E-2",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "ecs386": {
+      "Label": "[C&T 386] ECS 386/32",
+      "Types": [
+        "MACHINE_TYPE_386DX"
+      ]
+    },
+    "ecs486": {
+      "Label": "[UMC 8881] ECS Elite UM8810PAIO",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "eep_1000hx": {
+      "Label": "Tandy 1000HX EEPROM",
+      "Types": [
+        "0"
+      ]
+    },
+    "eep_1000sl2": {
+      "Label": "Tandy 1000SL2 EEPROM",
+      "Types": [
+        "0"
+      ]
+    },
+    "elt": {
+      "Label": "[8086] Epson Equity LT",
+      "Types": [
+        "MACHINE_TYPE_8086"
+      ]
+    },
+    "endeavor": {
+      "Label": "[i430FX] Intel Advanced/EV",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "equium5200": {
+      "Label": "[i430HX] Toshiba Equium 5200D",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "europc": {
+      "Label": "EuroPC System Board",
+      "Types": [
+        "0"
+      ]
+    },
+    "excalibur": {
+      "Label": "[OPTi 597] AMI Excalibur VLB",
+      "Types": [
+        "MACHINE_TYPE_SOCKET4"
+      ]
+    },
+    "excaliburpci": {
+      "Label": "[i430LX] AMI Excalibur PCI Pentium",
+      "Types": [
+        "MACHINE_TYPE_SOCKET4"
+      ]
+    },
+    "excaliburpci2": {
+      "Label": "[SiS 501] AMI Excalibur PCI-II Pentium ISA",
+      "Types": [
+        "MACHINE_TYPE_SOCKET4"
+      ]
+    },
+    "exp8551": {
+      "Label": "[i430FX] DataExpert EXP8551",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "ficka6130": {
+      "Label": "[VIA Apollo Pro] FIC KA-6130",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "ficpa2012": {
+      "Label": "[VIA VP3] FIC PA-2012",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "ficva502": {
+      "Label": "[VIA VPX] FIC VA-502",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "ficva503a": {
+      "Label": "[VIA MVP3] FIC VA-503A",
+      "Types": [
+        "MACHINE_TYPE_SOCKETS7"
+      ]
+    },
+    "ficva503p": {
+      "Label": "[VIA MVP3] FIC VA-503+",
+      "Types": [
+        "MACHINE_TYPE_SOCKETS7"
+      ]
+    },
+    "flytech386": {
+      "Label": "[ALi M1217] Flytech 386",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "fmb": {
+      "Label": "[i430FX] QDI FMB",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "fw6400gx": {
+      "Label": "[i440GX] Freeway FW-6400GX",
+      "Types": [
+        "MACHINE_TYPE_SLOT1_2"
+      ]
+    },
+    "g486ip": {
+      "Label": "[IMS 8848] Tekram G486IP",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "g486vpa": {
+      "Label": "[VIA VT82C496G] DFI G486VPA",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "gdc212m": {
+      "Label": "[SCAT] Goldstar GDC-212M",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "genxt": {
+      "Label": "[8088] Generic XT clone",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "greenb": {
+      "Label": "[Contaq 82C597] Green-B",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "gt694va": {
+      "Label": "[VIA Apollo Pro 133A] BCM GT694VA",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "gw286ct": {
+      "Label": "[SCAT] GW-286CT GEAR",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "gw2katx": {
+      "Label": "[i430FX] Gateway 2000 Thor",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "gw2kte": {
+      "Label": "[i430VX] Gateway 2000 Tigereye",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "hawk": {
+      "Label": "[i430FX] TriGem Hawk",
+      "Types": [
+        "MACHINE_TYPE_SOCKET5"
+      ]
+    },
+    "hot433": {
+      "Label": "[UMC 8881] Shuttle HOT-433A",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "hot543": {
+      "Label": "[OPTi 597] Shuttle HOT-543",
+      "Types": [
+        "MACHINE_TYPE_SOCKET5"
+      ]
+    },
+    "ibmat": {
+      "Label": "[ISA] IBM AT",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "ibmatami": {
+      "Label": "[ISA] AMI IBM AT",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "ibmatpx": {
+      "Label": "[ISA] Phoenix IBM AT",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "ibmatquadtel": {
+      "Label": "[ISA] Quadtel IBM AT",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "ibmpc": {
+      "Label": "[8088] IBM PC (1981)",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "ibmpc82": {
+      "Label": "[8088] IBM PC (1982)",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "ibmpcjr": {
+      "Label": "[8088] IBM PCjr",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "ibmps1_2121": {
+      "Label": "[ISA] IBM PS/1 model 2121",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "ibmps1es": {
+      "Label": "[ISA] IBM PS/1 model 2011",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "ibmps2_m30_286": {
+      "Label": "[ISA] IBM PS/2 model 30-286",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "ibmps2_m50": {
+      "Label": "[MCA] IBM PS/2 model 50",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "ibmps2_m55sx": {
+      "Label": "[MCA] IBM PS/2 model 55SX",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "ibmps2_m60": {
+      "Label": "[MCA] IBM PS/2 model 60",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "ibmps2_m65sx": {
+      "Label": "[MCA] IBM PS/2 model 65SX",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "ibmps2_m70_type3": {
+      "Label": "[MCA] IBM PS/2 model 70 (type 3)",
+      "Types": [
+        "MACHINE_TYPE_386DX_486"
+      ]
+    },
+    "ibmps2_m70_type4": {
+      "Label": "[MCA] IBM PS/2 model 70 (type 4)",
+      "Types": [
+        "MACHINE_TYPE_486"
+      ]
+    },
+    "ibmps2_m80": {
+      "Label": "[MCA] IBM PS/2 model 80 (type 2)",
+      "Types": [
+        "MACHINE_TYPE_386DX"
+      ]
+    },
+    "ibmps2_m80_type3": {
+      "Label": "[MCA] IBM PS/2 model 80 (type 3)",
+      "Types": [
+        "MACHINE_TYPE_386DX_486"
+      ]
+    },
+    "ibmxt": {
+      "Label": "[8088] IBM XT (1982)",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "ibmxt286": {
+      "Label": "[ISA] IBM XT Model 286",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "ibmxt86": {
+      "Label": "[8088] IBM XT (1986)",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "infinia7200": {
+      "Label": "[i430HX] Toshiba Infinia 7200",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "isa486": {
+      "Label": "[SiS 401] ASUS ISA-486",
+      "Types": [
+        "MACHINE_TYPE_486"
+      ]
+    },
+    "iskra3104": {
+      "Label": "[8086] Schetmash Iskra-3104",
+      "Types": [
+        "MACHINE_TYPE_8086"
+      ]
+    },
+    "itoxstar": {
+      "Label": "[STPC Client] ITOX STAR",
+      "Types": [
+        "MACHINE_TYPE_486_MISC"
+      ]
+    },
+    "jukopc": {
+      "Label": "[8088] Juko ST",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "kaypropc": {
+      "Label": "[8088] Kaypro PC",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "kmxc02": {
+      "Label": "[SCAT] KMX-C-02",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "kn97": {
+      "Label": "[i440FX] ASUS KN97",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "ls486e": {
+      "Label": "[SiS 496] Lucky Star LS-486E",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "ltxt": {
+      "Label": "[8088] VTech Laser Turbo XT",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "lx6": {
+      "Label": "[i440LX] ABIT LX6",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "lxt3": {
+      "Label": "[8086] VTech Laser XT3",
+      "Types": [
+        "MACHINE_TYPE_8086"
+      ]
+    },
+    "m19": {
+      "Label": "[8088] Olivetti M19",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "m19_vid": {
+      "Label": "Olivetti M19 graphics card",
+      "Types": [
+        "0"
+      ]
+    },
+    "m24": {
+      "Label": "[8086] Olivetti M21/24/24SP",
+      "Types": [
+        "MACHINE_TYPE_8086"
+      ]
+    },
+    "m24_kbd": {
+      "Label": "Olivetti M24 keyboard and mouse",
+      "Types": [
+        "0"
+      ]
+    },
+    "m240": {
+      "Label": "[8086] Olivetti M240",
+      "Types": [
+        "MACHINE_TYPE_8086"
+      ]
+    },
+    "m290": {
+      "Label": "[ISA] Olivetti M290",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "m4li": {
+      "Label": "[SiS 496] Micronics M4Li",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "m560": {
+      "Label": "[ALi ALADDiN IV+] PC Chips M560",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "m579": {
+      "Label": "[ALi ALADDiN V] PC Chips M579",
+      "Types": [
+        "MACHINE_TYPE_SOCKETS7"
+      ]
+    },
+    "m6mi": {
+      "Label": "[i440FX] Micronics M6Mi",
+      "Types": [
+        "MACHINE_TYPE_SOCKET8"
+      ]
+    },
+    "m729": {
+      "Label": "[ALi ALADDiN-PRO II] PC Chips M729",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "m7shi": {
+      "Label": "[i430HX] Micronics M7S-Hi",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "m919": {
+      "Label": "[UMC 8881] PC Chips M919",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "mb500n": {
+      "Label": "[i430FX] PC Partner MB500N",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "mb520n": {
+      "Label": "[i430VX] PC Partner MB520N",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "mb540n": {
+      "Label": "[i430TX] PC Partner MB540N",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "mb600n": {
+      "Label": "[i440FX] PC Partner MB600N",
+      "Types": [
+        "MACHINE_TYPE_SOCKET8"
+      ]
+    },
+    "megapc": {
+      "Label": "[WD76C10] Amstrad MegaPC",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "micronics386": {
+      "Label": "[ISA] Micronics 09-00021",
+      "Types": [
+        "MACHINE_TYPE_386DX"
+      ]
+    },
+    "mpc1600": {
+      "Label": "[8088] Columbia Data Products MPC-1600",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "mr1217": {
+      "Label": "[ALi M1217] MR BIOS 386SX clone",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "mr286": {
+      "Label": "[ISA] MR BIOS 286 clone",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "mr495": {
+      "Label": "[OPTi 495] DataExpert SX495 (MR BIOS)",
+      "Types": [
+        "MACHINE_TYPE_386DX_486"
+      ]
+    },
+    "mrthor": {
+      "Label": "[i430FX] Intel Advanced/ATX (MR BIOS)",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "ms4134": {
+      "Label": "[ALi M1429G] MSI MS-4134",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "ms4145": {
+      "Label": "[ALi M1489] MSI MS-4145",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "ms5119": {
+      "Label": "[i430FX] MSI MS-5119",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "ms5124": {
+      "Label": "[SiS 5511] MSI MS-5124",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "ms5146": {
+      "Label": "[SiS 5571] MSI MS-5146",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "ms5164": {
+      "Label": "[ALi ALADDiN IV+] MSI MS-5164",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "ms6168": {
+      "Label": "[i440ZX] MSI MS-6168",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "mvi486": {
+      "Label": "[OPTi 895] Mylex MVI486",
+      "Types": [
+        "MACHINE_TYPE_486"
+      ]
+    },
+    "mxl7t": {
+      "Label": "[8088] Micoms XL-7 Turbo",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "ninja": {
+      "Label": "[i420EX] Intel Classic/PCI ED",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "NULL": {
+      "Label": "NULL",
+      "Types": [
+        "MACHINE_TYPE_NONE"
+      ]
+    },
+    "nupro592": {
+      "Label": "[i430TX] ADLink NuPRO-592",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "openat": {
+      "Label": "[ISA] OpenAT",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "openxt": {
+      "Label": "[8088] OpenXT",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "opti560l": {
+      "Label": "[i430LX] Dell OptiPlex 560/L",
+      "Types": [
+        "MACHINE_TYPE_SOCKET4"
+      ]
+    },
+    "p2bls": {
+      "Label": "[i440BX] ASUS P2B-LS",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "p3105": {
+      "Label": "[8088] Philips P3105/NMS9100",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "p3120": {
+      "Label": "[GC100A] Philips P3120",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "p3bf": {
+      "Label": "[i440BX] ASUS P3B-F",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "p3v133": {
+      "Label": "[VIA Apollo Pro 133] ASUS P3V133",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "p3v4x": {
+      "Label": "[VIA Apollo Pro 133A] ASUS P3V4X",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "p54sp4": {
+      "Label": "[SiS 501] ASUS PCI/I-P54SP4",
+      "Types": [
+        "MACHINE_TYPE_SOCKET5"
+      ]
+    },
+    "p54sps": {
+      "Label": "[SiS 501] Gemlight GMB-P54SPS",
+      "Types": [
+        "MACHINE_TYPE_SOCKET5"
+      ]
+    },
+    "p54tp4xe": {
+      "Label": "[i430FX] ASUS P/I-P54TP4XE",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "p54tp4xe_mr": {
+      "Label": "[i430FX] ASUS P/I-P54TP4XE (MR BIOS)",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "p55t2p4": {
+      "Label": "[i430HX] ASUS P/I-P55T2P4",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "p55t2s": {
+      "Label": "[i430HX] Supermicro P55T2S",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "p55tvp4": {
+      "Label": "[i430VX] ASUS P/I-P55TVP4",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "p55va": {
+      "Label": "[i430VX] Epox P55-VA",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "p5a": {
+      "Label": "[ALi ALADDiN V] ASUS P5A",
+      "Types": [
+        "MACHINE_TYPE_SOCKETS7"
+      ]
+    },
+    "p5mms98": {
+      "Label": "[i430TX] Supermicro P5MMS98",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "p5mp3": {
+      "Label": "[i430LX] ASUS P/I-P5MP3",
+      "Types": [
+        "MACHINE_TYPE_SOCKET4"
+      ]
+    },
+    "p5sp4": {
+      "Label": "[SiS 501] ASUS PCI/I-P5SP4",
+      "Types": [
+        "MACHINE_TYPE_SOCKET4"
+      ]
+    },
+    "p5vl": {
+      "Label": "[OPTi 597] Supermicro P5VL-PCI",
+      "Types": [
+        "MACHINE_TYPE_SOCKET4"
+      ]
+    },
+    "p5vxb": {
+      "Label": "[i430VX] ECS P5VX-B",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "p65up5_cp55t2d": {
+      "Label": "[i430HX] ASUS P/I-P65UP5 (C-P55T2D)",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "p65up5_cp6nd": {
+      "Label": "[i440FX] ASUS P/I-P65UP5 (C-P6ND)",
+      "Types": [
+        "MACHINE_TYPE_SOCKET8"
+      ]
+    },
+    "p65up5_cpknd": {
+      "Label": "[i440FX] ASUS P/I-P65UP5 (C-PKND)",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "p6bap": {
+      "Label": "[VIA Apollo Pro 133] ECS P6BAP-A+",
+      "Types": [
+        "MACHINE_TYPE_SOCKET370"
+      ]
+    },
+    "p6bat": {
+      "Label": "[VIA Apollo Pro 133] ECS P6BAT-A+",
+      "Types": [
+        "MACHINE_TYPE_SLOT1_370"
+      ]
+    },
+    "p6i440e2": {
+      "Label": "[i440EX] QDI EXCELLENT II",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "p6rp4": {
+      "Label": "[i450KX] ASUS P/I-P6RP4",
+      "Types": [
+        "MACHINE_TYPE_SOCKET8"
+      ]
+    },
+    "p6sba": {
+      "Label": "[i440BX] Supermicro P6SBA",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "pat54pv": {
+      "Label": "[OPTi 597] TMC PAT54PV",
+      "Types": [
+        "MACHINE_TYPE_SOCKET5"
+      ]
+    },
+    "pb410a": {
+      "Label": "[ACC 2168] Packard Bell PB410A",
+      "Types": [
+        "MACHINE_TYPE_486_S2"
+      ]
+    },
+    "pb520r": {
+      "Label": "[i430LX] Packard Bell PB520R",
+      "Types": [
+        "MACHINE_TYPE_SOCKET4"
+      ]
+    },
+    "pb640": {
+      "Label": "[i430FX] Packard Bell PB640",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "pb680": {
+      "Label": "[i430VX] Packard Bell PB680",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "pb810": {
+      "Label": "[i430VX] Packard Bell PB810",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "pb8810": {
+      "Label": "[8088] Packard Bell PB8810",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "pc1512": {
+      "Label": "[8086] Amstrad PC1512",
+      "Types": [
+        "MACHINE_TYPE_8086"
+      ]
+    },
+    "pc1640": {
+      "Label": "[8086] Amstrad PC1640",
+      "Types": [
+        "MACHINE_TYPE_8086"
+      ]
+    },
+    "pc200": {
+      "Label": "[8086] Amstrad PC20(0)",
+      "Types": [
+        "MACHINE_TYPE_8086"
+      ]
+    },
+    "pc2086": {
+      "Label": "[8086] Amstrad PC2086",
+      "Types": [
+        "MACHINE_TYPE_8086"
+      ]
+    },
+    "pc3086": {
+      "Label": "[8086] Amstrad PC3086",
+      "Types": [
+        "MACHINE_TYPE_8086"
+      ]
+    },
+    "pc330_6573": {
+      "Label": "[OPTi 802G] IBM PC 330 (type 6573)",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "pc4i": {
+      "Label": "[8088] NCR PC4i",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "pc500": {
+      "Label": "[8088] Multitech PC-500",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "pc700": {
+      "Label": "[8088] Multitech PC-700",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "pc8": {
+      "Label": "[ISA] NCR PC8/810/710/3390/3392",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "pc916sx": {
+      "Label": "[ISA] NCR PC916SX",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "pci400cb": {
+      "Label": "[IMS 8848] J-Bond PCI400C-B",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "pcjr": {
+      "Label": "IBM PCjr",
+      "Types": [
+        "0"
+      ]
+    },
+    "pcm5330": {
+      "Label": "[STPC Atlas] AAEON PCM-5330",
+      "Types": [
+        "MACHINE_TYPE_486_MISC"
+      ]
+    },
+    "pcm9340": {
+      "Label": "[STPC Elite] Advantech PCM-9340",
+      "Types": [
+        "MACHINE_TYPE_486_MISC"
+      ]
+    },
+    "pcspirit": {
+      "Label": "[8088] Eagle PC Spirit",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "pcv90": {
+      "Label": "[i430HX] Sony Vaio PCV-90",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "pcxt": {
+      "Label": "[8088] Super PC/Turbo XT",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "philips": {
+      "Label": "Philips XT Mainboard",
+      "Types": [
+        "0"
+      ]
+    },
+    "pja511m": {
+      "Label": "[ALi M6117] Acrosser PJ-A511M",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "plato": {
+      "Label": "[i430NX] Intel Premiere/PCI II",
+      "Types": [
+        "MACHINE_TYPE_SOCKET5"
+      ]
+    },
+    "portable": {
+      "Label": "[8088] Compaq Portable",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "portableii": {
+      "Label": "[ISA] Compaq Portable II",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "portableiii": {
+      "Label": "[ISA] Compaq Portable III",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "portableiii386": {
+      "Label": "[ISA] Compaq Portable III (386)",
+      "Types": [
+        "MACHINE_TYPE_386DX"
+      ]
+    },
+    "powermatev": {
+      "Label": "[i430FX] NEC PowerMate V",
+      "Types": [
+        "MACHINE_TYPE_SOCKET5"
+      ]
+    },
+    "ppc512": {
+      "Label": "[8086] Amstrad PPC512/640",
+      "Types": [
+        "MACHINE_TYPE_8086"
+      ]
+    },
+    "pravetz16": {
+      "Label": "[8088] Pravetz 16 / IMKO-4",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "presario2240": {
+      "Label": "[i430VX] Compaq Presario 2240",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "presario4500": {
+      "Label": "[i430VX] Compaq Presario 4500",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "prox1332": {
+      "Label": "[ALi M6117] Protech ProX-1332",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "ps1_hdc": {
+      "Label": "PS/1 2011 Fixed Disk Controller",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_PS2"
+      ]
+    },
+    "px286": {
+      "Label": "[NEAT] Phoenix 286 clone",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "px471": {
+      "Label": "[SiS 471] SiS VL-BUS 471 REV. A1",
+      "Types": [
+        "MACHINE_TYPE_486"
+      ]
+    },
+    "pxxt": {
+      "Label": "[8088] Phoenix XT clone",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "quadt286": {
+      "Label": "[GC103] Quadtel 286 clone",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "quadt386sx": {
+      "Label": "[ISA] QTC-SXM KT X20T02/HI",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "r418": {
+      "Label": "[SiS 496] Rise Computer R418",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "r534f": {
+      "Label": "[SiS 5571] Rise R534F",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "revenge": {
+      "Label": "[i430LX] Intel Premiere/PCI",
+      "Types": [
+        "MACHINE_TYPE_SOCKET4"
+      ]
+    },
+    "rycleopardlx": {
+      "Label": "[OPTi 283] RYC Leopard LX",
+      "Types": [
+        "MACHINE_TYPE_486SLC"
+      ]
+    },
+    "s1846": {
+      "Label": "[i440BX] Tyan Tsunami ATX",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "s1857": {
+      "Label": "[i440BX] Tyan Trinity 371",
+      "Types": [
+        "MACHINE_TYPE_SLOT1_370"
+      ]
+    },
+    "s2dge": {
+      "Label": "[i440GX] Supermicro S2DGE",
+      "Types": [
+        "MACHINE_TYPE_SLOT2"
+      ]
+    },
+    "s370slm": {
+      "Label": "[i440LX] Supermicro 370SLM",
+      "Types": [
+        "MACHINE_TYPE_SOCKET370"
+      ]
+    },
+    "sansx16": {
+      "Label": "[8088] Sanyo SX-16",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "sbc350a": {
+      "Label": "[ALi M1217] AAEON SBC-350A",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "sbc490": {
+      "Label": "[ALi M1489] AAEON SBC-490",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "shuttle386sx": {
+      "Label": "[Intel 82335] Shuttle 386SX",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "siemens": {
+      "Label": "[ISA] Siemens PCD-2L",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "sis401": {
+      "Label": "[SiS 401] Chaintech 433SC",
+      "Types": [
+        "MACHINE_TYPE_486"
+      ]
+    },
+    "spc4200p": {
+      "Label": "[SCAT] Samsung SPC-4200P",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "spc4216p": {
+      "Label": "[SCAT] Samsung SPC-4216P",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "spc4620p": {
+      "Label": "[SCAT] Samsung SPC-4620P",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "spc6000a": {
+      "Label": "[C&T 386] Samsung SPC-6000A",
+      "Types": [
+        "MACHINE_TYPE_386DX"
+      ]
+    },
+    "spc6033p": {
+      "Label": "[SCAMP] Samsung SPC-6033P",
+      "Types": [
+        "MACHINE_TYPE_386SX"
+      ]
+    },
+    "spc7700plw": {
+      "Label": "[UMC 8881] Samsung SPC7700P-LW",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "spitfire": {
+      "Label": "[i440LX] Micronics Spitfire",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "sq588": {
+      "Label": "[SiS 501] BCM SQ-588",
+      "Types": [
+        "MACHINE_TYPE_SOCKET5"
+      ]
+    },
+    "super16t": {
+      "Label": "[8088] Hyundai SUPER-16T",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "super16te": {
+      "Label": "[8088] Hyundai SUPER-16TE",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "super286tr": {
+      "Label": "[SCAT] Hyundai Super-286TR",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "t1000": {
+      "Label": "[8088] Toshiba T1000",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "t1000_video": {
+      "Label": "Toshiba T1000 Video",
+      "Types": [
+        "0"
+      ]
+    },
+    "t1200": {
+      "Label": "[8086] Toshiba T1200",
+      "Types": [
+        "MACHINE_TYPE_8086"
+      ]
+    },
+    "t1200_video": {
+      "Label": "Toshiba T1200 Video",
+      "Types": [
+        "0"
+      ]
+    },
+    "t3100e": {
+      "Label": "Toshiba T3100e",
+      "Types": [
+        "0"
+      ]
+    },
+    "tandy": {
+      "Label": "[8088] Tandy 1000",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "tandy1000_hx_video": {
+      "Label": "Tandy 1000 HX",
+      "Types": [
+        "0"
+      ]
+    },
+    "tandy1000_sl_video": {
+      "Label": "Tandy 1000SL2",
+      "Types": [
+        "0"
+      ]
+    },
+    "tandy1000_video": {
+      "Label": "Tandy 1000",
+      "Types": [
+        "0"
+      ]
+    },
+    "tandy1000hx": {
+      "Label": "[8088] Tandy 1000 HX",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "tandy1000sl2": {
+      "Label": "[8086] Tandy 1000 SL/2",
+      "Types": [
+        "MACHINE_TYPE_8086"
+      ]
+    },
+    "tc430hx": {
+      "Label": "[i430HX] Intel TC430HX",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "tf486": {
+      "Label": "[ALi M1489] ESA TF-486",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "tg286m": {
+      "Label": "[GC103] TriGem 286M",
+      "Types": [
+        "MACHINE_TYPE_286"
+      ]
+    },
+    "tg486g": {
+      "Label": "[SiS 471] TriGem 486G",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "tg486gp": {
+      "Label": "[ALi M1429G] TriGem 486GP",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "thor": {
+      "Label": "[i430FX] Intel Advanced/ATX",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "top88": {
+      "Label": "[8088] Hyosung Topstar 88T",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "tx97": {
+      "Label": "[i430TX] ASUS TX97",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "v20xt": {
+      "Label": "[V20] PC-XT",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "v86p": {
+      "Label": "[8086] Victor V86P",
+      "Types": [
+        "MACHINE_TYPE_8086"
+      ]
+    },
+    "valuepoint433": {
+      "Label": "[SiS 461] IBM PS/ValuePoint 433DX/Si",
+      "Types": [
+        "MACHINE_TYPE_486_S2"
+      ]
+    },
+    "valuepointp60": {
+      "Label": "[i430LX] IBM PS/ValuePoint P60",
+      "Types": [
+        "MACHINE_TYPE_SOCKET4"
+      ]
+    },
+    "vect486vl": {
+      "Label": "[VLSI 82C480] HP Vectra 486VL",
+      "Types": [
+        "MACHINE_TYPE_486"
+      ]
+    },
+    "vectra54": {
+      "Label": "[i430FX] HP Vectra VL 5 Series 4",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7_3V"
+      ]
+    },
+    "vei8": {
+      "Label": "[i440BX] HP Vectra VEi 8",
+      "Types": [
+        "MACHINE_TYPE_SLOT1"
+      ]
+    },
+    "vendex": {
+      "Label": "[8088] Vendex HeadStart Turbo 888-XT",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "vi15g": {
+      "Label": "[SiS 471] AOpen Vi15G",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "vid_1512": {
+      "Label": "Amstrad PC1512 (video)",
+      "Types": [
+        "0"
+      ]
+    },
+    "vid_1640": {
+      "Label": "Amstrad PC1640 (video)",
+      "Types": [
+        "0"
+      ]
+    },
+    "vid_200": {
+      "Label": "Amstrad PC200 (video)",
+      "Types": [
+        "0"
+      ]
+    },
+    "vid_pc2086": {
+      "Label": "Amstrad PC2086",
+      "Types": [
+        "0"
+      ]
+    },
+    "vid_pc3086": {
+      "Label": "Amstrad PC3086",
+      "Types": [
+        "0"
+      ]
+    },
+    "vid_ppc512": {
+      "Label": "Amstrad PPC512 (video)",
+      "Types": [
+        "0"
+      ]
+    },
+    "vli486sv2g": {
+      "Label": "[SiS 471] ASUS VL/I-486SV2G (GX4)",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "vpc2007": {
+      "Label": "[i440BX] Microsoft Virtual PC 2007",
+      "Types": [
+        "MACHINE_TYPE_MISC"
+      ]
+    },
+    "vs440fx": {
+      "Label": "[i440FX] Intel VS440FX",
+      "Types": [
+        "MACHINE_TYPE_SOCKET8"
+      ]
+    },
+    "win471": {
+      "Label": "[SiS 471] ABit AB-AH4",
+      "Types": [
+        "MACHINE_TYPE_486_S2"
+      ]
+    },
+    "win486": {
+      "Label": "[ALi M1429G] Kaimei SA-486 VL-BUS M.B.",
+      "Types": [
+        "MACHINE_TYPE_486_S2"
+      ]
+    },
+    "win486pci": {
+      "Label": "[ALi M1489] AMI WinBIOS 486 PCI",
+      "Types": [
+        "MACHINE_TYPE_486_S3"
+      ]
+    },
+    "xi8088": {
+      "Label": "Xi8088",
+      "Types": [
+        "0"
+      ]
+    },
+    "ym430tx": {
+      "Label": "[i430TX] Intel YM430TX",
+      "Types": [
+        "MACHINE_TYPE_SOCKET7"
+      ]
+    },
+    "zappa": {
+      "Label": "[i430FX] Intel Advanced/ZP",
+      "Types": [
+        "MACHINE_TYPE_SOCKET5"
+      ]
+    },
+    "zdsupers": {
+      "Label": "[8088] Zenith Data Systems SupersPort (Z-184)",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "zdsz151": {
+      "Label": "[8088] Zenith Data Systems Z-151/152/161",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "zdsz159": {
+      "Label": "[8088] Zenith Data Systems Z-159",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    },
+    "zenith_scratchpad": {
+      "Label": "Zenith scratchpad RAM",
+      "Types": [
+        "0"
+      ]
+    },
+    "znic": {
+      "Label": "[8088] Z-NIX PC-1600",
+      "Types": [
+        "MACHINE_TYPE_8088"
+      ]
+    }
+  },
+  "main": {
+    "acpi_ali": {
+      "Label": "ALi M7101 ACPI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "acpi_intel": {
+      "Label": "Intel ACPI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "acpi_smc": {
+      "Label": "SMC FDC73C931APM ACPI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "acpi_via": {
+      "Label": "VIA ACPI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "acpi_via_596b": {
+      "Label": "VIA VT82C596 ACPI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ami_1992_nvr": {
+      "Label": "AMI Color 1992 PC/AT NVRAM",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "ami_1994_nvr": {
+      "Label": "AMI WinBIOS 1994 PC/AT NVRAM",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "ami_1995_nvr": {
+      "Label": "AMI WinBIOS 1995 PC/AT NVRAM",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "amstrad_megapc_nvr": {
+      "Label": "Amstrad MegaPC NVRAM",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "amstrad_nvr": {
+      "Label": "Amstrad NVRAM (No NMI)",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "apm": {
+      "Label": "Advanced Power Management",
+      "Types": [
+        "0"
+      ]
+    },
+    "apm_pci": {
+      "Label": "Advanced Power Management (PCI)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "apm_pci_acpi": {
+      "Label": "Advanced Power Management (PCI)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "at_nvr": {
+      "Label": "PC/AT NVRAM",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "at_nvr_old": {
+      "Label": "PC/AT NVRAM (No century)",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "ddma": {
+      "Label": "Distributed DMA",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "elt_nvr": {
+      "Label": "Epson Equity LT NVRAM",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "i8253": {
+      "Label": "Intel 8253/8253-5 Programmable Interval Timer",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "i8253_fast": {
+      "Label": "Intel 8253/8253-5 Programmable Interval Timer",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "i8254": {
+      "Label": "Intel 8254 Programmable Interval Timer",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "i8254_ext_io": {
+      "Label": "Intel 8254 Programmable Interval Timer (External I/O)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "i8254_ext_io_fast": {
+      "Label": "Intel 8254 Programmable Interval Timer (External I/O)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "i8254_fast": {
+      "Label": "Intel 8254 Programmable Interval Timer",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "i8254_ps2": {
+      "Label": "Intel 8254 Programmable Interval Timer (PS/2)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "i8254_ps2_fast": {
+      "Label": "Intel 8254 Programmable Interval Timer (PS/2)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "i8254_sec": {
+      "Label": "Intel 8254 Programmable Interval Timer (Secondary)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "i8254_sec_fast": {
+      "Label": "Intel 8254 Programmable Interval Timer (Secondary)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ibmat_nvr": {
+      "Label": "IBM AT NVRAM",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "ioapic": {
+      "Label": "I/O Advanced Programmable Interrupt Controller",
+      "Types": [
+        "DEVICE_AT"
+      ]
+    },
+    "p6rp4_nvr": {
+      "Label": "ASUS P/I-P6RP4 PC/AT NVRAM",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "pci_dummy": {
+      "Label": "Dummy Device (PCI)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "piix4_nvr": {
+      "Label": "Intel PIIX4 PC/AT NVRAM",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "port_6x": {
+      "Label": "Port 6x Registers",
+      "Types": [
+        "0"
+      ]
+    },
+    "port_6x_olivetti": {
+      "Label": "Port 6x Registers (Olivetti)",
+      "Types": [
+        "0"
+      ]
+    },
+    "port_6x_ps2": {
+      "Label": "Port 6x Registers (IBM PS/2)",
+      "Types": [
+        "0"
+      ]
+    },
+    "port_6x_xi8088": {
+      "Label": "Port 6x Registers (Xi8088)",
+      "Types": [
+        "0"
+      ]
+    },
+    "port_92": {
+      "Label": "Port 92 Register",
+      "Types": [
+        "0"
+      ]
+    },
+    "port_92_inv": {
+      "Label": "Port 92 Register (inverted bits 2-7)",
+      "Types": [
+        "0"
+      ]
+    },
+    "port_92_pci": {
+      "Label": "Port 92 Register (PCI)",
+      "Types": [
+        "0"
+      ]
+    },
+    "port_92_word": {
+      "Label": "Port 92 Register (16-bit)",
+      "Types": [
+        "0"
+      ]
+    },
+    "ps_nvr": {
+      "Label": "PS/1 or PS/2 NVRAM",
+      "Types": [
+        "DEVICE_PS2"
+      ]
+    },
+    "ps1_nvr": {
+      "Label": "PS/1 or PS/2 NVRAM (No NMI)",
+      "Types": [
+        "DEVICE_PS2"
+      ]
+    },
+    "ps2_nvr": {
+      "Label": "PS/2 Secondary NVRAM for PS/2 Models 70-80",
+      "Types": [
+        "0"
+      ]
+    },
+    "ps2_nvr_55ls": {
+      "Label": "PS/2 Secondary NVRAM for PS/2 Models 55LS-65SX",
+      "Types": [
+        "0"
+      ]
+    },
+    "usb": {
+      "Label": "Universal Serial Bus",
+      "Types": [
+        "DEVICE_PCI",
+        "DEVICE_EXTPARAMS"
+      ]
+    },
+    "via_nvr": {
+      "Label": "VIA PC/AT NVRAM",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    }
+  },
+  "mem": {
+    "catalyst_flash": {
+      "Label": "Catalyst 28F010-D Flash BIOS",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "intel_flash_bxb": {
+      "Label": "Intel 28F001BXB/28F002BXB/28F004BXB Flash BIOS",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "intel_flash_bxt": {
+      "Label": "Intel 28F001BXT/28F002BXT/28F004BXT Flash BIOS",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "intel_flash_bxt_ami": {
+      "Label": "Intel 28F001BXT/28F002BXT/28F004BXT Flash BIOS",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "spd": {
+      "Label": "Serial Presence Detect ROMs",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "sst_flash_29ee010": {
+      "Label": "SST 29EE010 Flash BIOS",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_29ee020": {
+      "Label": "SST 29EE020 Flash BIOS",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_39lf010": {
+      "Label": "SST 39LF010 Flash BIOS",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_39lf016": {
+      "Label": "SST 39LF016 Flash BIOS",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_39lf020": {
+      "Label": "SST 39LF020 Flash BIOS",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_39lf040": {
+      "Label": "SST 39LF040 Flash BIOS",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_39lf080": {
+      "Label": "SST 39LF080 Flash BIOS",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_39lf512": {
+      "Label": "SST 39LF512 Flash BIOS",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_39sf010": {
+      "Label": "SST 39SF010 Flash BIOS",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_39sf020": {
+      "Label": "SST 39SF020 Flash BIOS",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_39sf040": {
+      "Label": "SST 39SF040 Flash BIOS",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_39sf512": {
+      "Label": "SST 39SF512 Flash BIOS",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_49lf002": {
+      "Label": "SST 49LF002 Firmware Hub",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_49lf0020": {
+      "Label": "SST 49LF020 Firmware Hub",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_49lf0020a": {
+      "Label": "SST 49LF020A Firmware Hub",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_49lf003": {
+      "Label": "SST 49LF003 Firmware Hub",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_49lf004": {
+      "Label": "SST 49LF004 Firmware Hub",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_49lf004c": {
+      "Label": "SST 49LF004C Firmware Hub",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_49lf008": {
+      "Label": "SST 49LF008 Firmware Hub",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_49lf008c": {
+      "Label": "SST 49LF008C Firmware Hub",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_49lf016": {
+      "Label": "SST 49LF016 Firmware Hub",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_49lf030": {
+      "Label": "SST 49LF030 Firmware Hub",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_49lf040": {
+      "Label": "SST 49LF040 Firmware Hub",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_49lf080": {
+      "Label": "SST 49LF080 Firmware Hub",
+      "Types": [
+        "0"
+      ]
+    },
+    "sst_flash_49lf160": {
+      "Label": "SST 49LF160 Firmware Hub",
+      "Types": [
+        "0"
+      ]
+    },
+    "winbond_flash_w29c010": {
+      "Label": "Winbond W29C010 Flash BIOS",
+      "Types": [
+        "0"
+      ]
+    },
+    "winbond_flash_w29c020": {
+      "Label": "Winbond W29C020 Flash BIOS",
+      "Types": [
+        "0"
+      ]
+    },
+    "winbond_flash_w29c040": {
+      "Label": "Winbond W29C040 Flash BIOS",
+      "Types": [
+        "0"
+      ]
+    },
+    "winbond_flash_w29c512": {
+      "Label": "Winbond W29C512 Flash BIOS",
+      "Types": [
+        "0"
+      ]
+    }
+  },
+  "network": {
+    "3c501": {
+      "Label": "3Com EtherLink (3c500/3c501)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "3c503": {
+      "Label": "3Com EtherLink II",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "dp8390": {
+      "Label": "DP8390 Network Interface Controller",
+      "Types": [
+        "0"
+      ]
+    },
+    "ethernextmc": {
+      "Label": "NetWorth EtherNext/MC",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "ne1k": {
+      "Label": "Novell NE1000",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ne2k": {
+      "Label": "Novell NE2000",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "ne2kpci": {
+      "Label": "Realtek RTL8029AS",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ne2kpnp": {
+      "Label": "Realtek RTL8019AS",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "pcnetfast": {
+      "Label": "AMD PCnet-FAST III",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "pcnetisa": {
+      "Label": "AMD PCnet-ISA",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "pcnetisaplus": {
+      "Label": "AMD PCnet-ISA+",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "pcnetpci": {
+      "Label": "AMD PCnet-PCI II",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "pcnetracal": {
+      "Label": "Racal Interlan EtherBlaster",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "pcnetvlb": {
+      "Label": "AMD PCnet-VL",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "plip": {
+      "Label": "Parallel Line Internet Protocol",
+      "Types": [
+        "DEVICE_LPT"
+      ]
+    },
+    "wd8003e": {
+      "Label": "Western Digital WD8003E",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "wd8003ea": {
+      "Label": "Western Digital WD8003E/A",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "wd8003eb": {
+      "Label": "Western Digital WD8003EB",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "wd8003eta": {
+      "Label": "Western Digital WD8003ET/A",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "wd8013ebt": {
+      "Label": "Western Digital WD8013EBT",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "wd8013epa": {
+      "Label": "Western Digital WD8013EP/A",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    }
+  },
+  "printer": {
+    "dot_matrix": {
+      "Label": "Generic ESC/P Dot-Matrix"
+    },
+    "postscript": {
+      "Label": "Generic PostScript Printer"
+    },
+    "text_prt": {
+      "Label": "Generic Text Printer"
+    }
+  },
+  "scsi": {
+    "aha154xa": {
+      "Label": "Adaptec AHA-154xA",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "aha154xb": {
+      "Label": "Adaptec AHA-154xB",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "aha154xc": {
+      "Label": "Adaptec AHA-154xC",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "aha154xcf": {
+      "Label": "Adaptec AHA-154xCF",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "aha154xcp": {
+      "Label": "Adaptec AHA-154xCP",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "aha1640": {
+      "Label": "Adaptec AHA-1640",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "bt445c": {
+      "Label": "BusLogic BT-445C VLB",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "bt445s": {
+      "Label": "BusLogic BT-445S VLB",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "bt542b": {
+      "Label": "BusLogic BT-542B ISA",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "bt542bh": {
+      "Label": "BusLogic BT-542BH ISA",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "bt545c": {
+      "Label": "BusLogic BT-545C ISA",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "bt545s": {
+      "Label": "BusLogic BT-545S ISA",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "bt640a": {
+      "Label": "BusLogic BT-640A MCA",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "bt958d": {
+      "Label": "BusLogic BT-958D PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "dc390": {
+      "Label": "Tekram DC-390 PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "lcs6821n": {
+      "Label": "Longshine LCS-6821N",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ls2000": {
+      "Label": "Corel LS2000",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ncr53c810": {
+      "Label": "NCR 53c810",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ncr53c810_onboard": {
+      "Label": "NCR 53c810 On-Board",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ncr53c815": {
+      "Label": "NCR 53c815",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ncr53c820": {
+      "Label": "NCR 53c820",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ncr53c825a": {
+      "Label": "NCR 53c825A",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ncr53c860": {
+      "Label": "NCR 53c860",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ncr53c875": {
+      "Label": "NCR 53c875",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ncr53c90": {
+      "Label": "NCR 53c90 MCA",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "rt1000b": {
+      "Label": "Rancho RT1000B",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "rt1000mc": {
+      "Label": "Rancho RT1000B-MC",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "spock": {
+      "Label": "IBM PS/2 SCSI Adapter (Spock)",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "t128": {
+      "Label": "Trantor T128",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "t130b": {
+      "Label": "Trantor T130B",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    }
+  },
+  "sio": {
+    "acc3221": {
+      "Label": "ACC 3221-SP Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "access_bus": {
+      "Label": "SMC FDC37C932FR ACCESS.bus",
+      "Types": [
+        "0"
+      ]
+    },
+    "ali5123": {
+      "Label": "ALi M5123/M1543C Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "f82c606": {
+      "Label": "82C606 CHIPSpak Multifunction Controller",
+      "Types": [
+        "0"
+      ]
+    },
+    "f82c710": {
+      "Label": "F82C710 UPC Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c651": {
+      "Label": "SMC FDC37C651 Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c651_ide": {
+      "Label": "SMC FDC37C651 Super I/O (With IDE)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c661": {
+      "Label": "SMC FDC37C661 Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c661_ide": {
+      "Label": "SMC FDC37C661 Super I/O (With IDE)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c663": {
+      "Label": "SMC FDC37C663 Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c663_ide": {
+      "Label": "SMC FDC37C663 Super I/O (With IDE)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c665": {
+      "Label": "SMC FDC37C665 Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c665_ide": {
+      "Label": "SMC FDC37C665 Super I/O (With IDE)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c665_ide_pri": {
+      "Label": "SMC FDC37C665 Super I/O (With Primary IDE)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c666": {
+      "Label": "SMC FDC37C666 Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c669": {
+      "Label": "SMC FDC37C669 Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c669_370": {
+      "Label": "SMC FDC37C669 Super I/O (Port 370h)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c67x": {
+      "Label": "SMC FDC37C67X Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c931apm": {
+      "Label": "SMC FDC37C932QF Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c931apm_compaq": {
+      "Label": "SMC FDC37C932QF Super I/O (Compaq Presario 4500)",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c932fr": {
+      "Label": "SMC FDC37C932FR Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c932qf": {
+      "Label": "SMC FDC37C932QF Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37c935": {
+      "Label": "SMC FDC37C935 Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37m60x": {
+      "Label": "SMSC FDC37M60X",
+      "Types": [
+        "0"
+      ]
+    },
+    "fdc37m60x_370": {
+      "Label": "SMSC FDC37M60X with 10K Pull Up Resistor",
+      "Types": [
+        "0"
+      ]
+    },
+    "i82091aa": {
+      "Label": "Intel 82091AA Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "i82091aa_398": {
+      "Label": "Intel 82091AA Super I/O (Port 398h)",
+      "Types": [
+        "0"
+      ]
+    },
+    "i82091aa_ide": {
+      "Label": "Intel 82091AA Super I/O (With IDE)",
+      "Types": [
+        "0"
+      ]
+    },
+    "it8661f": {
+      "Label": "ITE IT8661F",
+      "Types": [
+        "0"
+      ]
+    },
+    "pc87306": {
+      "Label": "National Semiconductor PC87306 Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "pc87307": {
+      "Label": "National Semiconductor PC87307 Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "pc87307_15c": {
+      "Label": "National Semiconductor PC87307 Super I/O (Port 15Ch)",
+      "Types": [
+        "0"
+      ]
+    },
+    "pc87307_both": {
+      "Label": "National Semiconductor PC87307 Super I/O (Ports 2Eh and 15Ch)",
+      "Types": [
+        "0"
+      ]
+    },
+    "pc87309": {
+      "Label": "National Semiconductor PC87309 Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "pc87309_15c": {
+      "Label": "National Semiconductor PC87309 Super I/O (Port 15Ch)",
+      "Types": [
+        "0"
+      ]
+    },
+    "pc87310": {
+      "Label": "National Semiconductor PC87310 Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "pc87310_ide": {
+      "Label": "National Semiconductor PC87310 Super I/O with IDE functionality",
+      "Types": [
+        "0"
+      ]
+    },
+    "pc87311": {
+      "Label": "National Semiconductor PC87311",
+      "Types": [
+        "0"
+      ]
+    },
+    "pc87311_ide": {
+      "Label": "National Semiconductor PC87311 with IDE functionality",
+      "Types": [
+        "0"
+      ]
+    },
+    "pc87332": {
+      "Label": "National Semiconductor PC87332 Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "pc87332_398": {
+      "Label": "National Semiconductor PC87332 Super I/O (Port 398h)",
+      "Types": [
+        "0"
+      ]
+    },
+    "pc87332_398_ide": {
+      "Label": "National Semiconductor PC87332 Super I/O (Port 398h) (With IDE)",
+      "Types": [
+        "0"
+      ]
+    },
+    "pc87332_398_ide_fdcon": {
+      "Label": "National Semiconductor PC87332 Super I/O (Port 398h) (With IDE and FDC on)",
+      "Types": [
+        "0"
+      ]
+    },
+    "pc87332_398_ide_sec": {
+      "Label": "National Semiconductor PC87332 Super I/O (Port 398h) (With Secondary IDE)",
+      "Types": [
+        "0"
+      ]
+    },
+    "pc97307": {
+      "Label": "National Semiconductor PC97307 Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "prime3b": {
+      "Label": "Goldstar Prime3B",
+      "Types": [
+        "0"
+      ]
+    },
+    "prime3b_ide": {
+      "Label": "Goldstar Prime3B with IDE functionality",
+      "Types": [
+        "0"
+      ]
+    },
+    "prime3c": {
+      "Label": "Goldstar Prime3C",
+      "Types": [
+        "0"
+      ]
+    },
+    "prime3c_ide": {
+      "Label": "Goldstar Prime3C with IDE functionality",
+      "Types": [
+        "0"
+      ]
+    },
+    "sio_detect": {
+      "Label": "Super I/O Detection Helper",
+      "Types": [
+        "0"
+      ]
+    },
+    "um8669f": {
+      "Label": "UMC UM8669F Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "via_vt82c686_sio": {
+      "Label": "VIA VT82C686 Integrated Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "w83787f": {
+      "Label": "Winbond W83787F/IF Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "w83787f_ide": {
+      "Label": "Winbond W83787F/IF Super I/O (With IDE)",
+      "Types": [
+        "0"
+      ]
+    },
+    "w83787f_ide_en": {
+      "Label": "Winbond W83787F/IF Super I/O (With IDE Enabled)",
+      "Types": [
+        "0"
+      ]
+    },
+    "w83787f_ide_sec": {
+      "Label": "Winbond W83787F/IF Super I/O (With Secondary IDE)",
+      "Types": [
+        "0"
+      ]
+    },
+    "w83877f": {
+      "Label": "Winbond W83877F Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "w83877f_president": {
+      "Label": "Winbond W83877F Super I/O (President)",
+      "Types": [
+        "0"
+      ]
+    },
+    "w83877tf": {
+      "Label": "Winbond W83877TF Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "w83877tf_acorp": {
+      "Label": "Winbond W83877TF Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "w83977ef": {
+      "Label": "Winbond W83977TF Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "w83977ef_370": {
+      "Label": "Winbond W83977TF Super I/O (Port 370h)",
+      "Types": [
+        "0"
+      ]
+    },
+    "w83977f": {
+      "Label": "Winbond W83977F Super I/O",
+      "Types": [
+        "0"
+      ]
+    },
+    "w83977f_370": {
+      "Label": "Winbond W83977F Super I/O (Port 370h)",
+      "Types": [
+        "0"
+      ]
+    },
+    "w83977tf": {
+      "Label": "Winbond W83977TF Super I/O",
+      "Types": [
+        "0"
+      ]
+    }
+  },
+  "sound": {
+    "ac97_via": {
+      "Label": "VIA VT82C686 Integrated AC97 Controller",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "acermagic_s20": {
+      "Label": "AcerMagic S20",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "ad1881": {
+      "Label": "Analog Devices AD1881",
+      "Types": [
+        "DEVICE_AC97"
+      ]
+    },
+    "adlib": {
+      "Label": "AdLib",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "adlib_mca": {
+      "Label": "AdLib (MCA)",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "adlibgold": {
+      "Label": "AdLib Gold",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ak4540": {
+      "Label": "Asahi Kasei AK4540",
+      "Types": [
+        "DEVICE_AC97"
+      ]
+    },
+    "alc100": {
+      "Label": "Avance Logic ALC100",
+      "Types": [
+        "DEVICE_AC97"
+      ]
+    },
+    "azt1605": {
+      "Label": "Aztech Sound Galaxy Nova 16 Extra (Clinton)",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "azt2316a": {
+      "Label": "Aztech Sound Galaxy Pro 16 AB (Washington)",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "cm32l": {
+      "Label": "Roland CM-32L Emulation",
+      "Types": [
+        "0"
+      ]
+    },
+    "cm32ln": {
+      "Label": "Roland CM-32LN Emulation",
+      "Types": [
+        "0"
+      ]
+    },
+    "cmi8338": {
+      "Label": "C-Media CMI8338",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "cmi8338_onboard": {
+      "Label": "C-Media CMI8338 (On-Board)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "cmi8738": {
+      "Label": "C-Media CMI8738",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "cmi8738_6ch_onboard": {
+      "Label": "C-Media CMI8738-6CH (On-Board)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "cmi8738_onboard": {
+      "Label": "C-Media CMI8738 (On-Board)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "cms": {
+      "Label": "Creative Music System / Game Blaster",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "cs4235": {
+      "Label": "Crystal CS4235",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "cs4235_onboard": {
+      "Label": "Crystal CS4235 (On-Board)",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "cs4236b": {
+      "Label": "Crystal CS4236B",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "cs4237b": {
+      "Label": "Crystal CS4237B",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "cs4238b": {
+      "Label": "Crystal CS4238B",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "cs4297": {
+      "Label": "Crystal CS4297",
+      "Types": [
+        "DEVICE_AC97"
+      ]
+    },
+    "cs4297a": {
+      "Label": "Crystal CS4297A",
+      "Types": [
+        "DEVICE_AC97"
+      ]
+    },
+    "dss": {
+      "Label": "Disney Sound Source"
+    },
+    "es1371": {
+      "Label": "Ensoniq AudioPCI (ES1371)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "es1371_onboard": {
+      "Label": "Ensoniq AudioPCI (ES1371) (On-Board)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "fluidsynth": {
+      "Label": "FluidSynth",
+      "Types": [
+        "0"
+      ]
+    },
+    "gus": {
+      "Label": "Gravis UltraSound",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "internal": {
+      "Label": "Internal",
+      "Types": [
+        "0"
+      ]
+    },
+    "lpt_dac": {
+      "Label": "LPT DAC / Covox Speech Thing"
+    },
+    "lpt_dac_stereo": {
+      "Label": "Stereo LPT DAC"
+    },
+    "MIDI_INPUT_INTERNAL_NAME": {
+      "Label": "MIDI_INPUT_NAME",
+      "Types": [
+        "0"
+      ]
+    },
+    "mirosound_pcm10": {
+      "Label": "miroSOUND PCM10",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "mpu401": {
+      "Label": "Roland MPU-IPC-T",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "mpu401_mca": {
+      "Label": "Roland MPU-IMC",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "mt32": {
+      "Label": "Roland MT-32 (New) Emulation",
+      "Types": [
+        "0"
+      ]
+    },
+    "ncr8496": {
+      "Label": "NCR8496 PSG",
+      "Types": [
+        "0"
+      ]
+    },
+    "ncraudio": {
+      "Label": "NCR Business Audio",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "pas16": {
+      "Label": "Pro Audio Spectrum 16",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ps1snd": {
+      "Label": "IBM PS/1 Audio Card",
+      "Types": [
+        "0"
+      ]
+    },
+    "pssj": {
+      "Label": "Tandy PSSJ",
+      "Types": [
+        "0"
+      ]
+    },
+    "pssj_1e0": {
+      "Label": "Tandy PSSJ (port 1e0h)",
+      "Types": [
+        "0"
+      ]
+    },
+    "pssj_isa": {
+      "Label": "Tandy PSSJ Clone",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "sb": {
+      "Label": "Sound Blaster v1.0",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "sb1.5": {
+      "Label": "Sound Blaster v1.5",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "sb16": {
+      "Label": "Sound Blaster 16",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "sb16_compat": {
+      "Label": "Sound Blaster 16 (Compatibility - MPU-401 Off)",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "sb16_pnp": {
+      "Label": "Sound Blaster 16 PnP",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "sb16_reply_mca": {
+      "Label": "Sound Blaster 16 Reply MCA",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "sb2.0": {
+      "Label": "Sound Blaster v2.0",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "sb32_pnp": {
+      "Label": "Sound Blaster 32 PnP",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "sbawe32": {
+      "Label": "Sound Blaster AWE32",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "sbawe32_pnp": {
+      "Label": "Sound Blaster AWE32 PnP",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "sbawe64": {
+      "Label": "Sound Blaster AWE64",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "sbawe64_gold": {
+      "Label": "Sound Blaster AWE64 Gold",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "sbawe64_value": {
+      "Label": "Sound Blaster AWE64 Value",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "sbmcv": {
+      "Label": "Sound Blaster MCV",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "sbpro_compat": {
+      "Label": "Sound Blaster Pro (Compatibility)",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "sbpromcv": {
+      "Label": "Sound Blaster Pro MCV",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "sbprov1": {
+      "Label": "Sound Blaster Pro v1",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "sbprov2": {
+      "Label": "Sound Blaster Pro v2",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "sn76489": {
+      "Label": "TI SN74689 PSG",
+      "Types": [
+        "0"
+      ]
+    },
+    "ssi2001": {
+      "Label": "Innovation SSI-2001",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "stac9708": {
+      "Label": "SigmaTel STAC9708",
+      "Types": [
+        "DEVICE_AC97"
+      ]
+    },
+    "stac9721": {
+      "Label": "SigmaTel STAC9721",
+      "Types": [
+        "DEVICE_AC97"
+      ]
+    },
+    "SYSTEM_MIDI_INTERNAL_NAME": {
+      "Label": "SYSTEM_MIDI_NAME",
+      "Types": [
+        "0"
+      ]
+    },
+    "tndy": {
+      "Label": "TNDY",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "wm9701a": {
+      "Label": "Wolfson WM9701A",
+      "Types": [
+        "DEVICE_AC97"
+      ]
+    },
+    "wss": {
+      "Label": "Windows Sound System",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "ym3812_nuked": {
+      "Label": "Yamaha YM3812 OPL2 (NUKED)",
+      "Types": [
+        "0"
+      ]
+    },
+    "ym3812_ymfm": {
+      "Label": "Yamaha YM3812 OPL2 (YMFM)",
+      "Types": [
+        "0"
+      ]
+    },
+    "ymf262_nuked": {
+      "Label": "Yamaha YMF262 OPL3 (NUKED)",
+      "Types": [
+        "0"
+      ]
+    },
+    "ymf262_ymfm": {
+      "Label": "Yamaha YMF262 OPL3 (YMFM)",
+      "Types": [
+        "0"
+      ]
+    },
+    "ymf289b_ymfm": {
+      "Label": "Yamaha YMF278B OPL4 (YMFM)",
+      "Types": [
+        "0"
+      ]
+    }
+  },
+  "video": {
+    "8514_isa": {
+      "Label": "Generic 8514/A clone (ISA)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "8514_mca": {
+      "Label": "IBM 8514/A (MCA)",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "agpgart": {
+      "Label": "AGP Graphics Address Remapping Table",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ami_s3_924": {
+      "Label": "S3 86c924 ISA (AMI)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "ati18800": {
+      "Label": "ATI-18800-5",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ati18800v": {
+      "Label": "ATI-18800-1",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ati18800w": {
+      "Label": "ATI-18800",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ati28800": {
+      "Label": "ATI 28800-5 (ATI VGA Charger)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ati28800k": {
+      "Label": "ATI Korean VGA",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ati28800k_spc4620p": {
+      "Label": "ATI Korean VGA On-Board SPC-4620P",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ati28800k_spc6033p": {
+      "Label": "ATI Korean VGA On-Board SPC-6033P",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ati28800w": {
+      "Label": "ATI-28800 (VGA Wonder XL24)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ati68860_ramdac": {
+      "Label": "ATI-68860 RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "att20c504_ramdac": {
+      "Label": "AT&T 20c504 RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "att20c505_ramdac": {
+      "Label": "AT&T 20c505 RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "att490_ramdac": {
+      "Label": "AT&T 20c490 RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "att491_ramdac": {
+      "Label": "AT&T 20c491 RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "att492_ramdac": {
+      "Label": "AT&T 20c492 RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "att498_ramdac": {
+      "Label": "AT&T 22c498 RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "av9194": {
+      "Label": "AV9194 Clock Generator",
+      "Types": [
+        "0"
+      ]
+    },
+    "bahamas64_pci": {
+      "Label": "S3 Vision864 PCI (Paradise Bahamas 64)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "bahamas64_vlb": {
+      "Label": "S3 Vision864 VLB (Paradise Bahamas 64)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "bt484_ramdac": {
+      "Label": "Brooktree Bt484 RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "bt485_ramdac": {
+      "Label": "Brooktree Bt485 RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "bt485a_ramdac": {
+      "Label": "Brooktree Bt485A RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "cga": {
+      "Label": "CGA",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "cga_pravetz": {
+      "Label": "Pravetz VDC-2",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "cl_gd5401_isa": {
+      "Label": "Cirrus Logic GD5401 (ISA) (ACUMOS AVGA1)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "cl_gd5402_isa": {
+      "Label": "Cirrus Logic GD5402 (ISA) (ACUMOS AVGA2)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "cl_gd5402_onboard": {
+      "Label": "Cirrus Logic GD5402 (ISA) (ACUMOS AVGA2) (On-Board)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "cl_gd5420_isa": {
+      "Label": "Cirrus Logic GD5420 (ISA)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "cl_gd5422_isa": {
+      "Label": "Cirrus Logic GD5422 (ISA)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "cl_gd5424_vlb": {
+      "Label": "Cirrus Logic GD5424 (VLB)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "cl_gd5426_diamond_a1_isa": {
+      "Label": "Cirrus Logic GD5426 (ISA) (Diamond SpeedStar Pro Rev. A1)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "cl_gd5426_isa": {
+      "Label": "Cirrus Logic GD5426 (ISA)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "cl_gd5426_onboard": {
+      "Label": "Cirrus Logic GD5426 (VLB) (On-Board)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "cl_gd5426_vlb": {
+      "Label": "Cirrus Logic GD5426 (VLB)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "cl_gd5428_boca_isa": {
+      "Label": "Cirrus Logic GD5428 (ISA) (BOCA Research 4610)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "cl_gd5428_diamond_b1_vlb": {
+      "Label": "Cirrus Logic GD5428 (VLB) (Diamond SpeedStar Pro Rev. B1)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "cl_gd5428_isa": {
+      "Label": "Cirrus Logic GD5428 (ISA)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "cl_gd5428_onboard": {
+      "Label": "Cirrus Logic GD5428 (ISA) (On-Board)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "cl_gd5428_vlb": {
+      "Label": "Cirrus Logic GD5428 (VLB)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "cl_gd5429_isa": {
+      "Label": "Cirrus Logic GD5429 (ISA)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "cl_gd5429_vlb": {
+      "Label": "Cirrus Logic GD5429 (VLB)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "cl_gd5430_pci": {
+      "Label": "Cirrus Logic GD5430 (PCI)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "cl_gd5430_vlb": {
+      "Label": "Cirrus Logic GD5430",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "cl_gd5430_vlb_diamond": {
+      "Label": "Cirrus Logic GD5430 (VLB) (Diamond SpeedStar Pro SE Rev. A8)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "cl_gd5434_diamond_a3_isa": {
+      "Label": "Cirrus Logic GD5434 (ISA) (Diamond SpeedStar 64 Rev. A3)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "cl_gd5434_isa": {
+      "Label": "Cirrus Logic GD5434 (ISA)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "cl_gd5434_onboard_pci": {
+      "Label": "Cirrus Logic GD5434-4 (PCI) (On-Board)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "cl_gd5434_pci": {
+      "Label": "Cirrus Logic GD5434 (PCI)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "cl_gd5434_vlb": {
+      "Label": "Cirrus Logic GD5434 (VLB)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "cl_gd5436_pci": {
+      "Label": "Cirrus Logic GD5436 (PCI)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "cl_gd5440_onboard_pci": {
+      "Label": "Cirrus Logic GD5440 (PCI) (On-Board)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "cl_gd5440_pci": {
+      "Label": "Cirrus Logic GD5440 (PCI)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "cl_gd5446_pci": {
+      "Label": "Cirrus Logic GD5446 (PCI)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "cl_gd5446_stb_pci": {
+      "Label": "Cirrus Logic GD5446 (PCI) (STB Nitro 64V)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "cl_gd5480_pci": {
+      "Label": "Cirrus Logic GD5480 (PCI)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "compaq_ati28800": {
+      "Label": "ATI 28800-5 (ATI VGA Wonder XL)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "compaq_cga": {
+      "Label": "Compaq CGA",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "compaq_cga_2": {
+      "Label": "Compaq CGA 2",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "compaq_ega": {
+      "Label": "Compaq EGA",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "compaq_voodoo3_3500_agp": {
+      "Label": "Compaq Voodoo3 3500 TV",
+      "Types": [
+        "DEVICE_AGP"
+      ]
+    },
+    "ctl3d_banshee_pci": {
+      "Label": "Creative 3D Blaster Banshee",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "ega": {
+      "Label": "EGA",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "egawonder800": {
+      "Label": "ATI EGA Wonder 800+",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "elsawin2kprox_964_pci": {
+      "Label": "S3 Vision964 PCI (ELSA Winner 2000 Pro/X)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "elsawin2kprox_pci": {
+      "Label": "S3 Vision968 PCI (ELSA Winner 2000 Pro/X)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "et2000": {
+      "Label": "Tseng Labs ET2000",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "et3000ax": {
+      "Label": "Tseng Labs ET3000AX (ISA)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "et4000ax": {
+      "Label": "Tseng Labs ET4000AX (ISA)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "et4000k_tg286_isa": {
+      "Label": "Trigem Korean VGA (Trigem 286M)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "et4000mca": {
+      "Label": "Tseng Labs ET4000AX (MCA)",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "et4000w32": {
+      "Label": "Tseng Labs ET4000/w32 ISA",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "et4000w32_onboard": {
+      "Label": "Tseng Labs ET4000/w32 (ISA) (On-Board)",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "et4000w32i": {
+      "Label": "Tseng Labs ET4000/w32i Rev. B ISA",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "et4000w32i_vlb": {
+      "Label": "Tseng Labs ET4000/w32i Rev. B VLB",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "et4000w32p_nc_pci": {
+      "Label": "Tseng Labs ET4000/w32p Rev. D PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "et4000w32p_nc_vlb": {
+      "Label": "Tseng Labs ET4000/w32p Rev. D VLB",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "et4000w32p_pci": {
+      "Label": "Tseng Labs ET4000/w32p Rev. D PCI (Cardex)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "et4000w32p_revc_pci": {
+      "Label": "Tseng Labs ET4000/w32p Rev. C PCI (Cardex)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "et4000w32p_revc_vlb": {
+      "Label": "Tseng Labs ET4000/w32p Rev. C VLB (Cardex)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "et4000w32p_videomagic_revb_pci": {
+      "Label": "Tseng Labs ET4000/w32p Rev. B PCI (VideoMagic)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "et4000w32p_videomagic_revb_vlb": {
+      "Label": "Tseng Labs ET4000/w32p Rev. B VLB (VideoMagic)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "et4000w32p_vlb": {
+      "Label": "Tseng Labs ET4000/w32p Rev. D VLB (Cardex)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "f82c425_video": {
+      "Label": "82C425 CGA LCD/CRT Controller",
+      "Types": [
+        "0"
+      ]
+    },
+    "g2_gc205": {
+      "Label": "G2 GC205",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "gendac_ramdac": {
+      "Label": "S3 GENDAC 86c708 RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "genius": {
+      "Label": "Genius VHR",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "hercules": {
+      "Label": "Hercules",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "hercules_plus": {
+      "Label": "Hercules Plus",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ht216_32": {
+      "Label": "Headland HT216-32",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "ht216_32_pb410a": {
+      "Label": "Headland HT216-32 (Packard Bell PB410A)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "ibm_ps1_2121": {
+      "Label": "IBM PS/1 Model 2121 SVGA",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ibm_rgb528_ramdac": {
+      "Label": "IBM RGB528 RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "ibm1mbsvga": {
+      "Label": "Cirrus Logic GD5428 (MCA) (IBM SVGA Adapter/A)",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "icd2061": {
+      "Label": "ICD2061 Clock Generator",
+      "Types": [
+        "0"
+      ]
+    },
+    "ics2494an_305": {
+      "Label": "ICS2494AN-305 Clock Generator",
+      "Types": [
+        "0"
+      ]
+    },
+    "ics2595": {
+      "Label": "ICS2595 clock chip",
+      "Types": [
+        "0"
+      ]
+    },
+    "ics9161": {
+      "Label": "ICS9161 Clock Generator",
+      "Types": [
+        "0"
+      ]
+    },
+    "im1024": {
+      "Label": "ImageManager 1024",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "incolor": {
+      "Label": "Hercules InColor",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "internal": {
+      "Label": "Internal",
+      "Types": [
+        "0"
+      ]
+    },
+    "iskra_ega": {
+      "Label": "Iskra EGA (Cyrillic ROM)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "kasan16vga": {
+      "Label": "Kasan Hangulmadang-16 VGA (Tseng Labs ET4000AX Korean)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "mach64gx_isa": {
+      "Label": "ATI Mach64GX ISA",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "mach64gx_pci": {
+      "Label": "ATI Mach64GX PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "mach64gx_vlb": {
+      "Label": "ATI Mach64GX VLB",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "mach64vt2": {
+      "Label": "ATI Mach64VT2",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "mda": {
+      "Label": "MDA",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "metheus928_isa": {
+      "Label": "S3 86c928 ISA (Metheus Premier 928)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "metheus928_vlb": {
+      "Label": "S3 86c928 VLB (Metheus Premier 928)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "millennium": {
+      "Label": "Matrox Millennium",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "mirocrystal10sd_vlb": {
+      "Label": "S3 86c805 VLB (MiroCRYSTAL 10SD)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "mirocrystal20sd_vlb": {
+      "Label": "S3 Vision864 VLB (MiroCRYSTAL 20SD)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "mirocrystal20sv_pci": {
+      "Label": "S3 Vision964 PCI (MiroCRYSTAL 20SV)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "mirocrystal20sv_vlb": {
+      "Label": "S3 Vision964 VLB (MiroCRYSTAL 20SV)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "mirocrystal8s_vlb": {
+      "Label": "S3 86c805 VLB (MiroCRYSTAL 8S)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "mirovideo40sv_pci": {
+      "Label": "S3 Vision968 PCI (MiroVIDEO 40SV Ergo)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "mystique": {
+      "Label": "Matrox Mystique",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "mystique_220": {
+      "Label": "Matrox Mystique 220",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "n9_9fx_531_pci": {
+      "Label": "S3 Vision868 PCI (Number 9 9FX 531)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "n9_9fx_771_pci": {
+      "Label": "S3 Vision968 PCI (Number 9 9FX 771)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "n9_9fx_pci": {
+      "Label": "S3 Trio64 PCI (Number 9 9FX 330)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "n9_9fx_vlb": {
+      "Label": "S3 Trio64 VLB (Number 9 9FX 330)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "nec_sv9000": {
+      "Label": "NEC SV9000 (Trident TVGA 9000B)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "nga": {
+      "Label": "NCR NGA",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ogc": {
+      "Label": "Olivetti OGC (GO708)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ogc_m24": {
+      "Label": "Olivetti M21/M24/M28 (GO317/318/380/709) video card",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "orchid_s3_911": {
+      "Label": "S3 86c911 ISA (Orchid Fahrenheit 1280)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "oti037c": {
+      "Label": "Oak OTI-037C",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "oti067": {
+      "Label": "Oak OTI-067",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "oti067_ama932j": {
+      "Label": "Oak OTI-067 (AMA-932J)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "oti067_m300": {
+      "Label": "Oak OTI-067 (Olivetti M300-08/15)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "oti077": {
+      "Label": "Oak OTI-077",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "pgc": {
+      "Label": "PGC",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "plantronics": {
+      "Label": "Colorplus",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ps1vga": {
+      "Label": "PS/1 VGA",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "ps1vga_mca": {
+      "Label": "PS/1 VGA",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "pvga1a": {
+      "Label": "Paradise PVGA1A",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "pvga1a_ncr3302": {
+      "Label": "Paradise PVGA1A (NCR 3302)",
+      "Types": [
+        "0"
+      ]
+    },
+    "pvga1a_pc2086": {
+      "Label": "Paradise PVGA1A (Amstrad PC2086)",
+      "Types": [
+        "0"
+      ]
+    },
+    "pvga1a_pc3086": {
+      "Label": "Paradise PVGA1A (Amstrad PC3086)",
+      "Types": [
+        "0"
+      ]
+    },
+    "px_86c801_isa": {
+      "Label": "S3 86c801 ISA (Phoenix)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "px_86c805_vlb": {
+      "Label": "S3 86c805 VLB (Phoenix)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "px_s3_805_onboard_vlb": {
+      "Label": "S3 86c805 VLB On-Board",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "px_s3_v7_801_isa": {
+      "Label": "S3 86c801 ISA (SPEA Mirage ISA)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "px_s3_v7_805_vlb": {
+      "Label": "S3 86c805 VLB (SPEA Mirage VL)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "px_trio32_pci": {
+      "Label": "S3 Trio32 PCI (Phoenix)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "px_trio32_vlb": {
+      "Label": "S3 Trio32 VLB (Phoenix)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "px_trio64_onboard_pci": {
+      "Label": "S3 Trio64 PCI On-Board (Phoenix)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "px_trio64_pci": {
+      "Label": "S3 Trio64 PCI (Phoenix)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "px_trio64_vlb": {
+      "Label": "S3 Trio64 VLB (Phoenix)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "px_trio64vplus_onboard_pci": {
+      "Label": "S3 Trio64V+ PCI On-Board (Phoenix)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "px_trio64vplus_pci": {
+      "Label": "S3 Trio64V+ PCI (Phoenix)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "px_vision864_pci": {
+      "Label": "S3 Vision864 PCI (Phoenix)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "px_vision864_vlb": {
+      "Label": "S3 Vision864 VLB (Phoenix)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "px_vision868_pci": {
+      "Label": "S3 Vision868 PCI (Phoenix)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "px_vision868_vlb": {
+      "Label": "S3 Vision868 VLB (Phoenix)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "px_vision968_pci": {
+      "Label": "S3 Vision968 PCI (Phoenix)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "px_vision968_vlb": {
+      "Label": "S3 Vision968 VLB (Phoenix)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "radius_isa": {
+      "Label": "Radius SVGA Multiview ISA (HT209)",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "radius_mc": {
+      "Label": "Radius SVGA Multiview MCA (HT209)",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "replymcasvga": {
+      "Label": "Cirrus Logic GD5426 (MCA) (Reply Video Adapter)",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    },
+    "rtg3106": {
+      "Label": "Realtek RTG3106 (ISA)",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "sc11483_ramdac": {
+      "Label": "Sierra SC11483 RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "sc11484_nors2_ramdac": {
+      "Label": "Sierra SC11484 RAMDAC (no RS2 signal)",
+      "Types": [
+        "0"
+      ]
+    },
+    "sc11486_ramdac": {
+      "Label": "Sierra SC11486 RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "sc11487_ramdac": {
+      "Label": "Sierra SC11487 RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "sc1502x_ramdac": {
+      "Label": "Sierra SC1502x RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "sdac_ramdac": {
+      "Label": "S3 SDAC 86c716 RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "sigma400": {
+      "Label": "Sigma Color 400",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "spea_mercury64p_pci": {
+      "Label": "S3 Vision968 PCI (SPEA Mercury P64V)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "spea_mercurylite_pci": {
+      "Label": "S3 86c928 PCI (SPEA Mercury Lite)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "spea_miragep64_vlb": {
+      "Label": "S3 Trio64 VLB (SPEA Mirage P64)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "stb_velocity3d_pci": {
+      "Label": "S3 ViRGE/VX (STB Velocity 3D) PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "stealth32_pci": {
+      "Label": "Tseng Labs ET4000/w32p Rev. D PCI (Diamond Stealth32)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "stealth32_vlb": {
+      "Label": "Tseng Labs ET4000/w32p Rev. D VLB (Diamond Stealth32)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "stealth3d_2000_pci": {
+      "Label": "S3 ViRGE (Diamond Stealth 3D 2000) PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "stealth3d_2000pro_pci": {
+      "Label": "S3 ViRGE/DX (Diamond Stealth 3D 2000 Pro) PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "stealth3d_3000_pci": {
+      "Label": "S3 ViRGE/VX (Diamond Stealth 3D 3000) PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "stealth3d_4000_agp": {
+      "Label": "S3 ViRGE/GX2 (Diamond Stealth 3D 4000) AGP",
+      "Types": [
+        "DEVICE_AGP"
+      ]
+    },
+    "stealth3d_4000_pci": {
+      "Label": "S3 ViRGE/GX2 (Diamond Stealth 3D 4000) PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "stealth64d_pci": {
+      "Label": "S3 Trio64 PCI (Diamond Stealth64 DRAM)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "stealth64d_vlb": {
+      "Label": "S3 Trio64 VLB (Diamond Stealth64 DRAM)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "stealth64v_pci": {
+      "Label": "S3 Vision964 PCI (Diamond Stealth64 VRAM)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "stealth64v_vlb": {
+      "Label": "S3 Vision964 VLB (Diamond Stealth64 VRAM)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "stealthse_pci": {
+      "Label": "S3 Trio32 PCI (Diamond Stealth SE)",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "stealthse_vlb": {
+      "Label": "S3 Trio32 VLB (Diamond Stealth SE)",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "stealthvram_isa": {
+      "Label": "S3 86c911 ISA (Diamond Stealth VRAM)",
+      "Types": [
+        "DEVICE_AT",
+        "DEVICE_ISA"
+      ]
+    },
+    "stg_ramdac": {
+      "Label": "SGS-Thompson STG170x RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "superega": {
+      "Label": "SuperEGA",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "tgkorvga": {
+      "Label": "Trigem Korean VGA (Tseng Labs ET4000AX Korean)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "tgui9400cxi_vlb": {
+      "Label": "Trident TGUI 9400CXi",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "tgui9440_onboard_pci": {
+      "Label": "Trident TGUI 9440AGi On-Board PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "tgui9440_pci": {
+      "Label": "Trident TGUI 9440AGi PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "tgui9440_vlb": {
+      "Label": "Trident TGUI 9440AGi VLB",
+      "Types": [
+        "DEVICE_VLB"
+      ]
+    },
+    "tgui9660_pci": {
+      "Label": "Trident TGUI 9660XGi PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "tgui9680_pci": {
+      "Label": "Trident TGUI 9680XGi PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "tkd8001_ramdac": {
+      "Label": "Trident TKD8001 RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "trio3d2x": {
+      "Label": "S3 Trio3D/2X (362) PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "trio3d2x_agp": {
+      "Label": "S3 Trio3D/2X (362) AGP",
+      "Types": [
+        "DEVICE_AGP"
+      ]
+    },
+    "trio64v2dx_onboard_pci": {
+      "Label": "S3 Trio64V2/DX On-Board PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "trio64v2dx_pci": {
+      "Label": "S3 Trio64V2/DX PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "tseng_ics5301_ramdac": {
+      "Label": "Tseng ICS5301 GENDAC RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "tseng_ics5341_ramdac": {
+      "Label": "Tseng ICS5341 GENDAC RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "tvga8900b": {
+      "Label": "Trident TVGA 8900B",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "tvga8900d": {
+      "Label": "Trident TVGA 8900D",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "tvga9000b": {
+      "Label": "Trident TVGA 9000B",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "tvp3026_ramdac": {
+      "Label": "TI TVP3026 RAMDAC",
+      "Types": [
+        "0"
+      ]
+    },
+    "v7_vga_1024i": {
+      "Label": "Video 7 VGA 1024i (HT208)",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "velocity100_agp": {
+      "Label": "3dfx Velocity 100",
+      "Types": [
+        "DEVICE_AGP"
+      ]
+    },
+    "velocity200_agp": {
+      "Label": "3dfx Velocity 200",
+      "Types": [
+        "DEVICE_AGP"
+      ]
+    },
+    "vga": {
+      "Label": "VGA",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "virge325_pci": {
+      "Label": "S3 ViRGE (325) PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "virge357_agp": {
+      "Label": "S3 ViRGE/GX2 (357) AGP",
+      "Types": [
+        "DEVICE_AGP"
+      ]
+    },
+    "virge357_pci": {
+      "Label": "S3 ViRGE/GX2 (357) PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "virge375_pci": {
+      "Label": "S3 ViRGE/DX (375) PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "virge385_pci": {
+      "Label": "S3 ViRGE/GX (385) PCI",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "voodoo": {
+      "Label": "3DFX Voodoo Graphics",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "voodoo_banshee_pci": {
+      "Label": "3dfx Voodoo Banshee",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "voodoo3_1k_agp": {
+      "Label": "3dfx Voodoo3 1000",
+      "Types": [
+        "DEVICE_AGP"
+      ]
+    },
+    "voodoo3_1k_pci": {
+      "Label": "3dfx Voodoo3 1000",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "voodoo3_2k_agp": {
+      "Label": "3dfx Voodoo3 2000",
+      "Types": [
+        "DEVICE_AGP"
+      ]
+    },
+    "voodoo3_2k_agp_onboard_8m": {
+      "Label": "3dfx Voodoo3 2000 (On-Board 8MB SGRAM)",
+      "Types": [
+        "DEVICE_AGP"
+      ]
+    },
+    "voodoo3_2k_pci": {
+      "Label": "3dfx Voodoo3 2000",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "voodoo3_3500_agp_ntsc": {
+      "Label": "3dfx Voodoo3 3500 TV (NTSC)",
+      "Types": [
+        "DEVICE_AGP"
+      ]
+    },
+    "voodoo3_3500_agp_pal": {
+      "Label": "3dfx Voodoo3 3500 TV (PAL)",
+      "Types": [
+        "DEVICE_AGP"
+      ]
+    },
+    "voodoo3_3500_se_agp": {
+      "Label": "Falcon Northwest Voodoo3 3500 SE",
+      "Types": [
+        "DEVICE_AGP"
+      ]
+    },
+    "voodoo3_3500_si_agp": {
+      "Label": "3dfx Voodoo3 3500 SI",
+      "Types": [
+        "DEVICE_AGP"
+      ]
+    },
+    "voodoo3_3k_agp": {
+      "Label": "3dfx Voodoo3 3000",
+      "Types": [
+        "DEVICE_AGP"
+      ]
+    },
+    "voodoo3_3k_pci": {
+      "Label": "3dfx Voodoo3 3000",
+      "Types": [
+        "DEVICE_PCI"
+      ]
+    },
+    "wd90c11": {
+      "Label": "Paradise WD90C11-LR",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "wd90c11_megapc": {
+      "Label": "Paradise WD90C11 (Amstrad MegaPC)",
+      "Types": [
+        "0"
+      ]
+    },
+    "wd90c30": {
+      "Label": "Paradise WD90C30-LR",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "wy700": {
+      "Label": "Wyse 700",
+      "Types": [
+        "DEVICE_ISA"
+      ]
+    },
+    "xga_isa": {
+      "Label": "XGA (ISA)",
+      "Types": [
+        "DEVICE_ISA",
+        "DEVICE_AT"
+      ]
+    },
+    "xga_mca": {
+      "Label": "XGA (MCA)",
+      "Types": [
+        "DEVICE_MCA"
+      ]
+    }
+  }
+}
