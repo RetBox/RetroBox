@@ -10,6 +10,17 @@
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
 
+  <PropertyGroup>
+	  <AssemblyTitle>RetroBox Manager</AssemblyTitle>
+	  <Description>A nice PC emulator manager</Description>
+	  <Company>RetBox Inc.</Company>
+	  <Product>RetroBox Manager</Product>
+	  <Copyright>Copyright © 2023 xafero</Copyright>
+    
+    <InformationalVersion>0.0.1.0</InformationalVersion>
+	  <AssemblyVersion>0.0.1.0</AssemblyVersion>
+  </PropertyGroup>
+
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>

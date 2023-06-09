@@ -9,4 +9,8 @@
     <ProjectReference Include="..\RetroBox.Common\RetroBox.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Management" Version="7.0.1" />
+  </ItemGroup>
+
 </Project>

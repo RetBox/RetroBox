@@ -7,5 +7,7 @@ namespace RetroBox.Windows
         public IPlatFolder Folders { get; } = new WinFolders();
 
         public IPlatExec Execs { get; } = new WinExecs();
+
+        public IPlatComputer Computer { get; } = new WinInfos();
     }
 }

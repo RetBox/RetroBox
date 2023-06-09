@@ -7,5 +7,7 @@ namespace RetroBox.Mac
         public IPlatFolder Folders { get; } = new MacFolders();
 
         public IPlatExec Execs { get; } = new MacExecs();
+
+        public IPlatComputer Computer { get; } = new MacInfos();
     }
 }

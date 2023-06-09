@@ -7,5 +7,7 @@ namespace RetroBox.Linux
         public IPlatFolder Folders { get; } = new LinuxFolders();
 
         public IPlatExec Execs { get; } = new LinuxExecs();
+
+        public IPlatComputer Computer { get; } = new LinuxInfos();
     }
 }
