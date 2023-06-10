@@ -1,12 +1,12 @@
 using System;
-using Avalonia.Controls;
+using RetroBox.Manager.ViewCore;
 using Avalonia.Interactivity;
 using MessageBox.Avalonia.Enums;
 using RetroBox.Manager.ViewModels;
 
 namespace RetroBox.Manager.Views
 {
-    public partial class AboutWindow : Window
+    public partial class AboutWindow : FixWindow
     {
         public AboutWindow()
         {
