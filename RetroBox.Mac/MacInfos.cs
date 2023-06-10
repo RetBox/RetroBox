@@ -4,7 +4,6 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using ByteSizeLib;
-using PropertyList;
 using RetroBox.Common.Xplat;
 
 namespace RetroBox.Mac
@@ -22,7 +21,7 @@ namespace RetroBox.Mac
             var sys = ReadPlist("/System/Library/CoreServices/SystemVersion.plist");
             var pn = sys["ProductName"];
             var uv = sys["ProductUserVisibleVersion"];
-            Caption = pn + " " + uv;
+            Caption = $"{pn} {uv}";
         }
 
         public override long HostMemory => Memory;

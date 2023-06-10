@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Reflection;
 using System.Text;
 using RetroBox.Fabric;
 using RetroBox.Fabric.Config;
+using RetroBox.Fabric.Meta;
 
-Console.OutputEncoding=Encoding.UTF8;
+Console.OutputEncoding = Encoding.UTF8;
 
 var plat = Platforms.My;
 var cfg = Configs.Default;
@@ -32,29 +32,23 @@ foreach (var file in files3)
 
 Console.WriteLine();
 
-var ass = typeof(RetroBox.Manager.App).Assembly;
-var product = ass.GetCustomAttribute<AssemblyProductAttribute>()?.Product;
-var infoVer = ass.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
-var copy = ass.GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright;
-var config = ass.GetCustomAttribute<AssemblyConfigurationAttribute>()?.Configuration;
-var desc = ass.GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description;
-
+var dll = Infos.GetInfo<RetroBox.Manager.App>();
 var pc = Platforms.My.Computer;
 var hostName = pc.HostName;
 var hostMem = pc.HostMemory;
 var hostOs = pc.HostOS;
 var netRuntime = pc.NetRuntime;
 
-Console.WriteLine($"About {product}");
-Console.WriteLine($"Product: {product}");
-Console.WriteLine($"Description: {desc}");
-Console.WriteLine($"Version: {infoVer} ({config})");
+Console.WriteLine($"About {dll.Product}");
+Console.WriteLine($"Product: {dll.Product}");
+Console.WriteLine($"Description: {dll.Description}");
+Console.WriteLine($"Version: {dll.Version} ({dll.Config})");
 Console.WriteLine();
 Console.WriteLine($"Runtime: {netRuntime}");
 Console.WriteLine();
-Console.WriteLine($"Host name: {hostName}");
+Console.WriteLine($"Host: {hostName}");
 Console.WriteLine($"Memory: {hostMem} MB");
 Console.WriteLine($"System: {hostOs}");
 Console.WriteLine();
-Console.WriteLine(copy);
+Console.WriteLine(dll.Copyright);
 
