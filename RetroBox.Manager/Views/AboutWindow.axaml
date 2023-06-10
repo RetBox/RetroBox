@@ -1,0 +1,113 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:RetroBox.Manager.ViewModels"
+        mc:Ignorable="d" 
+        d:DesignWidth="452" d:DesignHeight="450"
+        Width="452" Height="450"
+        x:Class="RetroBox.Manager.Views.AboutWindow"
+        x:DataType="viewModels:AboutViewModel"
+        Title="About"
+        Opened="About_OnOpened"
+        WindowStartupLocation="CenterOwner">
+
+    <Design.DataContext>
+        <viewModels:AboutViewModel/>
+    </Design.DataContext>
+
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.45*" />
+            <ColumnDefinition Width="0.53*" />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,0,20">
+            Product Information
+		</TextBlock>
+
+        <TextBlock FontWeight="Bold" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,0,0,10">
+            Product:
+		</TextBlock>
+
+        <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,0,0,10"
+                   Text="{Binding Dll.Product}"/>
+
+        <TextBlock FontWeight="Bold" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,0,30">
+            Version:
+        </TextBlock>
+
+		<StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Margin="0,0,0,30"
+                    Orientation="Horizontal">
+            <TextBlock Text="{Binding Dll.Version}"/>
+			<TextBlock Text=" "/>
+			<TextBlock Text="("/>
+			<TextBlock Text="{Binding Dll.Config}"/>
+            <TextBlock Text=")"/>
+		</StackPanel>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,0,20">
+			Additional Information
+		</TextBlock>
+
+        <TextBlock FontWeight="Bold" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,0,10">
+			Host:
+		</TextBlock>
+
+        <TextBlock Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Margin="0,0,0,10"
+                   Text="{Binding Pc.HostName}"/>
+
+        <TextBlock FontWeight="Bold" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,0,10">
+            Memory:
+        </TextBlock>
+
+		<StackPanel Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Margin="0,0,0,10"
+                   Orientation="Horizontal">
+            <TextBlock Text="{Binding Pc.HostMemory}"/>
+            <TextBlock Text=" MB"/>
+		</StackPanel>
+
+        <TextBlock FontWeight="Bold" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,0,10">
+			System:
+		</TextBlock>
+
+        <TextBlock Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" Margin="0,0,0,10"
+                   Text="{Binding Pc.HostOS}" />
+
+		<TextBlock FontWeight="Bold" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,0,0,10">
+			Runtime:
+		</TextBlock>
+
+        <TextBlock Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Margin="0,0,0,10"
+                   Text="{Binding Pc.NetRuntime}"/>
+
+		<TextBlock Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4" Margin="20,30,0,5"
+                   Text="{Binding Dll.Copyright}" />
+
+        <TextBlock Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" Margin="20,5,0,0">
+			All marks and names mentioned herein may 
+be trademarks of their respective companies.
+		</TextBlock>
+
+        <Button Grid.Row="10" Grid.Column="2" Grid.ColumnSpan="2" Margin="20,20,0,5"
+                Click="About_OnClose">
+			Close
+        </Button>
+    </Grid>
+
+</Window>

@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        d:DesignWidth="400" d:DesignHeight="400"
-        Width="400" Height="400"
+        d:DesignWidth="600" d:DesignHeight="400"
+        Width="600" Height="400"
         WindowStartupLocation="CenterScreen"
         x:Class="RetroBox.Manager.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -17,9 +17,21 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-	<StackPanel>
-        <Button HorizontalAlignment="Center" VerticalAlignment="Center" 
-                Name="btnUpdate" Click="BtnUpdate_OnClick">Install</Button>
-    </StackPanel>
-
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+				<MenuItem Header="_Exit" Click="MenuExit_OnClick"/>
+			</MenuItem>
+			<MenuItem Header="_Help">
+				<MenuItem Header="_Updates" Click="MenuUpdate_OnClick"/>
+				<Separator/>
+                <MenuItem Header="_About..." Click="MenuAbout_OnClick"/>
+            </MenuItem>
+        </Menu>
+		<StackPanel DockPanel.Dock="Bottom" Background="White">
+            <TextBlock Margin="10">No status</TextBlock>
+        </StackPanel>
+		<StackPanel>
+        </StackPanel>
+    </DockPanel>
 </Window>
