@@ -12,9 +12,11 @@ namespace RetroBox.Fabric.Boxes
 {
     public static class Machines
     {
+        public const string BoxCfgName = "86box.cfg";
+
         public static IEnumerable<Machine> FindMachine(string folder)
         {
-            var files = Directory.GetFiles(folder, "86box.cfg", SearchOption.AllDirectories);
+            var files = Directory.GetFiles(folder, BoxCfgName, SearchOption.AllDirectories);
             foreach (var rawFile in files)
             {
                 var vmDir = Path.GetDirectoryName(rawFile);
