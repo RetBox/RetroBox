@@ -179,6 +179,7 @@ namespace RetroBox.Fabric.Boxes
             {
                 cdChId = all.FindSetting(cat, key.Replace("parameters", "ide_channel"))?.Trim();
             }
+
             return cdChId ?? string.Empty;
         }
 
