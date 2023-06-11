@@ -196,5 +196,12 @@ namespace RetroBox.Fabric.Boxes
             var mb = 512 * cylinders * heads * sectors / (1024d * 1024);
             return mb;
         }
+
+        public static IEnumerable<IMetaMachine> FindMetaMachine(string folder)
+        {
+            var machines = FindMachine(folder);
+            var envelopes = machines.Select(Envelopes.GetEnvelope);
+            return envelopes;
+        }
     }
 }

@@ -10,11 +10,11 @@ namespace RetroBox.Manager.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public ObservableCollection<Machine> AllMachines { get; } = new();
+        public ObservableCollection<IMetaMachine> AllMachines { get; } = new();
 
-        private Machine? _currentMachine;
+        private IMetaMachine? _currentMachine;
 
-        public Machine? CurrentMachine
+        public IMetaMachine? CurrentMachine
         {
             get => _currentMachine;
             set => this.RaiseAndSetIfChanged(ref _currentMachine, value);
@@ -28,7 +28,7 @@ namespace RetroBox.Manager.ViewModels
             };
 
             foreach (var folder in folders.OrderBy(n => n))
-            foreach (var machine in Machines.FindMachine(folder).OrderBy(n => n.Name))
+            foreach (var machine in Machines.FindMetaMachine(folder).OrderBy(n => n.Name))
                 AllMachines.Add(machine);
 
             CurrentMachine = AllMachines.FirstOrDefault();

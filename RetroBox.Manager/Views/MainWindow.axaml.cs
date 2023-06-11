@@ -40,7 +40,7 @@ namespace RetroBox.Manager.Views
         {
             var added = e.AddedItems[0];
             var model = (MainWindowViewModel)DataContext!;
-            model.CurrentMachine = (Machine?)added;
+            model.CurrentMachine = (IMetaMachine?)added;
         }
     }
 }
