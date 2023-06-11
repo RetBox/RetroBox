@@ -28,6 +28,8 @@ namespace RetroBox.Fabric.Boxes
             }
         }
 
+        private const string None = "None";
+
         private static Machine ReadConfig(string vmName, string vmFile)
         {
             var ini = new IniFile();
@@ -41,27 +43,27 @@ namespace RetroBox.Fabric.Boxes
 
             var memKb = all.FindSetting(mach, "mem_size")
                 ?.Trim().ToLong().AsKiloBytes();
-            var memKbTxt = memKb?.ToString() ?? "---";
+            var memKbTxt = memKb?.ToString() ?? None;
 
             var machine = all.FindSetting(mach, "machine")
                 ?.Trim();
             Internals.TryFindByName(machine, out _, out var mInfo);
-            var machineName = mInfo?.Label ?? "---";
+            var machineName = mInfo?.Label ?? None;
 
             var cpuFamily = all.FindSetting(mach, "cpu_family")
                 ?.Trim();
             Internals.TryFindByName(cpuFamily, out _, out var cInfo);
-            var familyName = cInfo?.Label ?? "---";
+            var familyName = cInfo?.Label ?? None;
 
             var cpuSpeed = all.FindSetting(mach, "cpu_speed")
                 ?.Trim().ToLong().AsHertzToStr();
-            var speedTxt = cpuSpeed == null ? "---" : $"{cpuSpeed.Value.value:0.##} {cpuSpeed.Value.unit}";
+            var speedTxt = cpuSpeed == null ? None : $"{cpuSpeed.Value.value:0.##} {cpuSpeed.Value.unit}";
             var cpuLbl = $"{familyName} {speedTxt}";
 
             const string vid = "Video";
             var gfxCard = all.FindSetting(vid, "gfxcard")?.Trim();
             Internals.TryFindByName(gfxCard, out _, out var gInfo);
-            var gfxLbl = gInfo?.Label ?? "---";
+            var gfxLbl = gInfo?.Label ?? None;
 
             var gfxMemKb = all.FindSetting(vid, "memory")?.Trim().ToLong() ?? 0;
             var otMemKb = all.FindSettings(key: "memory")
@@ -73,7 +75,7 @@ namespace RetroBox.Fabric.Boxes
                              + ByteSize.FromKiloBytes(otMemKb)
                              + ByteSize.FromMegaBytes(fbMemMb)).ToString();
             if (gfxAllMem == "0 b")
-                gfxAllMem = "---";
+                gfxAllMem = None;
 
             var floppies = Enumerable.Range(1, 4).Select(i => $"fdd_0{i}_type")
                 .SelectMany(f => all.FindSettings(key: f))
@@ -83,11 +85,11 @@ namespace RetroBox.Fabric.Boxes
                 {
                     var intName = f.val.Trim();
                     Internals.TryFindByName(intName, out _, out var fInfo);
-                    return fInfo?.Label ?? "---";
+                    return fInfo?.Label ?? None;
                 }).ToArray();
             var floppyTxt = string.Join(", ", floppies);
             if (floppyTxt.Length == 0)
-                floppyTxt = "---";
+                floppyTxt = None;
 
             var cds = Enumerable.Range(1, 4).Select(i => $"cdrom_0{i}_parameters")
                 .SelectMany(f => all.FindSettings(key: f))
@@ -102,7 +104,7 @@ namespace RetroBox.Fabric.Boxes
                 .ToArray();
             var cdromTxt = string.Join(", ", cds.Select(c => $"{c.cdSpeed}x CD ({c.cdChId})"));
             if (cdromTxt.Length == 0)
-                cdromTxt = "---";
+                cdromTxt = None;
 
             const string hd = "Hard disks";
 
@@ -122,18 +124,18 @@ namespace RetroBox.Fabric.Boxes
                 .ToArray();
             var hdLines = hds.Select(c => $"{c.hFile} ({c.hdS:0.##} MB)").ToArray();
             if (hdLines.Length == 0)
-                hdLines = new[] { "---" };
+                hdLines = new[] { None };
             var hdTxt = string.Join(Environment.NewLine, hdLines);
 
             const string snd = "Sound";
 
             var sndCard = all.FindSetting(snd, "sndcard")?.Trim();
             Internals.TryFindByName(sndCard, out _, out var sInfo);
-            var sndCardTxt = sInfo?.Label ?? "---";
+            var sndCardTxt = sInfo?.Label ?? None;
 
             var midCard = all.FindSetting(snd, "midi_device")?.Trim();
             Internals.TryFindByName(midCard, out _, out var mmInfo);
-            var mmCardTxt = mmInfo?.Label ?? "---";
+            var mmCardTxt = mmInfo?.Label ?? None;
 
             const string net = "Network";
 
@@ -144,7 +146,7 @@ namespace RetroBox.Fabric.Boxes
                 {
                     var intName = f.val.Trim();
                     Internals.TryFindByName(intName, out _, out var fInfo);
-                    var intLbl = fInfo?.Label ?? "---";
+                    var intLbl = fInfo?.Label ?? None;
                     var intType = (all.FindSetting(net, f.key.Replace("card", "net_type"))
                                    ?? all.FindSetting(net, f.key.Replace("card", "type")))?.Trim()!;
                     return (f.key, intLbl, intType);
@@ -152,7 +154,7 @@ namespace RetroBox.Fabric.Boxes
                 .ToArray();
             var netLines = nts.Select(c => $"{c.intLbl} ({c.intType})").ToArray();
             if (netLines.Length == 0)
-                netLines = new[] { "---" };
+                netLines = new[] { None };
             var netTxt = string.Join(Environment.NewLine, netLines);
 
             return new Machine(vmFile, vmName, memKbTxt, cpuLbl, machineName,
