@@ -79,6 +79,12 @@ namespace RetroBox.Manager.Views
             }
 
             Close(ButtonResult.Ok);
+            ReloadWebResults();
+        }
+
+        private void ReloadWebResults()
+        {
+            Configs.ReloadConfig();
         }
 
         private async void TopLevel_OnOpened(object? sender, EventArgs e)
