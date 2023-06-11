@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using RetroBox.Common;
 
@@ -24,10 +23,9 @@ namespace RetroBox.Fabric.Boxes
             else
             {
                 var boxLocalFile = Path.GetFileName(boxConfigFile);
-                env = new Envelope { File = boxLocalFile };
+                env = new Envelope { File = boxLocalFile, Description = "" };
                 Serials.WriteJsonFile(env, envConfigFile);
             }
-
             return new MetaMachine(src, env);
         }
     }

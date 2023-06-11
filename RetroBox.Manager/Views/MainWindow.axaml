@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        d:DesignWidth="600" d:DesignHeight="795"
-        Width="600" Height="795"
+        d:DesignWidth="600" d:DesignHeight="815"
+        Width="600" Height="815"
         WindowStartupLocation="CenterScreen"
         x:Class="RetroBox.Manager.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -47,17 +47,19 @@
                         DataContext="{Binding CurrentMachine}">
 				<Expander IsExpanded="True">
 					<Expander.Header>General</Expander.Header>
-					<Grid Width="200">
+					<Grid Width="340">
 						<Grid.RowDefinitions>
 							<RowDefinition/>
 							<RowDefinition/>
 						</Grid.RowDefinitions>
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="3*"/>
-							<ColumnDefinition Width="4*"/>
+							<ColumnDefinition Width="9*"/>
 						</Grid.ColumnDefinitions>
 						<TextBlock Grid.Row="0" Grid.Column="0" Text="Name:"/>
 						<TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Name}"/>
+						<TextBlock Grid.Row="1" Grid.Column="0" Text="Comment:"/>
+						<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Description}"/>
 					</Grid>
 				</Expander>
 				<Expander IsExpanded="True">

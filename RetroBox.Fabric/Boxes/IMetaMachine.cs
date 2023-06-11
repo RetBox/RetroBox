@@ -15,5 +15,7 @@ namespace RetroBox.Fabric.Boxes
         string SoundCard { get; }
         string MidiChip { get; }
         string NetworkTxt { get; }
+        
+        string Description { get; }
     }
 }

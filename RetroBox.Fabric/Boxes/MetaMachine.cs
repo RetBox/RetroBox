@@ -1,3 +1,5 @@
+using RetroBox.Fabric.Tools;
+
 namespace RetroBox.Fabric.Boxes
 {
     internal sealed class MetaMachine : IMetaMachine
@@ -24,5 +26,8 @@ namespace RetroBox.Fabric.Boxes
         public string SoundCard => _machine.SoundCard;
         public string MidiChip => _machine.MidiChip;
         public string NetworkTxt => _machine.NetworkTxt;
+
+        public string Description
+            => _envelope.Description.ToNullIfEmpty() ?? Machines.None;
     }
 }
