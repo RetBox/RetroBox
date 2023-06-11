@@ -13,5 +13,7 @@
         string RomRoot { get; }
 
         string CacheRoot { get; }
+
+        string MachineRoot { get; }
     }
 }

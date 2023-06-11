@@ -19,5 +19,6 @@ namespace RetroBox.Fabric.Config
         public string EmuRoot => Path.Combine(AppData, "emu");
         public string RomRoot => Path.Combine(AppData, "rom");
         public string CacheRoot => Path.Combine(AppData, "cache");
+        public string MachineRoot => Path.Combine(HomePath, $"{nameof(RetroBox)} VMs");
     }
 }
