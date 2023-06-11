@@ -1,6 +1,8 @@
 using System;
+using Avalonia.Controls;
 using Avalonia.Interactivity;
 using MessageBox.Avalonia.Enums;
+using RetroBox.Fabric.Boxes;
 using RetroBox.Manager.ViewCore;
 using RetroBox.Manager.ViewModels;
 
@@ -32,6 +34,13 @@ namespace RetroBox.Manager.Views
         {
             var about = new AboutWindow { DataContext = new AboutViewModel() };
             await about.ShowDialogFor(this);
+        }
+
+        private void Machines_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
+        {
+            var added = e.AddedItems[0];
+            var model = (MainWindowViewModel)DataContext!;
+            model.CurrentMachine = (Machine?)added;
         }
     }
 }

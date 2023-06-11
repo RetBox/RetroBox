@@ -30,7 +30,7 @@ namespace RetroBox.Windows
             Memory = (long)Math.Round(tmpMem, MidpointRounding.ToPositiveInfinity);
         }
 
-        protected override string OSName => Caption;
+        protected override string OSName => Caption!;
         public override long HostMemory => Memory;
 
         [DllImport("Kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]

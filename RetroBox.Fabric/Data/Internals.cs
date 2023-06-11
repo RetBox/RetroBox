@@ -13,8 +13,14 @@ namespace RetroBox.Fabric.Data
             _inter = Serials.ReadJson<Dictionary<string, IDictionary<string, EmulatedInfo>>>(jsonText)!;
         }
 
-        public static bool TryFindByName(string name, out string? category, out EmulatedInfo? info)
+        public static bool TryFindByName(string? name, out string? category, out EmulatedInfo? info)
         {
+            if (name == null)
+            {
+                category = default;
+                info = default;
+                return false;
+            }
             foreach (var pair in _inter)
             {
                 var catDict = pair.Value;
