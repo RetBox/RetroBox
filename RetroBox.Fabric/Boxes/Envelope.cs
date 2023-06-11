@@ -5,5 +5,7 @@ namespace RetroBox.Fabric.Boxes
         public string? File { get; set; }
 
         public string? Description { get; set; }
+
+        public string? Name { get; set; }
     }
 }

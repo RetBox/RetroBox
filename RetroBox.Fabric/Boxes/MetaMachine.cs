@@ -14,7 +14,6 @@ namespace RetroBox.Fabric.Boxes
         }
 
         public string File => _machine.File;
-        public string Name => _machine.Name;
         public string Memory => _machine.Memory;
         public string CpuLbl => _machine.CpuLbl;
         public string MachineLbl => _machine.MachineLbl;
@@ -26,6 +25,9 @@ namespace RetroBox.Fabric.Boxes
         public string SoundCard => _machine.SoundCard;
         public string MidiChip => _machine.MidiChip;
         public string NetworkTxt => _machine.NetworkTxt;
+
+        public string Name
+            => _envelope.Name.ToNullIfEmpty() ?? _machine.Name;
 
         public string Description
             => _envelope.Description.ToNullIfEmpty() ?? Machines.None;
