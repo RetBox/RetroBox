@@ -30,7 +30,7 @@ namespace RetroBox.Fabric.Boxes
             }
         }
 
-        internal const string None = "None";
+        public const string None = "None";
 
         private static Machine ReadConfig(string vmName, string vmFile)
         {

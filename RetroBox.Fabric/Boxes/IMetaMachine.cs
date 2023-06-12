@@ -3,7 +3,6 @@ namespace RetroBox.Fabric.Boxes
     public interface IMetaMachine
     {
         string File { get; }
-        string Name { get; }
         string Memory { get; }
         string CpuLbl { get; }
         string MachineLbl { get; }
@@ -15,7 +14,8 @@ namespace RetroBox.Fabric.Boxes
         string SoundCard { get; }
         string MidiChip { get; }
         string NetworkTxt { get; }
-        
-        string Description { get; }
+
+        string Description { get; set; }
+        string Name { get; set; }
     }
 }

@@ -73,9 +73,11 @@
                                 <ColumnDefinition Width="*"/>
 							</Grid.ColumnDefinitions>
 							<TextBlock Grid.Row="0" Grid.Column="0" Text="Name:"/>
-							<TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Name}"/>
+							<Button Grid.Row="0" Grid.Column="1" Content="{Binding Name}"
+                                    Padding="0" Background="Transparent" Click="ChangeName_OnClick"/>
 							<TextBlock Grid.Row="1" Grid.Column="0" Text="Comment:"/>
-							<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Description}"/>
+							<Button Grid.Row="1" Grid.Column="1" Content="{Binding Description}"
+                                    Padding="0" Background="Transparent" Click="ChangeDesc_OnClick"/>
 						</Grid>
 					</Expander>
 					<Expander IsExpanded="True">

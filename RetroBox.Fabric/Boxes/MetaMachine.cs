@@ -27,9 +27,23 @@ namespace RetroBox.Fabric.Boxes
         public string NetworkTxt => _machine.NetworkTxt;
 
         public string Name
-            => _envelope.Name.ToNullIfEmpty() ?? _machine.Name;
+        {
+            get => _envelope.Name.ToNullIfEmpty() ?? _machine.Name;
+            set
+            {
+                _envelope.Name = value;
+                _envelope.Save();
+            }
+        }
 
         public string Description
-            => _envelope.Description.ToNullIfEmpty() ?? Machines.None;
+        {
+            get => _envelope.Description.ToNullIfEmpty() ?? Machines.None;
+            set
+            {
+                _envelope.Description = value;
+                _envelope.Save();
+            }
+        }
     }
 }

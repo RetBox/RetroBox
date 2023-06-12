@@ -19,12 +19,16 @@ namespace RetroBox.Fabric.Boxes
             if (File.Exists(envConfigFile))
             {
                 env = Serials.ReadJsonFile<Envelope>(envConfigFile)!;
+                env.InternalFile = envConfigFile;
             }
             else
             {
                 var boxLocalFile = Path.GetFileName(boxConfigFile);
-                env = new Envelope { File = boxLocalFile, Description = "" };
-                Serials.WriteJsonFile(env, envConfigFile);
+                env = new Envelope
+                {
+                    File = boxLocalFile, Description = "", InternalFile = envConfigFile
+                };
+                env.Save();
             }
             return new MetaMachine(src, env);
         }

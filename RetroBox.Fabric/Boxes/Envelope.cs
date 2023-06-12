@@ -1,3 +1,5 @@
+using RetroBox.Common;
+
 namespace RetroBox.Fabric.Boxes
 {
     public class Envelope
@@ -7,5 +9,12 @@ namespace RetroBox.Fabric.Boxes
         public string? Description { get; set; }
 
         public string? Name { get; set; }
+
+        public void Save()
+        {
+            Serials.WriteJsonFile(this, InternalFile!);
+        }
+
+        internal string? InternalFile { get; set; }
     }
 }

@@ -1,7 +1,9 @@
 using System;
+using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using MessageBox.Avalonia.Enums;
+using ReactiveUI;
 using RetroBox.Fabric.Boxes;
 using RetroBox.Manager.ViewCore;
 using RetroBox.Manager.ViewModels;
@@ -39,8 +41,47 @@ namespace RetroBox.Manager.Views
         private void Machines_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
         {
             var added = e.AddedItems[0];
-            var model = (MainWindowViewModel)DataContext!;
-            model.CurrentMachine = (IMetaMachine?)added;
+            Model.CurrentMachine = (IMetaMachine?)added;
+        }
+
+        private MainWindowViewModel Model => (MainWindowViewModel)DataContext!;
+
+        private async void ChangeName_OnClick(object? sender, RoutedEventArgs e)
+        {
+            await ChangeParticle(nameof(Model.CurrentMachine.Name),
+                Model.CurrentMachine?.Name,
+                t => Model.CurrentMachine!.Name = t);
+            TriggerMachines();
+        }
+
+        private async void ChangeDesc_OnClick(object? sender, RoutedEventArgs e)
+        {
+            await ChangeParticle(nameof(Model.CurrentMachine.Description),
+                Model.CurrentMachine?.Description,
+                t => Model.CurrentMachine!.Description = t);
+            TriggerMachines();
+        }
+
+        private void TriggerMachines()
+        {
+        }
+
+        private async Task ChangeParticle(string title, string? value, Action<string> setter)
+        {
+            if (value == null)
+                return;
+            var initial = value == Machines.None ? string.Empty : value;
+            var model = new ParticleViewModel
+            {
+                Title = $@"Edit ""{value}""", Key = title, Val = initial
+            };
+            var par = new ParticleWindow { DataContext = model };
+            if (await par.ShowDialogFor(this) != ButtonResult.Ok)
+                return;
+            var currentVal = model.Val;
+            if (initial.Equals(currentVal))
+                return;
+            setter(currentVal);
         }
     }
 }
