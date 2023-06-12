@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using MessageBox.Avalonia.Enums;
-using ReactiveUI;
 using RetroBox.Fabric.Boxes;
 using RetroBox.Manager.ViewCore;
 using RetroBox.Manager.ViewModels;

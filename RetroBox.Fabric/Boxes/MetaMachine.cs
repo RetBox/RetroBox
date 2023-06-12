@@ -45,5 +45,18 @@ namespace RetroBox.Fabric.Boxes
                 _envelope.Save();
             }
         }
+
+        public string Preview
+        {
+            get => _envelope.Preview.ToNullIfEmpty() ?? string.Empty;
+            set
+            {
+                _envelope.Preview = value;
+                _envelope.Save();
+            }
+        }
+
+        public byte[] PreviewImg
+            => Binary.ReadFile(_envelope.Preview) ?? Machines.Black;
     }
 }

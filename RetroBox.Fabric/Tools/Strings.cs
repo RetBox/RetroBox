@@ -4,7 +4,7 @@ using ByteSizeLib;
 
 namespace RetroBox.Fabric.Tools
 {
-    internal static class Strings
+    public static class Strings
     {
         public static long? ToLong(this string? value)
         {

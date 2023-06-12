@@ -10,6 +10,8 @@ namespace RetroBox.Fabric.Boxes
 
         public string? Name { get; set; }
 
+        public string? Preview { get; set; }
+
         public void Save()
         {
             Serials.WriteJsonFile(this, InternalFile!);

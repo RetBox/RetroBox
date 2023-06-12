@@ -3,6 +3,7 @@
         xmlns:vm="using:RetroBox.Manager.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewCore="clr-namespace:RetroBox.Manager.ViewCore"
         mc:Ignorable="d"
         d:DesignWidth="785" d:DesignHeight="815"
         Width="785" Height="815"
@@ -16,6 +17,10 @@
 	<Design.DataContext>
 		<vm:MainWindowViewModel/>
 	</Design.DataContext>
+
+    <Window.Resources>
+        <viewCore:BinaryImager x:Key="BinaryConv" />
+    </Window.Resources>
 
 	<DockPanel>
 		<Menu DockPanel.Dock="Top">
@@ -50,14 +55,11 @@
 					<Border CornerRadius="8"
                             BorderThickness="4" BorderBrush="LightGray"
                             BoxShadow="0 0 10 2 #BF000000"
-                            Width="160" Height="160"
-                            Name="PreviewArea">
+                            Width="160" Height="160">
 						<Border.Background>
-							<SolidColorBrush Color="Black" />
-							<!-- 
-							<ImageBrush Source="/Assets/splash.png" />
-							-->
-						</Border.Background>
+                            <ImageBrush Source="{Binding PreviewImg, Converter={StaticResource BinaryConv}}" 
+                                        Stretch="UniformToFill" />
+                        </Border.Background>
 					</Border>
 				</Expander>
 				<StackPanel Orientation="Vertical">

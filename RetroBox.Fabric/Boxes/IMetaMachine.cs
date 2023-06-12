@@ -17,5 +17,8 @@ namespace RetroBox.Fabric.Boxes
 
         string Description { get; set; }
         string Name { get; set; }
+        string Preview { get; set; }
+
+        byte[] PreviewImg { get; }
     }
 }
