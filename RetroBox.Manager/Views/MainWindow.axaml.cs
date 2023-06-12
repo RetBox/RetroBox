@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -40,7 +41,7 @@ namespace RetroBox.Manager.Views
 
         private void Machines_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
         {
-            var added = e.AddedItems[0];
+            var added = e.AddedItems.OfType<object>().FirstOrDefault();
             Model.CurrentMachine = (IMetaMachine?)added;
         }
 
@@ -48,28 +49,38 @@ namespace RetroBox.Manager.Views
 
         private async void ChangeName_OnClick(object? sender, RoutedEventArgs e)
         {
-            await ChangeParticle(nameof(Model.CurrentMachine.Name),
-                Model.CurrentMachine?.Name,
-                t => Model.CurrentMachine!.Name = t);
+            if (!await ChangeParticle(nameof(Model.CurrentMachine.Name),
+                    Model.CurrentMachine?.Name,
+                    t => Model.CurrentMachine!.Name = t))
+                return;
             TriggerMachines();
         }
 
         private async void ChangeDesc_OnClick(object? sender, RoutedEventArgs e)
         {
-            await ChangeParticle(nameof(Model.CurrentMachine.Description),
-                Model.CurrentMachine?.Description,
-                t => Model.CurrentMachine!.Description = t);
+            if (!await ChangeParticle(nameof(Model.CurrentMachine.Description),
+                    Model.CurrentMachine?.Description,
+                    t => Model.CurrentMachine!.Description = t))
+                return;
             TriggerMachines();
         }
 
         private void TriggerMachines()
         {
+            var old = Model.CurrentMachine;
+            if (old == null)
+                return;
+            var index = Model.AllMachines.IndexOf(old);
+            Model.AllMachines.RemoveAt(index);
+            Model.AllMachines.Insert(index, old);
+            Model.CurrentMachine = null;
+            Model.CurrentMachine = old;
         }
 
-        private async Task ChangeParticle(string title, string? value, Action<string> setter)
+        private async Task<bool> ChangeParticle(string title, string? value, Action<string> setter)
         {
             if (value == null)
-                return;
+                return false;
             var initial = value == Machines.None ? string.Empty : value;
             var model = new ParticleViewModel
             {
@@ -77,11 +88,12 @@ namespace RetroBox.Manager.Views
             };
             var par = new ParticleWindow { DataContext = model };
             if (await par.ShowDialogFor(this) != ButtonResult.Ok)
-                return;
+                return false;
             var currentVal = model.Val;
             if (initial.Equals(currentVal))
-                return;
+                return false;
             setter(currentVal);
+            return true;
         }
     }
 }

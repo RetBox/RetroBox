@@ -22,6 +22,13 @@ namespace RetroBox.Manager.ViewModels
 
         public MainWindowViewModel()
         {
+            ReloadMachines();
+        }
+
+        private void ReloadMachines()
+        {
+            AllMachines.Clear();
+
             var folders = new List<string>
             {
                 IOPath.Combine(Platforms.My.Folders.GetDefaultHomePath(), "Desktop")

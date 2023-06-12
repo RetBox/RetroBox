@@ -1,4 +1,5 @@
 using System;
+using Avalonia.Input;
 using Avalonia.Interactivity;
 using MessageBox.Avalonia.Enums;
 using RetroBox.Manager.ViewCore;
@@ -17,6 +18,7 @@ namespace RetroBox.Manager.Views
         {
             var model = (ParticleViewModel)DataContext!;
             Title = model.Title;
+            ValBox.Focus();
         }
 
         private void Cancel_OnClick(object? sender, RoutedEventArgs e)
@@ -27,6 +29,14 @@ namespace RetroBox.Manager.Views
         private void Apply_OnClick(object? sender, RoutedEventArgs e)
         {
             Close(ButtonResult.Ok);
+        }
+
+        private void Text_OnKeyUp(object? sender, KeyEventArgs e)
+        {
+            if (e.Key is Key.Return or Key.Enter)
+                Apply_OnClick(sender, new RoutedEventArgs(e.RoutedEvent));
+            if (e.Key is Key.Escape)
+                Cancel_OnClick(sender, new RoutedEventArgs(e.RoutedEvent));
         }
     }
 }
