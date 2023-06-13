@@ -20,5 +20,6 @@ namespace RetroBox.Fabric.Boxes
         string Preview { get; set; }
 
         byte[] PreviewImg { get; }
+        string Folder { get; }
     }
 }

@@ -1,3 +1,5 @@
+using System.IO;
+using System.Reflection.PortableExecutable;
 using RetroBox.Fabric.Tools;
 
 namespace RetroBox.Fabric.Boxes
@@ -57,6 +59,10 @@ namespace RetroBox.Fabric.Boxes
         }
 
         public byte[] PreviewImg
-            => Binary.ReadFile(_envelope.Preview) ?? Machines.Black;
+            => Binary.ReadFile(Strings.AddPath(_envelope.Preview, Folder))
+               ?? Machines.Black;
+
+        public string Folder
+            => Path.GetDirectoryName(File)!;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using ByteSizeLib;
 
@@ -64,6 +65,17 @@ namespace RetroBox.Fabric.Tools
                 if (cat == null && hasKey)
                     yield return tuple;
             }
+        }
+
+        public static string? AddPath(string? file, string folder)
+        {
+            if (string.IsNullOrWhiteSpace(file))
+                return null;
+            if (Path.IsPathRooted(file))
+                return file;
+            if (Path.IsPathFullyQualified(file))
+                return file;
+            return Path.Combine(folder, file);
         }
     }
 }

@@ -1,12 +1,15 @@
 using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Interactivity;
 using MessageBox.Avalonia.Enums;
 using RetroBox.Fabric.Boxes;
 using RetroBox.Manager.ViewCore;
 using RetroBox.Manager.ViewModels;
+using IOPath = System.IO.Path;
 
 namespace RetroBox.Manager.Views
 {
@@ -19,6 +22,40 @@ namespace RetroBox.Manager.Views
 
         private void Main_OnOpened(object? sender, EventArgs e)
         {
+            RegisterDragDrop();
+        }
+
+        private void RegisterDragDrop()
+        {
+            PreviewArea.AddHandler(DragDrop.DragOverEvent, OnPreviewDragOver);
+            PreviewArea.AddHandler(DragDrop.DropEvent, OnPreviewDragDrop);
+        }
+
+        private void OnPreviewDragOver(object? sender, DragEventArgs e)
+        {
+            e.DragEffects &= DragDropEffects.Copy | DragDropEffects.Link;
+            if (!PreviewArea.Equals(sender) || !e.Data.Contains(DataFormats.FileNames))
+                e.DragEffects = DragDropEffects.None;
+        }
+
+        private void OnPreviewDragDrop(object? sender, DragEventArgs e)
+        {
+            if (!PreviewArea.Equals(sender) || !e.Data.Contains(DataFormats.FileNames))
+                return;
+            var fileNames = e.Data.GetFileNames()?.ToArray();
+            if (fileNames?.Length == 1)
+            {
+                var fileName = fileNames[0];
+                if (Model.CurrentMachine is { } machine)
+                {
+                    var machineDir = machine.Folder;
+                    const string previewName = "preview.png";
+                    var previewFile = IOPath.Combine(machineDir, previewName);
+                    File.Copy(fileName, previewFile, overwrite: true);
+                    machine.Preview = previewName;
+                    TriggerMachines();
+                }
+            }
         }
 
         private async void MenuUpdate_OnClick(object? sender, RoutedEventArgs e)
