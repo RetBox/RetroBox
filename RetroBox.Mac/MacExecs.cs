@@ -36,7 +36,7 @@ namespace RetroBox.Mac
                 var linkFile = Path.Combine(exeDir, emuName);
                 if (File.Exists(linkFile))
                     file = linkFile;
-                yield return new FoundExe(file, exeVer, exeDir);
+                yield return new FoundExe(file, exeVer);
             }
         }
     }

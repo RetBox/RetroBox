@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using RetroBox.API.Data;
 
 namespace RetroBox.Common.Data
 {
@@ -16,6 +17,20 @@ namespace RetroBox.Common.Data
         {
             _versions.TryGetValue(build, out var meta);
             return meta;
+        }
+
+        public static FileVerMeta Copy(this IFileVerMeta meta, string? relId = null)
+        {
+            var res = new FileVerMeta
+            {
+                ReleaseId = relId ?? meta.ReleaseId,
+                FileMajorPart = meta.FileMajorPart,
+                FileMinorPart = meta.FileMinorPart,
+                FileBuildPart = meta.FileBuildPart,
+                FilePrivatePart = meta.FilePrivatePart,
+                FileVersion = meta.FileVersion
+            };
+            return res;
         }
     }
 }

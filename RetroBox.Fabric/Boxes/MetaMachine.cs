@@ -1,5 +1,4 @@
 using System.IO;
-using System.Reflection.PortableExecutable;
 using RetroBox.Fabric.Tools;
 
 namespace RetroBox.Fabric.Boxes
