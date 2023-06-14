@@ -27,6 +27,8 @@ namespace RetroBox.Common.Xplat
             }
         }
 
+        public abstract void FindSystemic(string home, out List<FoundExe> exe, out List<FoundRom> rom);
+
         protected ProcessStartInfo CreateStartArg(StartBoxArg a)
         {
             var info = new ProcessStartInfo(a.Exe!);

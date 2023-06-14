@@ -8,5 +8,7 @@ namespace RetroBox.API.Xplat
         IEnumerable<FoundExe> FindExe(string folder);
 
         IEnumerable<FoundRom> FindRom(string folder);
+
+        void FindSystemic(string home, out List<FoundExe> exe, out List<FoundRom> rom);
     }
 }

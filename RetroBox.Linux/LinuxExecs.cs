@@ -38,7 +38,7 @@ namespace RetroBox.Linux
             }
         }
 
-        public void FindSystemic(string home, out List<FoundExe> exe, out List<FoundRom> rom)
+        public override void FindSystemic(string home, out List<FoundExe> exe, out List<FoundRom> rom)
         {
             exe = new List<FoundExe>();
             rom = new List<FoundRom>();
