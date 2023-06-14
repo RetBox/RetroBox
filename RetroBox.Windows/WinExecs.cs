@@ -5,6 +5,7 @@ using System.Threading;
 using RetroBox.API.Data;
 using RetroBox.Common;
 using RetroBox.Common.Data;
+using RetroBox.Common.Tools;
 using RetroBox.Common.Xplat;
 
 namespace RetroBox.Windows
@@ -14,7 +15,7 @@ namespace RetroBox.Windows
         public override IEnumerable<FoundExe> FindExe(string folder)
         {
             const string emuName = "86Box";
-            var files = Directory.GetFiles(folder, $"{emuName}*.exe", SearchOption.AllDirectories);
+            var files = Paths.GetFiles(folder, $"{emuName}*.exe");
             foreach (var file in files)
             {
                 var fileVer = FileVersionInfo.GetVersionInfo(file);

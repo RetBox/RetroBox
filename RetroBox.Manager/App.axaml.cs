@@ -27,10 +27,10 @@ namespace RetroBox.Manager
                 var mainView = new MainWindowViewModel();
                 try
                 {
-                    splashModel.StartupMessage = "Searching for software...";
+                    splashModel.StartupMessage = "Finding software...";
                     mainView.SearchSoftware(splashModel.CancellationToken);
 
-                    splashModel.StartupMessage = "Searching for machines...";
+                    splashModel.StartupMessage = "Finding machines...";
                     mainView.SearchMachines(splashModel.CancellationToken);
                 }
                 catch (TaskCanceledException)

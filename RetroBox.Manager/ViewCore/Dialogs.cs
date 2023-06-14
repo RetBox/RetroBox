@@ -19,6 +19,7 @@ namespace RetroBox.Manager.ViewCore
             window.Icon = parent.Icon;
             window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             window.Topmost = true;
+            window.Tag = parent;
             var res = await window.ShowDialog<ButtonResult?>(parent);
             return res;
         }
@@ -81,6 +82,14 @@ namespace RetroBox.Manager.ViewCore
                     return fileName;
             }
             return null;
+        }
+
+        public static Window? GetParent<T>(this Window window)
+            where T : Window
+        {
+            var owner = window.Owner as Window ?? window.Parent as Window ?? window.Tag as Window;
+            var conv = owner as T;
+            return conv;
         }
     }
 }

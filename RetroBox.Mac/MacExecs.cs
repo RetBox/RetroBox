@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using RetroBox.Common.Data;
+using RetroBox.Common.Tools;
 
 namespace RetroBox.Mac
 {
@@ -15,12 +16,12 @@ namespace RetroBox.Mac
         public override IEnumerable<FoundExe> FindExe(string folder)
         {
             const string emuName = "86Box";
-            var dirs = Directory.GetDirectories(folder, $"{emuName}*.app", SearchOption.AllDirectories);
+            var dirs = Paths.GetDirectories(folder, $"{emuName}*.app");
             foreach (var dir in dirs)
             {
                 var contents = Path.Combine(dir, "Contents");
                 var macos = Path.Combine(contents, "MacOS");
-                var file = Directory.GetFiles(macos).First();
+                var file = Paths.GetFiles(macos, "*").First();
                 var info = Path.Combine(contents, "Info.plist");
                 var infoLines = File.ReadAllLines(info, Encoding.UTF8);
                 var infoLine = infoLines.SkipWhile(i => !i.Contains("CFBundleVersion")).Skip(1);

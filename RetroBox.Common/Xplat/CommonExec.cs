@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using RetroBox.API.Data;
 using RetroBox.API.Xplat;
+using RetroBox.Common.Tools;
 
 namespace RetroBox.Common.Xplat
 {
@@ -14,7 +15,7 @@ namespace RetroBox.Common.Xplat
 
         public IEnumerable<FoundRom> FindRom(string folder)
         {
-            var files = Directory.GetFiles(folder, "LICENSE", SearchOption.AllDirectories);
+            var files = Paths.GetFiles(folder, "LICENSE");
             foreach (var rawFile in files)
             {
                 var exeDir = Path.GetDirectoryName(rawFile);

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using RetroBox.API.Data;
+﻿using System.IO;
 using RetroBox.Common;
 
 namespace RetroBox.Fabric.Config
@@ -12,7 +9,7 @@ namespace RetroBox.Fabric.Config
 
         public const string FileName = "RetroBox.json";
 
-        public static IGlobalConfig Global { get; private set; } = LoadGlobalConfig();
+        public static IGlobalConfig Global { get; } = LoadGlobalConfig();
 
         private static IGlobalConfig LoadGlobalConfig()
         {
@@ -30,38 +27,7 @@ namespace RetroBox.Fabric.Config
                 Serials.WriteJsonFile(env, gConfigFile);
             }
 
-            if (ReloadPreparedEnv(env, Array.Empty<FoundExe>(), Array.Empty<FoundRom>())) // TODO
-                Serials.WriteJsonFile(env, gConfigFile);
-
             return env;
-        }
-
-        // TODO
-        public static void ReloadConfig() => Global = LoadGlobalConfig();
-
-        private static bool ReloadPreparedEnv(GlobalConfig global,
-            IEnumerable<FoundExe> exes, IEnumerable<FoundRom> roms)
-        {
-            var cfg = Default;
-            var plat = Platforms.My;
-
-            var exe = new Dictionary<string, EmuExe>();
-            foreach (var file in exes)
-            {
-                var exeId = file.Version.ReleaseId!;
-                exe[exeId] = new EmuExe(file.File, file.Version.FilePrivatePart);
-            }
-            global.InstalledEmu = exe;
-
-            var rom = new Dictionary<string, string>();
-            foreach (var file in roms)
-            {
-                var exeId = file.ReleaseId!;
-                rom[exeId] = file.Path;
-            }
-            global.InstalledRom = rom;
-
-            return true;
         }
     }
 }

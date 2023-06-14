@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using Avalonia.Interactivity;
 using MessageBox.Avalonia.Enums;
 using RetroBox.API;
 using RetroBox.API.Update;
 using RetroBox.Fabric.Config;
+using RetroBox.Manager.CoreData;
 using RetroBox.Manager.Models;
 using RetroBox.Manager.Updates;
 using RetroBox.Manager.ViewCore;
@@ -84,7 +86,10 @@ namespace RetroBox.Manager.Views
 
         private void ReloadWebResults()
         {
-            Configs.ReloadConfig();
+            var parent = this.GetParent<MainWindow>();
+            if (parent?.DataContext is not MainWindowViewModel model)
+                return;
+            model.SearchSoftware(CancellationToken.None);
         }
 
         private async void TopLevel_OnOpened(object? sender, EventArgs e)

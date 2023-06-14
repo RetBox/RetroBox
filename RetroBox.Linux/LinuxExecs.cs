@@ -5,6 +5,7 @@ using System.Threading;
 using Mono.Unix;
 using RetroBox.API.Data;
 using RetroBox.Common.Data;
+using RetroBox.Common.Tools;
 using RetroBox.Common.Xplat;
 
 namespace RetroBox.Linux
@@ -13,11 +14,8 @@ namespace RetroBox.Linux
     {
         public override IEnumerable<FoundExe> FindExe(string folder)
         {
-            if (!Directory.Exists(folder))
-                yield break;
-
             const string emuName = "86Box";
-            var files = Directory.GetFiles(folder, $"{emuName}*.AppImage", SearchOption.AllDirectories);
+            var files = Paths.GetFiles(folder, $"{emuName}*.AppImage");
             foreach (var rawFile in files)
             {
                 var file = rawFile;

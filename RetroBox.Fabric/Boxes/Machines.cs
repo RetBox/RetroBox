@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using ByteSizeLib;
+using RetroBox.Common.Tools;
 using RetroBox.Fabric.Data;
 using RetroBox.Fabric.Tools;
 using SoftCircuits.IniFileParser;
@@ -16,10 +17,7 @@ namespace RetroBox.Fabric.Boxes
 
         public static IEnumerable<Machine> FindMachine(string folder)
         {
-            if (!Directory.Exists(folder))
-                yield break;
-
-            var files = Directory.GetFiles(folder, BoxCfgName, SearchOption.AllDirectories);
+            var files = Paths.GetFiles(folder, BoxCfgName);
             foreach (var rawFile in files)
             {
                 var vmDir = Path.GetDirectoryName(rawFile);
