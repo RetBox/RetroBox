@@ -20,8 +20,17 @@ namespace RetroBox.Manager.ViewModels
             set => this.RaiseAndSetIfChanged(ref _currentMachine, value);
         }
 
+        private string? _status;
+
+        public string? Status
+        {
+            get => _status;
+            set => this.RaiseAndSetIfChanged(ref _status, value);
+        }
+
         public MainWindowViewModel()
         {
+            Status = "No status and no operations are going on. Everything's calm.";
             ReloadMachines();
         }
 
