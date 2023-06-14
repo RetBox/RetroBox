@@ -25,8 +25,22 @@ namespace RetroBox.Manager.CoreData
                 model.AllEmus.Add(item);
             }
 
+            var emuRoot = config.EmuRoot;
+            foreach (var item in plat.Execs.FindExe(emuRoot))
+            {
+                token.ThrowIfCancellationRequested();
+                model.AllEmus.Add(item);
+            }
+
             model.AllRoms.Clear();
             foreach (var item in rom)
+            {
+                token.ThrowIfCancellationRequested();
+                model.AllRoms.Add(item);
+            }
+
+            var romRoot = config.RomRoot;
+            foreach (var item in plat.Execs.FindRom(romRoot))
             {
                 token.ThrowIfCancellationRequested();
                 model.AllRoms.Add(item);

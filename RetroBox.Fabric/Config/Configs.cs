@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using RetroBox.API.Data;
 using RetroBox.Common;
 
 namespace RetroBox.Fabric.Config
@@ -28,21 +30,22 @@ namespace RetroBox.Fabric.Config
                 Serials.WriteJsonFile(env, gConfigFile);
             }
 
-            if (ReloadPreparedEnv(env))
+            if (ReloadPreparedEnv(env, Array.Empty<FoundExe>(), Array.Empty<FoundRom>())) // TODO
                 Serials.WriteJsonFile(env, gConfigFile);
 
             return env;
         }
 
+        // TODO
         public static void ReloadConfig() => Global = LoadGlobalConfig();
 
-        private static bool ReloadPreparedEnv(GlobalConfig global)
+        private static bool ReloadPreparedEnv(GlobalConfig global,
+            IEnumerable<FoundExe> exes, IEnumerable<FoundRom> roms)
         {
             var cfg = Default;
             var plat = Platforms.My;
 
             var exe = new Dictionary<string, EmuExe>();
-            var exes = plat.Execs.FindExe(cfg.EmuRoot);
             foreach (var file in exes)
             {
                 var exeId = file.Version.ReleaseId!;
@@ -51,7 +54,6 @@ namespace RetroBox.Fabric.Config
             global.InstalledEmu = exe;
 
             var rom = new Dictionary<string, string>();
-            var roms = plat.Execs.FindRom(cfg.RomRoot);
             foreach (var file in roms)
             {
                 var exeId = file.ReleaseId!;
