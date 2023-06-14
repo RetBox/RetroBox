@@ -14,168 +14,178 @@
         Title="RetroBox"
         Opened="Main_OnOpened">
 
-	<Design.DataContext>
-		<vm:MainWindowViewModel/>
-	</Design.DataContext>
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
 
     <Window.Resources>
         <viewCore:BinaryImager x:Key="BinaryConv" />
     </Window.Resources>
 
-	<DockPanel>
-		<Menu DockPanel.Dock="Top">
-			<MenuItem Header="_File">
-				<MenuItem Header="_Exit" Click="MenuExit_OnClick"/>
-			</MenuItem>
-			<MenuItem Header="_Help">
-				<MenuItem Header="_Updates" Click="MenuUpdate_OnClick"/>
-				<Separator/>
-				<MenuItem Header="_About..." Click="MenuAbout_OnClick"/>
-			</MenuItem>
-		</Menu>
-		<ListBox DockPanel.Dock="Left" Width="163" Margin="10"
-                 Items="{Binding AllMachines}"
-                 SelectionChanged="Machines_OnSelectionChanged">
-			<ListBox.ItemTemplate>
-				<DataTemplate>
-					<WrapPanel HorizontalAlignment="Left" Margin="0,0,0,0">
-						<TextBlock Text="{Binding Name}" FontWeight="Bold" />
-					</WrapPanel>
-				</DataTemplate>
-			</ListBox.ItemTemplate>
-		</ListBox>
-		<StackPanel DockPanel.Dock="Bottom" Background="White">
-			<TextBlock Margin="10">No status</TextBlock>
-		</StackPanel>
-		<StackPanel Orientation="Vertical" Margin="10"
-                    DataContext="{Binding CurrentMachine}">
-			<DockPanel>
-				<Expander DockPanel.Dock="Right" IsExpanded="True">
-					<Expander.Header>Preview</Expander.Header>
-					<Border CornerRadius="8"
-                            BorderThickness="4" BorderBrush="LightGray"
-                            BoxShadow="0 0 10 2 #BF000000"
-                            DragDrop.AllowDrop="True"
-                            Width="265" Height="160"
-                            PointerReleased="PreviewArea_OnPointerReleased"
-                            Name="PreviewArea">
-                        <Border.Background>
-                            <ImageBrush Source="{Binding PreviewImg, Converter={StaticResource BinaryConv}}" 
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <Menu>
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Exit" Click="MenuExit_OnClick" />
+                </MenuItem>
+                <MenuItem Header="_Help">
+                    <MenuItem Header="_Updates" Click="MenuUpdate_OnClick" />
+                    <Separator />
+                    <MenuItem Header="_About..." Click="MenuAbout_OnClick" />
+                </MenuItem>
+            </Menu>
+            <Button Margin="0">Fuck you too</Button>
+            <Button Margin="10" HorizontalAlignment="Stretch">Fuck you</Button>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Bottom" Background="White" Orientation="Horizontal">
+            <TextBlock Margin="10" Text="{Binding Status}" />
+        </StackPanel>
+        <DockPanel>
+            <ScrollViewer DockPanel.Dock="Left" Margin="10,0,10,0" Width="163">
+                <ListBox Items="{Binding AllMachines}"
+                         SelectionChanged="Machines_OnSelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel HorizontalAlignment="Left" Margin="0,0,0,0">
+                                <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+            <ScrollViewer Margin="4,10,10,0"
+                          DataContext="{Binding CurrentMachine}">
+                <StackPanel>
+                    <DockPanel>
+                        <Expander DockPanel.Dock="Right" IsExpanded="True">
+                            <Expander.Header>Preview</Expander.Header>
+                            <Border CornerRadius="8"
+                                    BorderThickness="4" BorderBrush="LightGray"
+                                    BoxShadow="0 0 10 2 #BF000000"
+                                    DragDrop.AllowDrop="True"
+                                    Width="265" Height="160"
+                                    PointerReleased="PreviewArea_OnPointerReleased"
+                                    Name="PreviewArea">
+                                <Border.Background>
+                                    <ImageBrush
+                                        Source="{Binding PreviewImg, Converter={StaticResource BinaryConv}}"
                                         Stretch="Uniform" />
-                        </Border.Background>
-					</Border>
-				</Expander>
-				<StackPanel Orientation="Vertical">
-					<Expander IsExpanded="True">
-						<Expander.Header>General</Expander.Header>
-						<Grid>
-							<Grid.RowDefinitions>
-								<RowDefinition/>
-								<RowDefinition/>
-							</Grid.RowDefinitions>
-							<Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="*"/>
-							</Grid.ColumnDefinitions>
-							<TextBlock Grid.Row="0" Grid.Column="0" Text="Name:"/>
-							<Button Grid.Row="0" Grid.Column="1" Content="{Binding Name}"
-                                    Padding="0" Background="Transparent" Click="ChangeName_OnClick"/>
-							<TextBlock Grid.Row="1" Grid.Column="0" Text="Comment:"/>
-							<Button Grid.Row="1" Grid.Column="1" Content="{Binding Description}"
-                                    Padding="0" Background="Transparent" Click="ChangeDesc_OnClick"/>
-						</Grid>
-					</Expander>
-					<Expander IsExpanded="True">
-						<Expander.Header>System</Expander.Header>
-						<Grid HorizontalAlignment="Stretch">
-							<Grid.RowDefinitions>
-								<RowDefinition/>
-								<RowDefinition/>
-								<RowDefinition/>
-							</Grid.RowDefinitions>
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="100"/>
-								<ColumnDefinition Width="*"/>
-							</Grid.ColumnDefinitions>
-							<TextBlock Grid.Row="0" Grid.Column="0" Text="Memory:"/>
-							<TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Memory}"/>
-							<TextBlock Grid.Row="1" Grid.Column="0" Text="Processor:"/>
-							<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CpuLbl}"/>
-							<TextBlock Grid.Row="2" Grid.Column="0" Text="Machine:"/>
-							<TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding MachineLbl}"/>
-						</Grid>
-					</Expander>
-				</StackPanel>
-			</DockPanel>
-			<Expander IsExpanded="True">
-				<Expander.Header>Display</Expander.Header>
-				<Grid HorizontalAlignment="Stretch">
-					<Grid.RowDefinitions>
-						<RowDefinition/>
-						<RowDefinition/>
-					</Grid.RowDefinitions>
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="100"/>
-						<ColumnDefinition Width="*"/>
-					</Grid.ColumnDefinitions>
-					<TextBlock Grid.Row="0" Grid.Column="0" Text="Video RAM:"/>
-					<TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding GraphicMem}"/>
-					<TextBlock Grid.Row="1" Grid.Column="0" Text="Graphics:"/>
-					<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding GraphicLbl}"/>
-				</Grid>
-			</Expander>
-			<Expander IsExpanded="True">
-				<Expander.Header>Storage</Expander.Header>
-				<Grid HorizontalAlignment="Stretch">
-					<Grid.RowDefinitions>
-						<RowDefinition/>
-						<RowDefinition/>
-						<RowDefinition/>
-					</Grid.RowDefinitions>
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="100"/>
-						<ColumnDefinition Width="*"/>
-					</Grid.ColumnDefinitions>
-					<TextBlock Grid.Row="0" Grid.Column="0" Text="Floppy:"/>
-					<TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Floppies}"/>
-					<TextBlock Grid.Row="1" Grid.Column="0" Text="Disks:"/>
-					<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding HardDrivesTxt}"/>
-					<TextBlock Grid.Row="2" Grid.Column="0" Text="Optical:"/>
-					<TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding CdRoms}"/>
-				</Grid>
-			</Expander>
-			<Expander IsExpanded="True">
-				<Expander.Header>Audio</Expander.Header>
-				<Grid HorizontalAlignment="Stretch">
-					<Grid.RowDefinitions>
-						<RowDefinition/>
-						<RowDefinition/>
-					</Grid.RowDefinitions>
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="100"/>
-						<ColumnDefinition Width="*"/>
-					</Grid.ColumnDefinitions>
-					<TextBlock Grid.Row="0" Grid.Column="0" Text="Card:"/>
-					<TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding SoundCard}"/>
-					<TextBlock Grid.Row="1" Grid.Column="0" Text="MIDI:"/>
-					<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding MidiChip}"/>
-				</Grid>
-			</Expander>
-			<Expander IsExpanded="True">
-				<Expander.Header>Network</Expander.Header>
-				<Grid HorizontalAlignment="Stretch">
-					<Grid.RowDefinitions>
-						<RowDefinition/>
-						<RowDefinition/>
-					</Grid.RowDefinitions>
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="100"/>
-						<ColumnDefinition Width="*"/>
-					</Grid.ColumnDefinitions>
-					<TextBlock Grid.Row="0" Grid.Column="0" Text="Interfaces:"/>
-					<TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding NetworkTxt}"/>
-				</Grid>
-			</Expander>
-		</StackPanel>
-	</DockPanel>
+                                </Border.Background>
+                            </Border>
+                        </Expander>
+                        <StackPanel Orientation="Vertical">
+                            <Expander IsExpanded="True">
+                                <Expander.Header>General</Expander.Header>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Name:" />
+                                    <Button Grid.Row="0" Grid.Column="1" Content="{Binding Name}"
+                                            Padding="0" Background="Transparent" Click="ChangeName_OnClick" />
+                                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Comment:" />
+                                    <Button Grid.Row="1" Grid.Column="1" Content="{Binding Description}"
+                                            Padding="0" Background="Transparent" Click="ChangeDesc_OnClick" />
+                                </Grid>
+                            </Expander>
+                            <Expander IsExpanded="True">
+                                <Expander.Header>System</Expander.Header>
+                                <Grid HorizontalAlignment="Stretch">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Memory:" />
+                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Memory}" />
+                                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Processor:" />
+                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CpuLbl}" />
+                                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Machine:" />
+                                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding MachineLbl}" />
+                                </Grid>
+                            </Expander>
+                        </StackPanel>
+                    </DockPanel>
+                    <Expander IsExpanded="True">
+                        <Expander.Header>Display</Expander.Header>
+                        <Grid HorizontalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Video RAM:" />
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding GraphicMem}" />
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Graphics:" />
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding GraphicLbl}" />
+                        </Grid>
+                    </Expander>
+                    <Expander IsExpanded="True">
+                        <Expander.Header>Storage</Expander.Header>
+                        <Grid HorizontalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Floppy:" />
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Floppies}" />
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Disks:" />
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding HardDrivesTxt}" />
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Optical:" />
+                            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding CdRoms}" />
+                        </Grid>
+                    </Expander>
+                    <Expander IsExpanded="True">
+                        <Expander.Header>Audio</Expander.Header>
+                        <Grid HorizontalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Card:" />
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding SoundCard}" />
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="MIDI:" />
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding MidiChip}" />
+                        </Grid>
+                    </Expander>
+                    <Expander IsExpanded="True">
+                        <Expander.Header>Network</Expander.Header>
+                        <Grid HorizontalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Interfaces:" />
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding NetworkTxt}" />
+                        </Grid>
+                    </Expander>
+                </StackPanel>
+            </ScrollViewer>
+        </DockPanel>
+    </DockPanel>
 </Window>
