@@ -1,15 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
+﻿using System.Collections.ObjectModel;
 using ReactiveUI;
 using RetroBox.API.Data;
-using RetroBox.Fabric;
 using RetroBox.Fabric.Boxes;
 using IOPath = System.IO.Path;
 
 namespace RetroBox.Manager.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase
+    public sealed class MainWindowViewModel : ViewModelBase
     {
         public ObservableCollection<FoundExe> AllEmus { get; } = new();
         public ObservableCollection<FoundRom> AllRoms { get; } = new();
@@ -24,34 +21,12 @@ namespace RetroBox.Manager.ViewModels
             set => this.RaiseAndSetIfChanged(ref _currentMachine, value);
         }
 
-        private string? _status;
+        private string? _status = "No status and no operations are going on. Everything's calm.";
 
         public string? Status
         {
             get => _status;
             set => this.RaiseAndSetIfChanged(ref _status, value);
-        }
-
-        public MainWindowViewModel()
-        {
-            Status = "No status and no operations are going on. Everything's calm.";
-            ReloadMachines();
-        }
-
-        private void ReloadMachines()
-        {
-            AllMachines.Clear();
-
-            var folders = new List<string>
-            {
-                IOPath.Combine(Platforms.My.Folders.GetDefaultHomePath(), "Desktop")
-            };
-
-            foreach (var folder in folders.OrderBy(n => n))
-            foreach (var machine in Machines.FindMetaMachine(folder).OrderBy(n => n.Name))
-                AllMachines.Add(machine);
-
-            CurrentMachine = AllMachines.FirstOrDefault();
         }
     }
 }

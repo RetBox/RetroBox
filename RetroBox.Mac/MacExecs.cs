@@ -5,8 +5,8 @@ using System.IO;
 using RetroBox.Common.Xplat;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using RetroBox.Common.Data;
-using RetroBox.Common;
 
 namespace RetroBox.Mac
 {
@@ -41,12 +41,16 @@ namespace RetroBox.Mac
             }
         }
 
-        public override void FindSystemic(string home, out List<FoundExe> exe, out List<FoundRom> rom)
+        public override void FindSystemic(string home, out List<FoundExe> exe, out List<FoundRom> rom,
+            CancellationToken token)
         {
             exe = new List<FoundExe>();
             rom = new List<FoundRom>();
-            FindHomebrew(exe, rom,home);
+            token.ThrowIfCancellationRequested();
+            FindHomebrew(exe, rom, home);
+            token.ThrowIfCancellationRequested();
             FindAppsUser(exe, rom, home);
+            token.ThrowIfCancellationRequested();
             FindPortable(exe, rom, home);
         }
 

@@ -16,6 +16,9 @@ namespace RetroBox.Fabric.Boxes
 
         public static IEnumerable<Machine> FindMachine(string folder)
         {
+            if (!Directory.Exists(folder))
+                yield break;
+
             var files = Directory.GetFiles(folder, BoxCfgName, SearchOption.AllDirectories);
             foreach (var rawFile in files)
             {

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using Mono.Unix;
 using RetroBox.API.Data;
 using RetroBox.Common.Data;
@@ -12,6 +13,9 @@ namespace RetroBox.Linux
     {
         public override IEnumerable<FoundExe> FindExe(string folder)
         {
+            if (!Directory.Exists(folder))
+                yield break;
+
             const string emuName = "86Box";
             var files = Directory.GetFiles(folder, $"{emuName}*.AppImage", SearchOption.AllDirectories);
             foreach (var rawFile in files)
@@ -38,14 +42,20 @@ namespace RetroBox.Linux
             }
         }
 
-        public override void FindSystemic(string home, out List<FoundExe> exe, out List<FoundRom> rom)
+        public override void FindSystemic(string home, out List<FoundExe> exe, out List<FoundRom> rom,
+            CancellationToken token)
         {
             exe = new List<FoundExe>();
             rom = new List<FoundRom>();
+            token.ThrowIfCancellationRequested();
             FindPackage(exe, rom);
+            token.ThrowIfCancellationRequested();
             FindSysAdmin(exe, rom);
+            token.ThrowIfCancellationRequested();
             FindFlatpakSys(exe, rom);
+            token.ThrowIfCancellationRequested();
             FindFlatpakUser(exe, rom, home);
+            token.ThrowIfCancellationRequested();
             FindPortable(exe, rom, home);
         }
 

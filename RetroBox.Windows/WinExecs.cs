@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Threading;
 using RetroBox.API.Data;
 using RetroBox.Common;
 using RetroBox.Common.Data;
@@ -28,12 +29,16 @@ namespace RetroBox.Windows
             }
         }
 
-        public override void FindSystemic(string home, out List<FoundExe> exe, out List<FoundRom> rom)
+        public override void FindSystemic(string home, out List<FoundExe> exe, out List<FoundRom> rom,
+            CancellationToken token)
         {
             exe = new List<FoundExe>();
             rom = new List<FoundRom>();
+            token.ThrowIfCancellationRequested();
             FindPrograms(exe, rom);
+            token.ThrowIfCancellationRequested();
             FindPortableSys(exe, rom);
+            token.ThrowIfCancellationRequested();
             FindPortableUser(exe, rom, home);
         }
 

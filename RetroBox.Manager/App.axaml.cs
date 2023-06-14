@@ -4,6 +4,7 @@ using Avalonia.Markup.Xaml;
 using RetroBox.Manager.ViewModels;
 using RetroBox.Manager.Views;
 using System.Threading.Tasks;
+using RetroBox.Manager.CoreData;
 
 namespace RetroBox.Manager
 {
@@ -14,7 +15,7 @@ namespace RetroBox.Manager
             AvaloniaXamlLoader.Load(this);
         }
 
-        public override async void OnFrameworkInitializationCompleted()
+        public override void OnFrameworkInitializationCompleted()
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
@@ -23,14 +24,14 @@ namespace RetroBox.Manager
                 desktop.MainWindow = splash;
                 splash.Show();
 
+                var mainView = new MainWindowViewModel();
                 try
                 {
-                    splashModel.StartupMessage = "Searching for devices...";
-                    await Task.Delay(10, splashModel.CancellationToken);
-                    splashModel.StartupMessage = "Connecting to device #1...";
-                    await Task.Delay(20, splashModel.CancellationToken);
-                    splashModel.StartupMessage = "Configuring device...";
-                    await Task.Delay(20, splashModel.CancellationToken);
+                    splashModel.StartupMessage = "Searching for software...";
+                    mainView.SearchSoftware(splashModel.CancellationToken);
+
+                    splashModel.StartupMessage = "Searching for machines...";
+                    mainView.SearchMachines(splashModel.CancellationToken);
                 }
                 catch (TaskCanceledException)
                 {
@@ -38,7 +39,7 @@ namespace RetroBox.Manager
                     return;
                 }
 
-                var main = new MainWindow { DataContext = new MainWindowViewModel() };
+                var main = new MainWindow { DataContext = mainView };
                 desktop.MainWindow = main;
                 main.Show();
 

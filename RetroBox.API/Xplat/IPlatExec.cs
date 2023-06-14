@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading;
 using RetroBox.API.Data;
 
 namespace RetroBox.API.Xplat
@@ -9,6 +10,6 @@ namespace RetroBox.API.Xplat
 
         IEnumerable<FoundRom> FindRom(string folder);
 
-        void FindSystemic(string home, out List<FoundExe> exe, out List<FoundRom> rom);
+        void FindSystemic(string home, out List<FoundExe> exe, out List<FoundRom> rom, CancellationToken token);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using RetroBox.API.Data;
 using RetroBox.API.Xplat;
 
@@ -27,7 +28,8 @@ namespace RetroBox.Common.Xplat
             }
         }
 
-        public abstract void FindSystemic(string home, out List<FoundExe> exe, out List<FoundRom> rom);
+        public abstract void FindSystemic(string home, out List<FoundExe> exe, out List<FoundRom> rom,
+            CancellationToken token);
 
         protected ProcessStartInfo CreateStartArg(StartBoxArg a)
         {
