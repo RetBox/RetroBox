@@ -34,8 +34,10 @@
                     <MenuItem Header="_About..." Click="MenuAbout_OnClick" />
                 </MenuItem>
             </Menu>
-            <Button Margin="0">Fuck you too</Button>
-            <Button Margin="10" HorizontalAlignment="Stretch">Fuck you</Button>
+            <StackPanel Orientation="Horizontal" Margin="10,3,10,10">
+                <Button>Just fun</Button>
+                <Button Margin="105,0,0,0">Nothing good</Button>
+            </StackPanel>
         </StackPanel>
         <StackPanel DockPanel.Dock="Bottom" Background="White" Orientation="Horizontal">
             <TextBlock Margin="10" Text="{Binding Status}" />
@@ -53,7 +55,7 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </ScrollViewer>
-            <ScrollViewer Margin="4,10,10,0"
+            <ScrollViewer Margin="4,0,10,0"
                           DataContext="{Binding CurrentMachine}">
                 <StackPanel>
                     <DockPanel>
