@@ -46,15 +46,30 @@ namespace RetroBox.Manager.Views
             if (fileNames?.Length == 1)
             {
                 var fileName = fileNames[0];
-                if (Model.CurrentMachine is { } machine)
-                {
-                    var machineDir = machine.Folder;
-                    const string previewName = "preview.png";
-                    var previewFile = IOPath.Combine(machineDir, previewName);
-                    File.Copy(fileName, previewFile, overwrite: true);
-                    machine.Preview = previewName;
-                    TriggerMachines();
-                }
+                OnPreviewDragDrop(fileName);
+            }
+        }
+
+        private void OnPreviewDragDrop(string fileName)
+        {
+            if (Model.CurrentMachine is not { } machine) 
+                return;
+            var machineDir = machine.Folder;
+            const string previewName = "preview.png";
+            var previewFile = IOPath.Combine(machineDir, previewName);
+            File.Copy(fileName, previewFile, overwrite: true);
+            machine.Preview = previewName;
+            TriggerMachines();
+        }
+
+        private async void PreviewArea_OnPointerReleased(object? sender, PointerReleasedEventArgs e)
+        {
+            if (e.InitialPressMouseButton == MouseButton.Right)
+            {
+                var fileName = await Dialogs.AskToOpenFile(this, "Choose the screenshot to load!",
+                    "png", "Image files");
+                if (fileName != null)
+                    OnPreviewDragDrop(fileName);
             }
         }
 

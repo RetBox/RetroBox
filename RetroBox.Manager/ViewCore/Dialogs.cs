@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using Avalonia.Controls;
@@ -58,6 +61,26 @@ namespace RetroBox.Manager.ViewCore
             }
 
             window.Opened += OnWindowOnOpened;
+        }
+
+        public static async Task<string?> AskToOpenFile(Window parent, string title, string ext, string kind)
+        {
+            var dialog = new OpenFileDialog
+            {
+                AllowMultiple = false, Title = title,
+                Filters = new List<FileDialogFilter>
+                {
+                    new() { Name = $"{kind} (.{ext})", Extensions = new List<string> { ext } }
+                }
+            };
+            var fileNames = await dialog.ShowAsync(parent);
+            if (fileNames?.Length >= 1)
+            {
+                var fileName = fileNames.First();
+                if (!string.IsNullOrWhiteSpace(fileName) && File.Exists(fileName))
+                    return fileName;
+            }
+            return null;
         }
     }
 }

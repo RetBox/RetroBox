@@ -57,6 +57,7 @@
                             BoxShadow="0 0 10 2 #BF000000"
                             DragDrop.AllowDrop="True"
                             Width="265" Height="160"
+                            PointerReleased="PreviewArea_OnPointerReleased"
                             Name="PreviewArea">
                         <Border.Background>
                             <ImageBrush Source="{Binding PreviewImg, Converter={StaticResource BinaryConv}}" 
