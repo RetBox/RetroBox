@@ -36,7 +36,24 @@
             </Menu>
             <StackPanel Orientation="Horizontal" Margin="10,3,10,10">
                 <Button>Just fun</Button>
-                <Button Margin="105,0,0,0">Nothing good</Button>
+                <StackPanel Orientation="Horizontal" Margin="100,0,0,0">
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,10,0">Emulator:</TextBlock>
+                    <ComboBox SelectedIndex="0" Name="EmuCombo" Items="{Binding AllEmus}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Version.ReleaseId}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,10,0">ROM:</TextBlock>
+                    <ComboBox SelectedIndex="0" Name="RomCombo" Items="{Binding AllRoms}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ReleaseId}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
             </StackPanel>
         </StackPanel>
         <StackPanel DockPanel.Dock="Bottom" Background="White" Orientation="Horizontal">
