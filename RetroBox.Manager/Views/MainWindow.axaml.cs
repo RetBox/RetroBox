@@ -152,9 +152,11 @@ namespace RetroBox.Manager.Views
             throw new NotImplementedException(); // TODO
         }
 
-        private void CreateNew_OnClick(object? sender, RoutedEventArgs e)
+        private async void CreateNew_OnClick(object? sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException(); // TODO
+            var model = new NewVmViewModel();
+            var dialog = new NewVmWindow { DataContext = model };
+            await dialog.ShowDialogFor(this);
         }
 
         private void ConfigureThis_OnClick(object? sender, RoutedEventArgs e)

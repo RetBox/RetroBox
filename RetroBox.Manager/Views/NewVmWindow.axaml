@@ -1,0 +1,53 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:RetroBox.Manager.ViewModels"
+        mc:Ignorable="d"
+        d:DesignWidth="600" d:DesignHeight="300"
+        Width="600" Height="300"
+        x:Class="RetroBox.Manager.Views.NewVmWindow"
+        x:DataType="viewModels:NewVmViewModel"
+        Title="Create virtual machine"
+        WindowStartupLocation="CenterOwner"
+        Opened="Dialog_OnOpened">
+
+    <Design.DataContext>
+        <viewModels:NewVmViewModel/>
+    </Design.DataContext>
+
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal"
+                    VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30">
+            <Button Click="Create_OnClick" Margin="0,0,0,0">Create</Button>
+            <Button Click="Cancel_OnClick" Margin="10,0,0,0">Cancel</Button>
+        </StackPanel>
+        <StackPanel>
+            <StackPanel Margin="20">
+                <TextBlock Margin="0,0,0,15" FontWeight="Bold">Virtual machine name and parameters</TextBlock>
+                <TextBlock>Please choose a descriptive name and destination folder for the new virtual machine.</TextBlock>
+                <TextBlock>The name you choose will be used throughout RetroBox to identify this machine.</TextBlock>
+            </StackPanel>
+            <Grid Margin="20,5,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Name:</TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name}" />
+                <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">Folder:</TextBlock>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Folder}" />
+                <Button Grid.Row="1" Grid.Column="2" Content="..." Margin="7,0,0,0" Click="BrowseDir_OnClick"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">Template:</TextBlock>
+                <ComboBox Grid.Row="2" Grid.Column="1" Items="{Binding Templates}" 
+                          HorizontalAlignment="Stretch" Name="TemplBox" />
+            </Grid>
+        </StackPanel>
+    </DockPanel>
+</Window>
