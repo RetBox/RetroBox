@@ -35,10 +35,20 @@
                 </MenuItem>
             </Menu>
             <StackPanel Orientation="Horizontal" Margin="10,3,10,10">
-                <Button>Just fun</Button>
+                <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Create new machine"
+                        VerticalAlignment="Center"
+                        Click="CreateNew_OnClick">
+                    <Image Source="/Assets/icon-new.png" />
+                </Button>
+                <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Add existing machine"
+                        VerticalAlignment="Center" Margin="4,0,0,0"
+                        Click="AddExist_OnClick">
+                    <Image Source="/Assets/icon-add.png" />
+                </Button>
                 <StackPanel Orientation="Horizontal" Margin="100,0,0,0">
                     <TextBlock VerticalAlignment="Center" Margin="10,0,10,0">Emulator:</TextBlock>
-                    <ComboBox SelectedIndex="0" Name="EmuCombo" Items="{Binding AllEmus}">
+                    <ComboBox SelectedIndex="0" Name="EmuCombo" Items="{Binding AllEmus}"
+                              VerticalAlignment="Center">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Version.ReleaseId}" />
@@ -46,13 +56,19 @@
                         </ComboBox.ItemTemplate>
                     </ComboBox>
                     <TextBlock VerticalAlignment="Center" Margin="10,0,10,0">ROM:</TextBlock>
-                    <ComboBox SelectedIndex="0" Name="RomCombo" Items="{Binding AllRoms}">
+                    <ComboBox SelectedIndex="0" Name="RomCombo" Items="{Binding AllRoms}"
+                              VerticalAlignment="Center">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding ReleaseId}" />
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
+                    <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Configure this machine"
+                            VerticalAlignment="Center" Margin="14,0,0,0"
+                            Click="ConfigureThis_OnClick">
+                        <Image Source="/Assets/icon-config.png" />
+                    </Button>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

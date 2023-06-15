@@ -146,5 +146,20 @@ namespace RetroBox.Manager.Views
             setter(currentVal);
             return true;
         }
+
+        private void AddExist_OnClick(object? sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException(); // TODO
+        }
+
+        private void CreateNew_OnClick(object? sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException(); // TODO
+        }
+
+        private void ConfigureThis_OnClick(object? sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException(); // TODO
+        }
     }
 }
