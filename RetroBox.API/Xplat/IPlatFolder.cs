@@ -7,5 +7,7 @@ namespace RetroBox.API.Xplat
         string GetDefaultTempPath();
 
         string GetDefaultHomePath();
+        
+        string GetCurrentExePath();
     }
 }

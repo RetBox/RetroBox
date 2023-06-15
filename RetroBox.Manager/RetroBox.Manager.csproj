@@ -43,4 +43,10 @@
     <ProjectReference Include="..\RetroBox.Fabric\RetroBox.Fabric.csproj" />
     <ProjectReference Include="..\RetroBox.Update\RetroBox.Update.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Templates\**\*.cfg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

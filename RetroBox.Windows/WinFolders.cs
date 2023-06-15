@@ -1,23 +1,25 @@
 using RetroBox.API.Xplat;
 using RetroBox.Common;
+using RetroBox.Common.Tools;
+using RetroBox.Common.Xplat;
 
 namespace RetroBox.Windows
 {
-    internal sealed class WinFolders : IPlatFolder
+    internal sealed class WinFolders : CommonFolder
     {
-        public string GetDefaultConfigPath()
+        public override string GetDefaultConfigPath()
         {
             var path = Env.Resolve("LOCALAPPDATA", nameof(RetroBox));
             return path!;
         }
 
-        public string GetDefaultTempPath()
+        public override string GetDefaultTempPath()
         {
             var path = Env.Resolve("TEMP");
             return path!;
         }
 
-        public string GetDefaultHomePath()
+        public override string GetDefaultHomePath()
         {
             var path = Env.Resolve("USERPROFILE");
             return path!;

@@ -10,8 +10,10 @@ namespace RetroBox.Fabric.Config
             AppData = sys.GetDefaultConfigPath();
             HomePath = sys.GetDefaultHomePath();
             TempPath = sys.GetDefaultTempPath();
+            ExePath = sys.GetCurrentExePath();
         }
 
+        public string ExePath { get; set; }
         public string HomePath { get; set; }
         public string TempPath { get; set; }
 
@@ -20,5 +22,6 @@ namespace RetroBox.Fabric.Config
         public string RomRoot => Path.Combine(AppData, "rom");
         public string CacheRoot => Path.Combine(AppData, "cache");
         public string MachineRoot => Path.Combine(HomePath, $"{nameof(RetroBox)} VMs");
+        public string TemplateRoot => Path.Combine(ExePath, "Templates");
     }
 }

@@ -15,5 +15,7 @@
         string CacheRoot { get; }
 
         string MachineRoot { get; }
+        
+        string TemplateRoot { get; }
     }
 }

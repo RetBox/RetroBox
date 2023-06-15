@@ -26,7 +26,6 @@ namespace RetroBox.Fabric.Config
                 env = new GlobalConfig();
                 Serials.WriteJsonFile(env, gConfigFile);
             }
-
             return env;
         }
     }
