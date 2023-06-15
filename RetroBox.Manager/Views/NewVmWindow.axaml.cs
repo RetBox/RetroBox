@@ -53,7 +53,8 @@ namespace RetroBox.Manager.Views
             var vmFolder = Model.Folder;
             var vmTempl = (IMetaTemplate)TemplBox.SelectedItem!;
 
-            // TODO Create?!
+            if (!Appliers.Apply(vmName, vmFolder, vmTempl))
+                return;
 
             Close(ButtonResult.Ok);
             ReloadVmResults();

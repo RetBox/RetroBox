@@ -10,5 +10,6 @@ namespace RetroBox.Fabric.Prebuilt
         }
 
         public string Name => _temp.Name;
+        public string ConfigFile => _temp.CfgFile;
     }
 }
