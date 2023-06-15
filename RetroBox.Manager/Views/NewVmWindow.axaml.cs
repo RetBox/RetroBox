@@ -22,10 +22,13 @@ namespace RetroBox.Manager.Views
 
         private void Dialog_OnOpened(object? sender, EventArgs e)
         {
+            TemplBox.SelectedIndex = 0;
         }
 
         private void Create_OnClick(object? sender, RoutedEventArgs e)
         {
+            // TODO Create?!
+            
             Close(ButtonResult.Ok);
             ReloadVmResults();
         }

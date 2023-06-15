@@ -154,7 +154,7 @@ namespace RetroBox.Manager.Views
 
         private async void CreateNew_OnClick(object? sender, RoutedEventArgs e)
         {
-            var model = new NewVmViewModel();
+            var model = new NewVmViewModel { Templates = Model.AllTemplates };
             var dialog = new NewVmWindow { DataContext = model };
             await dialog.ShowDialogFor(this);
         }

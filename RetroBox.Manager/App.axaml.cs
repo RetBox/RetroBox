@@ -27,6 +27,9 @@ namespace RetroBox.Manager
                 var mainView = new MainWindowViewModel();
                 try
                 {
+                    splashModel.StartupMessage = "Finding templates...";
+                    mainView.SearchTemplates(splashModel.CancellationToken);
+                    
                     splashModel.StartupMessage = "Finding software...";
                     mainView.SearchSoftware(splashModel.CancellationToken);
 

@@ -2,6 +2,7 @@
 using ReactiveUI;
 using RetroBox.API.Data;
 using RetroBox.Fabric.Boxes;
+using RetroBox.Fabric.Prebuilt;
 using IOPath = System.IO.Path;
 
 namespace RetroBox.Manager.ViewModels
@@ -11,6 +12,7 @@ namespace RetroBox.Manager.ViewModels
         public ObservableCollection<FoundExe> AllEmus { get; } = new();
         public ObservableCollection<FoundRom> AllRoms { get; } = new();
 
+        public ObservableCollection<IMetaTemplate> AllTemplates { get; } = new();
         public ObservableCollection<IMetaMachine> AllMachines { get; } = new();
 
         private IMetaMachine? _currentMachine;

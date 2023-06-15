@@ -4,6 +4,7 @@ using System.Threading;
 using RetroBox.Fabric;
 using RetroBox.Fabric.Boxes;
 using RetroBox.Fabric.Config;
+using RetroBox.Fabric.Prebuilt;
 using RetroBox.Manager.ViewModels;
 
 namespace RetroBox.Manager.CoreData
@@ -66,6 +67,25 @@ namespace RetroBox.Manager.CoreData
             }
 
             model.CurrentMachine = model.AllMachines.FirstOrDefault();
+        }
+
+        public static void SearchTemplates(this MainWindowViewModel model, CancellationToken token)
+        {
+            var config = Configs.Default;
+            var temp = config.TemplateRoot;
+
+            model.AllTemplates.Clear();
+            var folders = new List<string> { temp };
+
+            foreach (var folder in folders.OrderBy(n => n))
+            {
+                token.ThrowIfCancellationRequested();
+                foreach (var template in Templates.FindMetaTemplate(folder).OrderBy(n => n.Name))
+                {
+                    token.ThrowIfCancellationRequested();
+                    model.AllTemplates.Add(template);
+                }
+            }
         }
     }
 }

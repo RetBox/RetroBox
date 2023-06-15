@@ -1,11 +1,12 @@
 using System.Collections.ObjectModel;
 using ReactiveUI;
+using RetroBox.Fabric.Prebuilt;
 
 namespace RetroBox.Manager.ViewModels
 {
     public class NewVmViewModel : ViewModelBase
     {
-        public ObservableCollection<string> Templates { get; } = new();
+        public ObservableCollection<IMetaTemplate> Templates { get; set; } = new();
 
         private string _name;
 
@@ -27,6 +28,8 @@ namespace RetroBox.Manager.ViewModels
         {
             _name = "???";
             _folder = "??";
+            var t = new Template(null, "High and Good", "?");
+            Templates.Add(new MetaTemplate(t));
         }
     }
 }
