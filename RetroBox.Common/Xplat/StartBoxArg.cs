@@ -4,7 +4,10 @@ namespace RetroBox.Common.Xplat
 {
     public class StartBoxArg
     {
-        public string? Exe { get; set; }
+        public string? ExeFile { get; set; }
+        public string? WorkDir { get; set; }
+        public IReadOnlyDictionary<string, string?>? Vars { get; set; }
+
         public string? Config { get; set; }
         public string? VmPath { get; set; }
         public string? RomPath { get; set; }
@@ -12,6 +15,5 @@ namespace RetroBox.Common.Xplat
         public string? LogFile { get; set; }
         public bool Settings { get; set; }
         public bool FullScreen { get; set; }
-        public IDictionary<string, string>? Vars { get; set; }
     }
 }

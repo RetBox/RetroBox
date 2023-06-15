@@ -6,6 +6,8 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using MessageBox.Avalonia.Enums;
+using RetroBox.API.Data;
+using RetroBox.Common.Xplat;
 using RetroBox.Fabric.Boxes;
 using RetroBox.Fabric.Config;
 using RetroBox.Manager.ViewCore;
@@ -166,9 +168,31 @@ namespace RetroBox.Manager.Views
             await dialog.ShowDialogFor(this);
         }
 
-        private void ConfigureThis_OnClick(object? sender, RoutedEventArgs e)
+        private (IMetaMachine mach, FoundExe exe, FoundRom rom)? GetEmuAndRom()
         {
-            throw new NotImplementedException(); // TODO
+            if (Model.CurrentMachine is { } m
+                && EmuCombo.SelectedItem is FoundExe e
+                && RomCombo.SelectedItem is FoundRom r)
+                return (m, e, r);
+            return null;
+        }
+
+        private async void ConfigureThis_OnClick(object? sender, RoutedEventArgs e)
+        {
+            if (GetEmuAndRom() is not { } current)
+                return;
+
+            var arg = new StartBoxArg
+            {
+                ExeFile = current.exe.File,
+                RomPath = current.rom.Path,
+                VmPath = current.mach.Folder,
+                VmName = current.mach.Name,
+                Settings = true
+            };
+            await CommonProc.Fuck(arg);
+
+            // TODO
         }
     }
 }
