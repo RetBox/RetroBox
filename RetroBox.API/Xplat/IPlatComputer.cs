@@ -1,3 +1,5 @@
+// ReSharper disable InconsistentNaming
+
 namespace RetroBox.API.Xplat
 {
     public interface IPlatComputer

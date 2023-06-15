@@ -8,6 +8,8 @@ namespace RetroBox.Windows
 
         public IPlatExec Execs { get; } = new WinExecs();
 
+        public IPlatProc Procs { get; } = new WinProcs();
+
         public IPlatComputer Computer { get; } = new WinInfos();
     }
 }

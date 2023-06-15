@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -31,51 +30,5 @@ namespace RetroBox.Common.Xplat
 
         public abstract void FindSystemic(string home, out List<FoundExe> exe, out List<FoundRom> rom,
             CancellationToken token);
-
-        protected ProcessStartInfo CreateStartArg(StartBoxArg a)
-        {
-            var info = new ProcessStartInfo(a.Exe!);
-            if (a.Vars != null)
-            {
-                var env = info.EnvironmentVariables;
-                foreach (var item in a.Vars)
-                    env[item.Key] = item.Value;
-            }
-            var args = info.ArgumentList;
-            if (!string.IsNullOrWhiteSpace(a.Config))
-            {
-                args.Add("--config");
-                args.Add(a.Config);
-            }
-            if (a.FullScreen)
-            {
-                args.Add("--fullscreen");
-            }
-            if (!string.IsNullOrWhiteSpace(a.LogFile))
-            {
-                args.Add("--logfile");
-                args.Add(a.LogFile);
-            }
-            if (!string.IsNullOrWhiteSpace(a.VmPath))
-            {
-                args.Add("--vmpath");
-                args.Add(a.VmPath);
-            }
-            if (!string.IsNullOrWhiteSpace(a.RomPath))
-            {
-                args.Add("--rompath");
-                args.Add(a.RomPath);
-            }
-            if (a.Settings)
-            {
-                args.Add("--settings");
-            }
-            if (!string.IsNullOrWhiteSpace(a.VmName))
-            {
-                args.Add("--vmname");
-                args.Add(a.VmName);
-            }
-            return info;
-        }
     }
 }

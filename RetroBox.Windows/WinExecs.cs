@@ -81,17 +81,5 @@ namespace RetroBox.Windows
                     rom.Add(rItem with { ReleaseId = id });
             }
         }
-
-        public ProcessStartInfo CreateStartArg(StartBoxArg a, string vmId, string hWnd)
-        {
-            var info = CreateStartArg(a);
-            var args = info.ArgumentList;
-            if (!string.IsNullOrWhiteSpace(vmId))
-            {
-                args.Add("--hwnd");
-                args.Add($"{vmId},{hWnd}");
-            }
-            return info;
-        }
     }
 }

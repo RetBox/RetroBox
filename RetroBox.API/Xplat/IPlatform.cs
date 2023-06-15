@@ -6,6 +6,8 @@
 
         IPlatExec Execs { get; }
 
+        IPlatProc Procs { get; }
+
         IPlatComputer Computer { get; }
     }
 }

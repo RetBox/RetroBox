@@ -8,6 +8,8 @@ namespace RetroBox.Linux
 
         public IPlatExec Execs { get; } = new LinuxExecs();
 
+        public IPlatProc Procs { get; } = new LinuxProcs();
+
         public IPlatComputer Computer { get; } = new LinuxInfos();
     }
 }

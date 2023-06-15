@@ -8,6 +8,8 @@ namespace RetroBox.Mac
 
         public IPlatExec Execs { get; } = new MacExecs();
 
+        public IPlatProc Procs { get; } = new MacProcs();
+
         public IPlatComputer Computer { get; } = new MacInfos();
     }
 }
