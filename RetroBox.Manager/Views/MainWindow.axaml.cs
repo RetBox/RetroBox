@@ -7,6 +7,7 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using MessageBox.Avalonia.Enums;
 using RetroBox.Fabric.Boxes;
+using RetroBox.Fabric.Config;
 using RetroBox.Manager.ViewCore;
 using RetroBox.Manager.ViewModels;
 using IOPath = System.IO.Path;
@@ -154,7 +155,13 @@ namespace RetroBox.Manager.Views
 
         private async void CreateNew_OnClick(object? sender, RoutedEventArgs e)
         {
-            var model = new NewVmViewModel { Templates = Model.AllTemplates };
+            var cfg = Configs.Default;
+            var machRoot = cfg.MachineRoot;
+
+            var model = new NewVmViewModel
+            {
+                Templates = Model.AllTemplates, Name = string.Empty, Folder = machRoot
+            };
             var dialog = new NewVmWindow { DataContext = model };
             await dialog.ShowDialogFor(this);
         }

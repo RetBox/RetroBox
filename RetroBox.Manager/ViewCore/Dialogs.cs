@@ -84,6 +84,18 @@ namespace RetroBox.Manager.ViewCore
             return null;
         }
 
+        public static async Task<string?> AskToOpenFolder(Window parent, string title, string? initialDir)
+        {
+            var dialog = new OpenFolderDialog
+            {
+                Title = title, Directory = initialDir
+            };
+            var folder = await dialog.ShowAsync(parent);
+            if (!string.IsNullOrWhiteSpace(folder) && Directory.Exists(folder))
+                return folder;
+            return null;
+        }
+
         public static Window? GetParent<T>(this Window window)
             where T : Window
         {

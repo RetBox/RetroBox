@@ -19,7 +19,7 @@
     <DockPanel>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal"
                     VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30">
-            <Button Click="Create_OnClick" Margin="0,0,0,0">Create</Button>
+            <Button Name="CreateBtn" Click="Create_OnClick" Margin="0,0,0,0">Create</Button>
             <Button Click="Cancel_OnClick" Margin="10,0,0,0">Cancel</Button>
         </StackPanel>
         <StackPanel>
@@ -40,10 +40,11 @@
                     <ColumnDefinition Width="0.5*" />
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Name:</TextBlock>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name}" />
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name}" Name="NameBox" />
                 <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">Folder:</TextBlock>
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Folder}" />
-                <Button Grid.Row="1" Grid.Column="2" Content="..." Margin="7,0,0,0" Click="BrowseDir_OnClick" />
+                <Button Grid.Row="1" Grid.Column="2" Content="..." Margin="7,0,0,0" 
+                        Click="BrowseDir_OnClick" ToolTip.Tip="Browse..." />
                 <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">Template:</TextBlock>
                 <ComboBox Grid.Row="2" Grid.Column="1" Items="{Binding Templates}"
                           HorizontalAlignment="Stretch" Name="TemplBox">
