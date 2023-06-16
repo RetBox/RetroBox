@@ -10,6 +10,7 @@ using RetroBox.API.Data;
 using RetroBox.Common.Xplat;
 using RetroBox.Fabric.Boxes;
 using RetroBox.Fabric.Config;
+using RetroBox.Manager.Boxes;
 using RetroBox.Manager.ViewCore;
 using RetroBox.Manager.ViewModels;
 using IOPath = System.IO.Path;
@@ -57,12 +58,12 @@ namespace RetroBox.Manager.Views
         {
             if (Model.CurrentMachine is not { } machine) 
                 return;
-            var machineDir = machine.Folder;
+            var machineDir = machine.GetFolder()!;
             const string previewName = "preview.png";
             var previewFile = IOPath.Combine(machineDir, previewName);
             File.Copy(fileName, previewFile, overwrite: true);
             machine.Preview = previewName;
-            TriggerMachines();
+            TriggerMachines("Preview");
         }
 
         private async void PreviewArea_OnPointerReleased(object? sender, PointerReleasedEventArgs e)
@@ -96,7 +97,7 @@ namespace RetroBox.Manager.Views
         private void Machines_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
         {
             var added = e.AddedItems.OfType<object>().FirstOrDefault();
-            Model.CurrentMachine = (IMetaMachine?)added;
+            Model.CurrentMachine = (MetaMachine?)added;
         }
 
         private MainWindowViewModel Model => (MainWindowViewModel)DataContext!;
@@ -105,30 +106,23 @@ namespace RetroBox.Manager.Views
         {
             if (!await ChangeParticle(nameof(Model.CurrentMachine.Name),
                     Model.CurrentMachine?.Name,
-                    t => Model.CurrentMachine!.Name = t))
+                    t => Model.CurrentMachine!.NameTxt = t))
                 return;
-            TriggerMachines();
+            TriggerMachines("Name");
         }
 
         private async void ChangeDesc_OnClick(object? sender, RoutedEventArgs e)
         {
             if (!await ChangeParticle(nameof(Model.CurrentMachine.Description),
                     Model.CurrentMachine?.Description,
-                    t => Model.CurrentMachine!.Description = t))
+                    t => Model.CurrentMachine!.DescriptionTxt = t))
                 return;
-            TriggerMachines();
+            TriggerMachines("Comment");
         }
 
-        private void TriggerMachines()
+        private void TriggerMachines(string txt)
         {
-            var old = Model.CurrentMachine;
-            if (old == null)
-                return;
-            var index = Model.AllMachines.IndexOf(old);
-            Model.AllMachines.RemoveAt(index);
-            Model.AllMachines.Insert(index, old);
-            Model.CurrentMachine = null;
-            Model.CurrentMachine = old;
+            Model.Status = $"{txt} changed.";
         }
 
         private async Task<bool> ChangeParticle(string title, string? value, Action<string> setter)
@@ -168,7 +162,7 @@ namespace RetroBox.Manager.Views
             await dialog.ShowDialogFor(this);
         }
 
-        private (IMetaMachine mach, FoundExe exe, FoundRom rom)? GetEmuAndRom()
+        private (MetaMachine mach, FoundExe exe, FoundRom rom)? GetEmuAndRom()
         {
             if (Model.CurrentMachine is { } m
                 && EmuCombo.SelectedItem is FoundExe e
@@ -186,7 +180,7 @@ namespace RetroBox.Manager.Views
             {
                 ExeFile = current.exe.File,
                 RomPath = current.rom.Path,
-                VmPath = current.mach.Folder,
+                VmPath = current.mach.GetFolder(),
                 VmName = current.mach.Name,
                 Settings = true
             };

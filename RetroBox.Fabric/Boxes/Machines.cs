@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using ByteSizeLib;
-using RetroBox.Common;
 using RetroBox.Common.Tools;
 using RetroBox.Fabric.Data;
 using RetroBox.Fabric.Tools;
@@ -199,13 +198,11 @@ namespace RetroBox.Fabric.Boxes
             return mb;
         }
 
-        public static IEnumerable<IMetaMachine> FindMetaMachine(string folder)
+        public static IEnumerable<(Machine src, Envelope env)> FindMetaMachine(string folder)
         {
             var machines = FindMachine(folder);
             var envelopes = machines.Select(Envelopes.GetEnvelope);
             return envelopes;
         }
-
-        public static byte[] Black { get; } = Resources.LoadBytes("black.png");
     }
 }

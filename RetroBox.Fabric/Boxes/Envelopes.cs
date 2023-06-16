@@ -5,12 +5,12 @@ namespace RetroBox.Fabric.Boxes
 {
     public static class Envelopes
     {
-        internal static IMetaMachine GetEnvelope(Machine machine)
+        internal static (Machine src, Envelope env) GetEnvelope(Machine machine)
             => GetEnvelope(machine.File, machine);
 
         public const string FileName = "envelope.json";
 
-        internal static IMetaMachine GetEnvelope(string boxConfigFile, Machine src)
+        internal static (Machine src, Envelope env) GetEnvelope(string boxConfigFile, Machine src)
         {
             var boxConfigDir = Path.GetDirectoryName(boxConfigFile)!;
             var envConfigFile = Path.Combine(boxConfigDir, FileName);
@@ -30,7 +30,7 @@ namespace RetroBox.Fabric.Boxes
                 };
                 env.Save();
             }
-            return new MetaMachine(src, env);
+            return (src, env);
         }
     }
 }

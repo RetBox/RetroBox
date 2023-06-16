@@ -1,8 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 using ReactiveUI;
 using RetroBox.API.Data;
-using RetroBox.Fabric.Boxes;
 using RetroBox.Fabric.Prebuilt;
+using RetroBox.Manager.Boxes;
 using IOPath = System.IO.Path;
 
 namespace RetroBox.Manager.ViewModels
@@ -13,11 +13,11 @@ namespace RetroBox.Manager.ViewModels
         public ObservableCollection<FoundRom> AllRoms { get; } = new();
 
         public ObservableCollection<IMetaTemplate> AllTemplates { get; } = new();
-        public ObservableCollection<IMetaMachine> AllMachines { get; } = new();
+        public ObservableCollection<MetaMachine> AllMachines { get; } = new();
 
-        private IMetaMachine? _currentMachine;
+        private MetaMachine? _currentMachine;
 
-        public IMetaMachine? CurrentMachine
+        public MetaMachine? CurrentMachine
         {
             get => _currentMachine;
             set => this.RaiseAndSetIfChanged(ref _currentMachine, value);

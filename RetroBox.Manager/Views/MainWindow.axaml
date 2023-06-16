@@ -141,11 +141,11 @@
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Grid.Row="0" Grid.Column="0" Text="Memory:" />
-                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Memory}" />
+                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding M.Memory}" />
                                     <TextBlock Grid.Row="1" Grid.Column="0" Text="Processor:" />
-                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CpuLbl}" />
+                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding M.CpuLbl}" />
                                     <TextBlock Grid.Row="2" Grid.Column="0" Text="Machine:" />
-                                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding MachineLbl}" />
+                                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding M.MachineLbl}" />
                                 </Grid>
                             </Expander>
                         </StackPanel>
@@ -162,9 +162,9 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="Video RAM:" />
-                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding GraphicMem}" />
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding M.GraphicMem}" />
                             <TextBlock Grid.Row="1" Grid.Column="0" Text="Graphics:" />
-                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding GraphicLbl}" />
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding M.GraphicLbl}" />
                         </Grid>
                     </Expander>
                     <Expander IsExpanded="True">
@@ -180,11 +180,11 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="Floppy:" />
-                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Floppies}" />
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding M.Floppies}" />
                             <TextBlock Grid.Row="1" Grid.Column="0" Text="Disks:" />
-                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding HardDrivesTxt}" />
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding M.HardDrivesTxt}" />
                             <TextBlock Grid.Row="2" Grid.Column="0" Text="Optical:" />
-                            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding CdRoms}" />
+                            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding M.CdRoms}" />
                         </Grid>
                     </Expander>
                     <Expander IsExpanded="True">
@@ -199,9 +199,9 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="Card:" />
-                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding SoundCard}" />
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding M.SoundCard}" />
                             <TextBlock Grid.Row="1" Grid.Column="0" Text="MIDI:" />
-                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding MidiChip}" />
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding M.MidiChip}" />
                         </Grid>
                     </Expander>
                     <Expander IsExpanded="True">
@@ -216,7 +216,7 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="Interfaces:" />
-                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding NetworkTxt}" />
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding M.NetworkTxt}" />
                         </Grid>
                     </Expander>
                 </StackPanel>

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Reflection;
 using System.Text;
 
 namespace RetroBox.Common
@@ -16,9 +15,7 @@ namespace RetroBox.Common
         private static T LoadStream<T>(string name, Type? type, Func<Stream, T> func)
         {
             type ??= typeof(Resources);
-            using var stream = type.Assembly.GetManifestResourceStream(name)
-                               ?? Assembly.GetEntryAssembly()?.GetManifestResourceStream(name)
-                               ?? Assembly.GetExecutingAssembly().GetManifestResourceStream(name);
+            using var stream = type.Assembly.GetManifestResourceStream(name);
             return func(stream!);
         }
 

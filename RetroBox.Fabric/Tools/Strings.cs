@@ -67,9 +67,9 @@ namespace RetroBox.Fabric.Tools
             }
         }
 
-        public static string? AddPath(string? file, string folder)
+        public static string? AddPath(string? file, string? folder)
         {
-            if (string.IsNullOrWhiteSpace(file))
+            if (string.IsNullOrWhiteSpace(file) || string.IsNullOrWhiteSpace(folder))
                 return null;
             if (Path.IsPathRooted(file))
                 return file;

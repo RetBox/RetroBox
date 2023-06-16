@@ -5,6 +5,7 @@ using RetroBox.Fabric;
 using RetroBox.Fabric.Boxes;
 using RetroBox.Fabric.Config;
 using RetroBox.Fabric.Prebuilt;
+using RetroBox.Manager.Boxes;
 using RetroBox.Manager.ViewModels;
 
 namespace RetroBox.Manager.CoreData
@@ -59,7 +60,8 @@ namespace RetroBox.Manager.CoreData
             foreach (var folder in folders.OrderBy(n => n))
             {
                 token.ThrowIfCancellationRequested();
-                foreach (var machine in Machines.FindMetaMachine(folder).OrderBy(n => n.Name))
+                foreach (var machine in Machines.FindMetaMachine(folder)
+                             .Select(MetaMachines.Wrap).OrderBy(n => n.Name))
                 {
                     token.ThrowIfCancellationRequested();
                     model.AllMachines.Add(machine);
