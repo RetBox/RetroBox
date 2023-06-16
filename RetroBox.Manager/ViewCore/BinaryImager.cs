@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.IO;
 using Avalonia.Data.Converters;
+using Avalonia.Media;
 using Avalonia.Media.Imaging;
 
 namespace RetroBox.Manager.ViewCore
@@ -10,7 +11,7 @@ namespace RetroBox.Manager.ViewCore
     {
         public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
-            if (value is byte[] array && targetType == typeof(IBitmap))
+            if (value is byte[] array && (targetType == typeof(IBitmap) || targetType == typeof(IImage)))
             {
                 var bitmap = new Bitmap(new MemoryStream(array));
                 return bitmap;

@@ -78,12 +78,26 @@
         <DockPanel>
             <ScrollViewer DockPanel.Dock="Left" Margin="10,0,10,0" Width="163">
                 <ListBox Items="{Binding AllMachines}"
-                         SelectionChanged="Machines_OnSelectionChanged">
+                         SelectionChanged="Machines_OnSelectionChanged" SelectedIndex="0">
+                    <ListBox.Styles>
+                        <Style Selector="ListBoxItem">
+                            <Setter Property="Padding" Value="2" />
+                        </Style>
+                    </ListBox.Styles>
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <WrapPanel HorizontalAlignment="Left" Margin="0,0,0,0">
-                                <TextBlock Text="{Binding Name}" FontWeight="Bold" />
-                            </WrapPanel>
+                            <Border BorderThickness="1" BorderBrush="DarkGray"
+                                    CornerRadius="10" Padding="10">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <Image Source="{Binding StatusImg, Converter={StaticResource BinaryConv}}"
+                                               Stretch="Uniform" Width="24" Height="24" Margin="0,0,5,0" />
+                                        <TextBlock Text="{Binding StatusTxt}" VerticalAlignment="Center"
+                                                   FontStyle="Italic" FontWeight="Light" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>

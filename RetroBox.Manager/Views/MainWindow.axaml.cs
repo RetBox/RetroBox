@@ -97,6 +97,8 @@ namespace RetroBox.Manager.Views
         private void Machines_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
         {
             var added = e.AddedItems.OfType<object>().FirstOrDefault();
+            if (added == null)
+                return;
             Model.CurrentMachine = (MetaMachine?)added;
         }
 

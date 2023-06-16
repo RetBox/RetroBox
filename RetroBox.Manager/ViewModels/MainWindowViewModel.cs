@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Linq;
 using ReactiveUI;
 using RetroBox.API.Data;
 using RetroBox.Fabric.Prebuilt;
@@ -29,6 +31,17 @@ namespace RetroBox.Manager.ViewModels
         {
             get => _status;
             set => this.RaiseAndSetIfChanged(ref _status, value);
+        }
+
+        public MainWindowViewModel()
+        {
+            var i = 0;
+            foreach (var state in Enum.GetValues<MachineState>())
+                AllMachines.Add(new MetaMachine
+                {
+                    Name = $"Debug #{++i}", Description = $"It is: {state}", Status = state
+                });
+            CurrentMachine = AllMachines.FirstOrDefault();
         }
     }
 }

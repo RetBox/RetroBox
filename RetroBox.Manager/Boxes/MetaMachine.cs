@@ -21,6 +21,13 @@ namespace RetroBox.Manager.Boxes
             PreviewImg = Binary.ReadFile(Strings.AddPath(preview, dir)) ?? MetaMachines.Black;
         }
 
+        private void RefreshStatus()
+        {
+            var status = Status ?? default(MachineState);
+            StatusImg = status.GetImage();
+            StatusTxt = status.GetText();
+        }
+
         #endregion
 
         #region Sub objects
@@ -47,7 +54,40 @@ namespace RetroBox.Manager.Boxes
             {
                 this.RaiseAndSetIfChanged(ref _machine, value);
                 RefreshName();
+                RefreshStatus();
             }
+        }
+
+        #endregion
+
+        #region Only in-memory
+
+        private MachineState? _status;
+
+        public MachineState? Status
+        {
+            get => _status;
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _status, value);
+                RefreshStatus();
+            }
+        }
+
+        private string? _statusTxt;
+
+        public string? StatusTxt
+        {
+            get => _statusTxt;
+            set => this.RaiseAndSetIfChanged(ref _statusTxt, value);
+        }
+
+        private byte[]? _statusImg;
+
+        public byte[]? StatusImg
+        {
+            get => _statusImg;
+            set => this.RaiseAndSetIfChanged(ref _statusImg, value);
         }
 
         #endregion
@@ -59,7 +99,7 @@ namespace RetroBox.Manager.Boxes
         public string? Name
         {
             get => _name;
-            private set => this.RaiseAndSetIfChanged(ref _name, value);
+            set => this.RaiseAndSetIfChanged(ref _name, value);
         }
 
         private string? _description;
@@ -67,7 +107,7 @@ namespace RetroBox.Manager.Boxes
         public string? Description
         {
             get => _description;
-            private set => this.RaiseAndSetIfChanged(ref _description, value);
+            set => this.RaiseAndSetIfChanged(ref _description, value);
         }
 
         private byte[]? _previewImg;
