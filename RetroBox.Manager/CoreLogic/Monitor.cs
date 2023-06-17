@@ -27,7 +27,8 @@ namespace RetroBox.Manager.CoreLogic
         public static void RunThis(this Command cmd)
         {
             var id = Guid.NewGuid().ToString("N");
-            GetById(id).Obs = cmd.OnProcessEvent(OnEvent, id);
+            var sub = cmd.OnProcessEvent(OnEvent, id);
+            OnEvent(cmd, id, new InitEvent(sub));
         }
 
         private static Monitored GetById(string id)
@@ -49,6 +50,11 @@ namespace RetroBox.Manager.CoreLogic
             if (evt is StartedCommandEvent se)
             {
                 GetById(tag).Pid = se.ProcessId;
+                return;
+            }
+            if (evt is InitEvent ie)
+            {
+                GetById(tag).Obs = ie.Disposable;
                 return;
             }
             if (evt is ExitedCommandEvent ee)
