@@ -9,8 +9,7 @@ namespace RetroBox.Manager.CoreLogic
 {
     public static class Monitor
     {
-        private static IDisposable OnProcessEvent(this Command cmd,
-            Action<Command, string, CommandEvent> action, string tag)
+        private static IDisposable OnProcessEvent(this Command cmd, MonitorHandler action, string tag)
         {
             var observe = cmd.Observe();
             var sub = observe.Subscribe(
@@ -24,11 +23,19 @@ namespace RetroBox.Manager.CoreLogic
 
         private static readonly IDictionary<string, Monitored> Sub = new Dictionary<string, Monitored>();
 
-        public static void RunThis(this Command cmd)
+        public static void RunThis(this Command cmd, MonitorHandler? extra = null)
         {
+            void EventCb(object c, string t, CommandEvent e)
+            {
+                var current = Sub.ContainsKey(t) ? Sub[t] : null;
+                OnEvent(c, t, e);
+                current = Sub.ContainsKey(t) ? Sub[t] : current;
+                extra?.Invoke(current!, t, e);
+            }
+
             var id = Guid.NewGuid().ToString("N");
-            var sub = cmd.OnProcessEvent(OnEvent, id);
-            OnEvent(cmd, id, new InitEvent(sub));
+            var sub = cmd.OnProcessEvent(EventCb, id);
+            EventCb(cmd, id, new InitEvent(sub));
         }
 
         private static Monitored GetById(string id)
@@ -38,7 +45,7 @@ namespace RetroBox.Manager.CoreLogic
             return value;
         }
 
-        private static void OnEvent(Command cmd, string tag, CommandEvent evt)
+        private static void OnEvent(object _, string tag, CommandEvent evt)
         {
             if (evt is CompleteEvent)
             {

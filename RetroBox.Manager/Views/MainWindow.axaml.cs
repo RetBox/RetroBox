@@ -1,10 +1,12 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
+using CliWrap.EventStream;
 using MessageBox.Avalonia.Enums;
 using RetroBox.API.Data;
 using RetroBox.Common.Xplat;
@@ -192,7 +194,13 @@ namespace RetroBox.Manager.Views
                 var plat = Platforms.My;
                 var proc = plat.GetProcs();
                 var core = proc.Build(arg);
-                core.RunThis();
+                core.RunThis((_, _, d) =>
+                {
+                    if (d is StartedCommandEvent or InitEvent)
+                        current.mach.Status = MachineState.Waiting;
+                    else if (d is ExitedCommandEvent or CompleteEvent)
+                        current.mach.Status = MachineState.Stopped;
+                });
                 return;
             }
             if (current.mach.Status == MachineState.Running)
