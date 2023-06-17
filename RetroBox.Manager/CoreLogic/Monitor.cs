@@ -24,7 +24,9 @@ namespace RetroBox.Manager.CoreLogic
 
         private static readonly IDictionary<string, Monitored> Sub = new Dictionary<string, Monitored>();
 
-        public static void RunThis(this Command cmd, MonitorHandler? extra = null)
+        public static string GenerateId() => Guid.NewGuid().ToString("N");
+
+        public static void RunThis(this Command cmd, string id, MonitorHandler? extra = null)
         {
             void EventCb(object c, string t, CommandEvent e)
             {
@@ -34,7 +36,6 @@ namespace RetroBox.Manager.CoreLogic
                 extra?.Invoke(current!, t, e);
             }
 
-            var id = Guid.NewGuid().ToString("N");
             var sub = cmd.OnProcessEvent(EventCb, id);
             EventCb(cmd, id, new InitEvent(sub));
         }

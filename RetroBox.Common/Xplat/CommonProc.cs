@@ -60,5 +60,7 @@ namespace RetroBox.Common.Xplat
                 cmd = cmd.WithArguments(args, escape: true);
             return cmd;
         }
+
+        public abstract void CleanUp(string tag);
     }
 }

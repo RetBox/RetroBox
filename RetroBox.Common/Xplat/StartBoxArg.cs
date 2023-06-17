@@ -4,6 +4,9 @@ namespace RetroBox.Common.Xplat
 {
     public class StartBoxArg
     {
+        public string? TempDir { get; set; }
+        public string? CallId { get; set; }
+
         public string? ExeFile { get; set; }
         public string? WorkDir { get; set; }
         public IReadOnlyDictionary<string, string?>? Vars { get; set; }

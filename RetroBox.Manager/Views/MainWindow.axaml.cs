@@ -1,5 +1,4 @@
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -184,8 +183,12 @@ namespace RetroBox.Manager.Views
             var mach = current.mach;
             if (mach.Status == MachineState.Stopped)
             {
+                var cfg = Configs.Default;
+                var id = Monitor.GenerateId();
                 var arg = new StartBoxArg
                 {
+                    TempDir = cfg.TempPath,
+                    CallId = id,
                     ExeFile = current.exe.File,
                     RomPath = current.rom.Path,
                     VmPath = mach.GetFolder(),
@@ -195,7 +198,7 @@ namespace RetroBox.Manager.Views
                 var plat = Platforms.My;
                 var proc = plat.GetProcs();
                 var core = proc.Build(arg);
-                core.RunThis((_, tag, d) =>
+                core.RunThis(id, (_, tag, d) =>
                 {
                     mach.Tag = tag;
                     if (d is StartedCommandEvent or InitEvent)
@@ -213,7 +216,39 @@ namespace RetroBox.Manager.Views
 
         private void StartThis_OnClick(object? sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (GetEmuAndRom() is not { } current)
+                return;
+            var mach = current.mach;
+            if (mach.Status == MachineState.Stopped)
+            {
+                var cfg = Configs.Default;
+                var id = Monitor.GenerateId();
+                var arg = new StartBoxArg
+                {
+                    TempDir = cfg.TempPath,
+                    CallId = id,
+                    ExeFile = current.exe.File,
+                    RomPath = current.rom.Path,
+                    VmPath = mach.GetFolder(),
+                    VmName = mach.Name
+                };
+                var plat = Platforms.My;
+                var proc = plat.GetProcs();
+                var core = proc.Build(arg);
+                core.RunThis(id, (_, tag, d) =>
+                {
+                    mach.Tag = tag;
+                    if (d is StartedCommandEvent or InitEvent)
+                    {
+                        mach.Status = MachineState.Running;
+                    }
+                    else if (d is ExitedCommandEvent or CompleteEvent)
+                    {
+                        mach.Status = MachineState.Stopped;
+                        proc.CleanUp(mach.Tag);
+                    }
+                });
+            }
         }
 
         private void PauseThis_OnClick(object? sender, RoutedEventArgs e)
