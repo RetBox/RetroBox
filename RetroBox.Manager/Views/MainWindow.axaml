@@ -58,7 +58,7 @@
                     </ComboBox>
                     <TextBlock VerticalAlignment="Center" Margin="10,0,10,0">ROM:</TextBlock>
                     <ComboBox SelectedIndex="0" Name="RomCombo" Items="{Binding AllRoms}"
-                              VerticalAlignment="Center">
+                              VerticalAlignment="Center" Margin="0,0,10,0">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding ReleaseId}" />
@@ -66,24 +66,39 @@
                         </ComboBox.ItemTemplate>
                     </ComboBox>
                     <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Configure this machine"
-                            VerticalAlignment="Center" Margin="14,0,0,0" Click="ConfigureThis_OnClick"
+                            VerticalAlignment="Center" Margin="4,0,0,0" Click="ConfigureThis_OnClick"
                             IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Stopped|Running', Converter={StaticResource EnumCmp}}">
                         <Image Source="/Assets/icon-config.png" />
                     </Button>
                     <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Start this machine"
                             VerticalAlignment="Center" Margin="4,0,0,0" Click="StartThis_OnClick"
-                            IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Stopped|Paused', Converter={StaticResource EnumCmp}}">
+                            IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Stopped', Converter={StaticResource EnumCmp}}">
                         <Image Source="/Assets/icon-play.png" />
+                    </Button>
+                    <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Resume this machine"
+                            VerticalAlignment="Center" Margin="4,0,0,0" Click="ResumeThis_OnClick"
+                            IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Paused', Converter={StaticResource EnumCmp}}">
+                        <Image Source="/Assets/icon-resume.png" />
                     </Button>
                     <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Pause this machine"
                             VerticalAlignment="Center" Margin="4,0,0,0" Click="PauseThis_OnClick"
                             IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Running', Converter={StaticResource EnumCmp}}">
                         <Image Source="/Assets/icon-pause.png" />
                     </Button>
+                    <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Reset this machine"
+                            VerticalAlignment="Center" Margin="4,0,0,0" Click="ResetThis_OnClick"
+                            IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Running', Converter={StaticResource EnumCmp}}">
+                        <Image Source="/Assets/icon-reset.png" />
+                    </Button>
                     <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Stop this machine"
                             VerticalAlignment="Center" Margin="4,0,0,0" Click="StopThis_OnClick"
                             IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Paused|Running', Converter={StaticResource EnumCmp}}">
                         <Image Source="/Assets/icon-stop.png" />
+                    </Button>
+                    <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Kill this machine"
+                            VerticalAlignment="Center" Margin="4,0,0,0" Click="KillThis_OnClick"
+                            IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Waiting', Converter={StaticResource EnumCmp}}">
+                        <Image Source="/Assets/icon-kill.png" />
                     </Button>
                 </StackPanel>
             </StackPanel>
