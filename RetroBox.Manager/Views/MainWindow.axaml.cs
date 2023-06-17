@@ -181,14 +181,15 @@ namespace RetroBox.Manager.Views
         {
             if (GetEmuAndRom() is not { } current)
                 return;
-            if (current.mach.Status == MachineState.Stopped)
+            var mach = current.mach;
+            if (mach.Status == MachineState.Stopped)
             {
                 var arg = new StartBoxArg
                 {
                     ExeFile = current.exe.File,
                     RomPath = current.rom.Path,
-                    VmPath = current.mach.GetFolder(),
-                    VmName = current.mach.Name,
+                    VmPath = mach.GetFolder(),
+                    VmName = mach.Name,
                     Settings = true
                 };
                 var plat = Platforms.My;
@@ -196,15 +197,15 @@ namespace RetroBox.Manager.Views
                 var core = proc.Build(arg);
                 core.RunThis((_, tag, d) =>
                 {
-                    current.mach.Tag = tag;
+                    mach.Tag = tag;
                     if (d is StartedCommandEvent or InitEvent)
-                        current.mach.Status = MachineState.Waiting;
+                        mach.Status = MachineState.Waiting;
                     else if (d is ExitedCommandEvent or CompleteEvent)
-                        current.mach.Status = MachineState.Stopped;
+                        mach.Status = MachineState.Stopped;
                 });
                 return;
             }
-            if (current.mach.Status == MachineState.Running)
+            if (mach.Status == MachineState.Running)
             {
                 // TODO
             }
@@ -229,7 +230,8 @@ namespace RetroBox.Manager.Views
         {
             if (GetEmuAndRom() is not { } current)
                 return;
-            var myTag = current.mach.Tag;
+            var mach = current.mach;
+            var myTag = mach.Tag;
             var proc = Monitor.FindProcess(myTag);
             if (proc == null)
                 return;
