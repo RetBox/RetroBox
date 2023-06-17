@@ -8,9 +8,11 @@ using Avalonia.Interactivity;
 using MessageBox.Avalonia.Enums;
 using RetroBox.API.Data;
 using RetroBox.Common.Xplat;
+using RetroBox.Fabric;
 using RetroBox.Fabric.Boxes;
 using RetroBox.Fabric.Config;
 using RetroBox.Manager.Boxes;
+using RetroBox.Manager.CoreLogic;
 using RetroBox.Manager.ViewCore;
 using RetroBox.Manager.ViewModels;
 using IOPath = System.IO.Path;
@@ -173,22 +175,30 @@ namespace RetroBox.Manager.Views
             return null;
         }
 
-        private async void ConfigureThis_OnClick(object? sender, RoutedEventArgs e)
+        private void ConfigureThis_OnClick(object? sender, RoutedEventArgs e)
         {
             if (GetEmuAndRom() is not { } current)
                 return;
-
-            var arg = new StartBoxArg
+            if (current.mach.Status == MachineState.Stopped)
             {
-                ExeFile = current.exe.File,
-                RomPath = current.rom.Path,
-                VmPath = current.mach.GetFolder(),
-                VmName = current.mach.Name,
-                Settings = true
-            };
-            await CommonProc.Fuck(arg);
-
-            // TODO
+                var arg = new StartBoxArg
+                {
+                    ExeFile = current.exe.File,
+                    RomPath = current.rom.Path,
+                    VmPath = current.mach.GetFolder(),
+                    VmName = current.mach.Name,
+                    Settings = true
+                };
+                var plat = Platforms.My;
+                var proc = plat.GetProcs();
+                var core = proc.Build(arg);
+                core.RunThis();
+                return;
+            }
+            if (current.mach.Status == MachineState.Running)
+            {
+                // TODO
+            }
         }
 
         private void StartThis_OnClick(object? sender, RoutedEventArgs e)

@@ -7,6 +7,7 @@ namespace RetroBox.Common.Xplat
         public string? ExeFile { get; set; }
         public string? WorkDir { get; set; }
         public IReadOnlyDictionary<string, string?>? Vars { get; set; }
+        public IReadOnlyCollection<string>? ExtraArgs { get; set; }
 
         public string? Config { get; set; }
         public string? VmPath { get; set; }
