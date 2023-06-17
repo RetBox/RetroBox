@@ -20,6 +20,7 @@
 
     <Window.Resources>
         <viewCore:BinaryImager x:Key="BinaryConv" />
+        <viewCore:EnumComparer x:Key="EnumCmp" />
     </Window.Resources>
 
     <DockPanel>
@@ -65,9 +66,24 @@
                         </ComboBox.ItemTemplate>
                     </ComboBox>
                     <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Configure this machine"
-                            VerticalAlignment="Center" Margin="14,0,0,0"
-                            Click="ConfigureThis_OnClick">
+                            VerticalAlignment="Center" Margin="14,0,0,0" Click="ConfigureThis_OnClick"
+                            IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Stopped|Running', Converter={StaticResource EnumCmp}}">
                         <Image Source="/Assets/icon-config.png" />
+                    </Button>
+                    <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Start this machine"
+                            VerticalAlignment="Center" Margin="4,0,0,0" Click="StartThis_OnClick"
+                            IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Stopped|Paused', Converter={StaticResource EnumCmp}}">
+                        <Image Source="/Assets/icon-play.png" />
+                    </Button>
+                    <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Pause this machine"
+                            VerticalAlignment="Center" Margin="4,0,0,0" Click="PauseThis_OnClick"
+                            IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Running', Converter={StaticResource EnumCmp}}">
+                        <Image Source="/Assets/icon-pause.png" />
+                    </Button>
+                    <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Stop this machine"
+                            VerticalAlignment="Center" Margin="4,0,0,0" Click="StopThis_OnClick"
+                            IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Paused|Running', Converter={StaticResource EnumCmp}}">
+                        <Image Source="/Assets/icon-stop.png" />
                     </Button>
                 </StackPanel>
             </StackPanel>

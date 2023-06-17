@@ -54,7 +54,7 @@ namespace RetroBox.Manager.Boxes
             {
                 this.RaiseAndSetIfChanged(ref _machine, value);
                 RefreshName();
-                RefreshStatus();
+                Status = MachineState.Stopped;
             }
         }
 

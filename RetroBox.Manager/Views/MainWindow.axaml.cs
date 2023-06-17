@@ -190,5 +190,20 @@ namespace RetroBox.Manager.Views
 
             // TODO
         }
+
+        private void StartThis_OnClick(object? sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void PauseThis_OnClick(object? sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void StopThis_OnClick(object? sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
