@@ -28,9 +28,9 @@ namespace RetroBox.Manager.CoreLogic
         {
             void EventCb(object c, string t, CommandEvent e)
             {
-                var current = Sub.ContainsKey(t) ? Sub[t] : null;
+                var current = Sub.TryGetValue(t, out var v1) ? v1 : null;
                 OnEvent(c, t, e);
-                current = Sub.ContainsKey(t) ? Sub[t] : current;
+                current = Sub.TryGetValue(t, out var v2) ? v2 : current;
                 extra?.Invoke(current!, t, e);
             }
 
