@@ -194,8 +194,9 @@ namespace RetroBox.Manager.Views
                 var plat = Platforms.My;
                 var proc = plat.GetProcs();
                 var core = proc.Build(arg);
-                core.RunThis((_, _, d) =>
+                core.RunThis((_, tag, d) =>
                 {
+                    current.mach.Tag = tag;
                     if (d is StartedCommandEvent or InitEvent)
                         current.mach.Status = MachineState.Waiting;
                     else if (d is ExitedCommandEvent or CompleteEvent)
@@ -226,7 +227,17 @@ namespace RetroBox.Manager.Views
 
         private void KillThis_OnClick(object? sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (GetEmuAndRom() is not { } current)
+                return;
+            var myTag = current.mach.Tag;
+            var proc = Monitor.FindProcess(myTag);
+            if (proc == null)
+                return;
+            using (proc)
+            {
+                proc.CloseMainWindow();
+                proc.Kill();
+            }
         }
 
         private void ResumeThis_OnClick(object? sender, RoutedEventArgs e)

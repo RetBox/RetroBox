@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using CliWrap;
 using CliWrap.EventStream;
 using RetroBox.API.Xplat;
@@ -79,6 +80,14 @@ namespace RetroBox.Manager.CoreLogic
             if (text == null)
                 return;
             GetById(tag).Lines.Add(text);
+        }
+
+        public static Process? FindProcess(string? tag)
+        {
+            if (tag == null || !Sub.TryGetValue(tag, out var cur) || cur.Pid is not { } pid)
+                return null;
+            var proc = Process.GetProcessById(pid);
+            return proc;
         }
     }
 }

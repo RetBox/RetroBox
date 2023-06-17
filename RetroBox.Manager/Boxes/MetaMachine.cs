@@ -156,5 +156,7 @@ namespace RetroBox.Manager.Boxes
         }
 
         #endregion
+
+        public string? Tag { get; set; }
     }
 }
