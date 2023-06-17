@@ -14,10 +14,18 @@ namespace RetroBox.Manager.Views
     public partial class NewVmWindow : FixWindow
     {
         private string? _initDir;
+        private IDisposable? _txtSub;
 
         public NewVmWindow()
         {
             InitializeComponent();
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            _txtSub?.Dispose();
+            _txtSub = null;
         }
 
         private NewVmViewModel Model => (DataContext as NewVmViewModel)!;
@@ -37,7 +45,7 @@ namespace RetroBox.Manager.Views
             CreateBtn.IsEnabled = false;
             _initDir = Model.Folder;
             TemplBox.SelectedIndex = 0;
-            NameBox.OnTextChange(OnNameChange);
+            _txtSub = NameBox.OnTextChange(OnNameChange);
         }
 
         private void OnNameChange(TextBox nameBox, string newText)

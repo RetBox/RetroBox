@@ -6,10 +6,11 @@ namespace RetroBox.Manager.ViewCore
 {
     public static class Events
     {
-        public static void OnTextChange(this TextBox box, Action<TextBox, string> action)
+        public static IDisposable OnTextChange(this TextBox box, Action<TextBox, string> action)
         {
             var observe = box.GetObservable(TextBox.TextProperty);
-            observe.Subscribe(text => action(box, text));
+            var sub = observe.Subscribe(text => action(box, text));
+            return sub;
         }
     }
 }
