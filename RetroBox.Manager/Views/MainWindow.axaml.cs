@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -200,19 +201,8 @@ namespace RetroBox.Manager.Views
                 var plat = Platforms.My;
                 var proc = plat.GetProcs();
                 var core = proc.Build(arg);
-                core.RunThis(id, (_, tag, d) =>
-                {
-                    mach.Tag = tag;
-                    if (d is StartedCommandEvent or InitEvent)
-                    {
-                        mach.Status = MachineState.Waiting;
-                    }
-                    else if (d is ExitedCommandEvent or CompleteEvent)
-                    {
-                        mach.Status = MachineState.Stopped;
-                        ReloadFromConfig(mach);
-                    }
-                });
+                mach.Tag = id;
+                core.RunThis(id, ConfigureThis_OnEvent);
                 return;
             }
             if (mach.Status == MachineState.Running)
@@ -222,6 +212,25 @@ namespace RetroBox.Manager.Views
 
                 var vCmd = new SettingsVCmd();
                 proc.Send(mach.Tag!, vCmd);
+            }
+        }
+
+        private async void ConfigureThis_OnEvent(object sender, string tag, CommandEvent d)
+        {
+            var machines = await Events.Invoke<IEnumerable<MetaMachine>>(() => Model.AllMachines);
+            var mach = machines.FirstOrDefault(m => m.Tag == tag);
+            if (mach?.Tag == null)
+                return;
+            if (d is StartedCommandEvent or InitEvent)
+            {
+                mach.Status = MachineState.Waiting;
+                return;
+            }
+            if (d is ExitedCommandEvent or CompleteEvent)
+            {
+                mach.Status = MachineState.Stopped;
+
+                ReloadFromConfig(mach);
             }
         }
 
@@ -254,19 +263,29 @@ namespace RetroBox.Manager.Views
                 var plat = Platforms.My;
                 var proc = plat.GetProcs();
                 var core = proc.Build(arg);
-                core.RunThis(id, (_, tag, d) =>
-                {
-                    mach.Tag = tag;
-                    if (d is StartedCommandEvent or InitEvent)
-                    {
-                        mach.Status = MachineState.Running;
-                    }
-                    else if (d is ExitedCommandEvent or CompleteEvent)
-                    {
-                        mach.Status = MachineState.Stopped;
-                        proc.CleanUp(mach.Tag);
-                    }
-                });
+                mach.Tag = id;
+                core.RunThis(id, StartThis_OnEvent);
+            }
+        }
+
+        private async void StartThis_OnEvent(object sender, string tag, CommandEvent d)
+        {
+            var machines = await Events.Invoke<IEnumerable<MetaMachine>>(() => Model.AllMachines);
+            var mach = machines.FirstOrDefault(m => m.Tag == tag);
+            if (mach?.Tag == null)
+                return;
+            if (d is StartedCommandEvent or InitEvent)
+            {
+                mach.Status = MachineState.Running;
+                return;
+            }
+            if (d is ExitedCommandEvent or CompleteEvent)
+            {
+                mach.Status = MachineState.Stopped;
+
+                var plat = Platforms.My;
+                var proc = plat.GetProcs();
+                proc.CleanUp(mach.Tag);
             }
         }
 
