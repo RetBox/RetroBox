@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Runtime.InteropServices;
 using RetroBox.Common.Messages;
 using RetroBox.Common.Special;
+using RetroBox.Common.Tools;
 using static RetroBox.Windows.Core.WinImports;
 using I = System.IntPtr;
 
@@ -12,19 +13,21 @@ namespace RetroBox.Windows.Core
 {
     internal class WinLoop
     {
+        public string Title { get; }
         private readonly WndProc? _wndDelegate;
+        private readonly Lazy<I> _oneHandle;
 
-        public WinLoop(bool skipHandle = false, string title = "RetroBox Manager Secret")
+        public WinLoop(string title = Apps.MainSecret)
         {
-            if (skipHandle)
-                return;
-            Handle = CreateMessageWindow(title, _wndDelegate = WndProc);
+            Title = title;
+            _wndDelegate = WndProc;
+            _oneHandle = new(() => CreateMessageWindow(Title, _wndDelegate));
         }
 
         public EventHandler<IVmMessage>? CallbackV;
         public EventHandler<IMgrMessage>? CallbackM;
 
-        public I Handle { get; }
+        public I Handle => _oneHandle.Value;
 
         private I WndProc(I hWnd, uint msg, I wParam, I lParam)
         {

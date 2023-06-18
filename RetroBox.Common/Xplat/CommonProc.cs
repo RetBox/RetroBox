@@ -72,5 +72,10 @@ namespace RetroBox.Common.Xplat
 
         public abstract void Send(IntPtr tag, IMgrCommand cmd);
         public abstract void Receive(EventHandler<IMgrMessage> msg);
+
+        public abstract bool IsFirstInstance();
+        public abstract IntPtr RestoreExistingWindow();
+
+        public abstract string Setup();
     }
 }

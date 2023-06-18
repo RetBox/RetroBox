@@ -31,5 +31,15 @@ namespace RetroBox.Windows.Core
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         public static extern int SendMessage(IntPtr hwnd, int wMsg, IntPtr wParam, ref COPYDATASTRUCT lParam);
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool ShowWindow(IntPtr hWnd, ShowWindowEnum flags);
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr FindWindow(string? className, string windowTitle);
+
+        [DllImport("user32.dll")]
+        internal static extern int SetForegroundWindow(IntPtr hwnd);
     }
 }

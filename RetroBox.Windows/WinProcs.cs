@@ -1,11 +1,16 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using CliWrap;
 using RetroBox.Common.Commands;
 using RetroBox.Common.Messages;
 using RetroBox.Common.Special;
 using RetroBox.Common.Xplat;
 using RetroBox.Windows.Core;
+using static RetroBox.Common.Tools.Apps;
+using static RetroBox.Windows.Core.WinImports;
+
+// ReSharper disable NotAccessedField.Local
 
 namespace RetroBox.Windows
 {
@@ -95,6 +100,30 @@ namespace RetroBox.Windows
         public override void Receive(EventHandler<IMgrMessage> action)
         {
             _loop.CallbackM = action;
+        }
+
+        private static Mutex? _mutex;
+
+        public override bool IsFirstInstance()
+        {
+            _mutex = new Mutex(true, MainTitle, out var firstInstance);
+            return firstInstance;
+        }
+
+        public override IntPtr RestoreExistingWindow()
+        {
+            var hWnd = FindWindow(null, MainTitle);
+            ShowWindow(hWnd, ShowWindowEnum.Show);
+            ShowWindow(hWnd, ShowWindowEnum.Restore);
+            SetForegroundWindow(hWnd);
+
+            hWnd = FindWindow(null, _loop.Title);
+            return hWnd;
+        }
+
+        public override string Setup()
+        {
+            return $"{_loop.Handle.ToInt64():X2}";
         }
     }
 }

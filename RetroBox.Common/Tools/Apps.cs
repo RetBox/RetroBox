@@ -12,5 +12,8 @@ namespace RetroBox.Common.Tools
             var dir = Path.GetDirectoryName(loc);
             return dir!;
         }
+
+        public const string MainTitle = "RetroBox Manager";
+        public const string MainSecret = $"{MainTitle} Secret";
     }
 }

@@ -2,6 +2,10 @@
 using Avalonia.ReactiveUI;
 using System;
 using JetBrains.Annotations;
+using RetroBox.Manager.Tools;
+using RetroBox.Common.Special;
+using RetroBox.Fabric;
+using RetroBox.Manager.CoreLogic;
 
 namespace RetroBox.Manager
 {
@@ -10,6 +14,17 @@ namespace RetroBox.Manager
         [STAThread]
         public static void Main(string[] args)
         {
+            var opt = CmdUtil.Parse(args);
+            var proc = Platforms.My.GetProcs();
+            if (!proc.IsFirstInstance())
+            {
+                var handle = proc.RestoreExistingWindow();
+                if (!string.IsNullOrWhiteSpace(opt.VmName))
+                {
+                    proc.Send(handle, new LinkStartMCmd(opt.VmName));
+                }
+                return;
+            }
             var app = BuildAvaloniaApp();
             app.StartWithClassicDesktopLifetime(args);
         }

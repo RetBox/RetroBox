@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using RetroBox.API.Data;
 using RetroBox.Common.Commands;
 using RetroBox.Common.Messages;
 using RetroBox.Common.Special;
+using RetroBox.Common.Tools;
 using RetroBox.Common.Xplat;
 using RetroBox.Fabric;
 using RetroBox.Fabric.Boxes;
@@ -35,6 +37,7 @@ namespace RetroBox.Manager.Views
 
         private void Main_OnOpened(object? sender, EventArgs e)
         {
+            Title = Apps.MainTitle;
             RegisterListen();
             RegisterDragDrop();
         }
@@ -45,6 +48,9 @@ namespace RetroBox.Manager.Views
             var proc = plat.GetProcs();
             proc.Receive(OnManagerMessage);
             proc.Receive(OnMachineMessage);
+
+            var setup = proc.Setup();
+            Trace.WriteLine(setup);
         }
 
         private void RegisterDragDrop()

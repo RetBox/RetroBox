@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using CliWrap;
 using RetroBox.Common.Commands;
 using RetroBox.Common.Messages;
@@ -72,6 +74,36 @@ namespace RetroBox.Unix
         }
 
         public override void Receive(EventHandler<IMgrMessage> msg)
+        {
+            throw new NotImplementedException(); // TODO
+        }
+
+        private IntPtr _lastEnemy;
+
+        public override bool IsFirstInstance()
+        {
+            var entry = Assembly.GetEntryAssembly()?.Location;
+            if (entry != null)
+            {
+                var exeName = Path.GetFileNameWithoutExtension(entry);
+                var myProcId = Environment.ProcessId;
+                var processes = Process.GetProcessesByName(exeName);
+                foreach (var proc in processes)
+                    if (proc.Id != myProcId)
+                    {
+                        _lastEnemy = new IntPtr(proc.Id);
+                        return false;
+                    }
+            }
+            return true;
+        }
+
+        public override IntPtr RestoreExistingWindow()
+        {
+            return _lastEnemy;
+        }
+
+        public override string Setup()
         {
             throw new NotImplementedException(); // TODO
         }
