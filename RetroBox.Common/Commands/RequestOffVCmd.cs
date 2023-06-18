@@ -1,4 +1,4 @@
-namespace RetroBox.Common.Messages
+namespace RetroBox.Common.Commands
 {
     public sealed class RequestOffVCmd : IVmCommand
     {

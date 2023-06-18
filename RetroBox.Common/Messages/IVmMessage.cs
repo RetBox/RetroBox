@@ -1,6 +1,6 @@
 namespace RetroBox.Common.Messages
 {
-    public sealed class SettingsVCmd : IVmCommand
+    public interface IVmMessage
     {
     }
 }

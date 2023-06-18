@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using CliWrap;
-using RetroBox.Common.Messages;
+using RetroBox.Common.Commands;
 using RetroBox.Common.Xplat;
 
 namespace RetroBox.Unix

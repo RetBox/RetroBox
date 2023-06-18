@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using CliWrap;
 using RetroBox.API.Xplat;
-using RetroBox.Common.Messages;
+using RetroBox.Common.Commands;
 
 namespace RetroBox.Common.Xplat
 {

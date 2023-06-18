@@ -1,8 +1,9 @@
+using System;
 using System.Net.Sockets;
 
 namespace RetroBox.Unix
 {
-    public sealed class SocketObj
+    public sealed class SocketObj : IDisposable
     {
         public string? Tag { get; set; }
 

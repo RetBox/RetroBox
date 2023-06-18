@@ -1,6 +1,6 @@
 namespace RetroBox.Common.Messages
 {
-    public interface IVmCommand
+    public sealed class VmPausedVMsg : IVmMessage
     {
     }
 }

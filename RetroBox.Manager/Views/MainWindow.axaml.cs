@@ -8,7 +8,7 @@ using Avalonia.Interactivity;
 using CliWrap.EventStream;
 using MessageBox.Avalonia.Enums;
 using RetroBox.API.Data;
-using RetroBox.Common.Messages;
+using RetroBox.Common.Commands;
 using RetroBox.Common.Xplat;
 using RetroBox.Fabric;
 using RetroBox.Fabric.Boxes;
