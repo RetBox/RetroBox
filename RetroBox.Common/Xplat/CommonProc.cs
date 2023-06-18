@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using CliWrap;
 using RetroBox.API.Xplat;
+using RetroBox.Common.Messages;
 
 namespace RetroBox.Common.Xplat
 {
@@ -62,5 +63,7 @@ namespace RetroBox.Common.Xplat
         }
 
         public abstract void CleanUp(string tag);
+
+        public abstract void Send(string tag, IVmCommand cmd);
     }
 }

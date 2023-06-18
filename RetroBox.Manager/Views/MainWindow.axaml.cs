@@ -8,6 +8,7 @@ using Avalonia.Interactivity;
 using CliWrap.EventStream;
 using MessageBox.Avalonia.Enums;
 using RetroBox.API.Data;
+using RetroBox.Common.Messages;
 using RetroBox.Common.Xplat;
 using RetroBox.Fabric;
 using RetroBox.Fabric.Boxes;
@@ -17,6 +18,7 @@ using RetroBox.Manager.CoreLogic;
 using RetroBox.Manager.ViewCore;
 using RetroBox.Manager.ViewModels;
 using IOPath = System.IO.Path;
+using MIcon = MessageBox.Avalonia.Enums.Icon;
 
 namespace RetroBox.Manager.Views
 {
@@ -210,7 +212,11 @@ namespace RetroBox.Manager.Views
             }
             if (mach.Status == MachineState.Running)
             {
-                // TODO
+                var plat = Platforms.My;
+                var proc = plat.GetProcs();
+
+                var vCmd = new SettingsVCmd();
+                proc.Send(mach.Tag!, vCmd);
             }
         }
 
@@ -253,12 +259,36 @@ namespace RetroBox.Manager.Views
 
         private void PauseThis_OnClick(object? sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (GetEmuAndRom() is not { } current)
+                return;
+            var mach = current.mach;
+            if (mach.Status == MachineState.Running)
+            {
+                var plat = Platforms.My;
+                var proc = plat.GetProcs();
+
+                var vCmd = new PauseVCmd();
+                proc.Send(mach.Tag!, vCmd);
+            }
         }
 
-        private void StopThis_OnClick(object? sender, RoutedEventArgs e)
+        private async void StopThis_OnClick(object? sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (GetEmuAndRom() is not { } current)
+                return;
+            var mach = current.mach;
+            if (mach.Status != MachineState.Running)
+                return;
+            var res = await Dialogs.ShowMessageBox("Invoke normal shutdown?", "Request or force off",
+                MIcon.Question, ButtonEnum.YesNoCancel);
+            var isYes = res == ButtonResult.Yes;
+            var isNo = res == ButtonResult.No;
+            if (!isYes && !isNo)
+                return;
+            var plat = Platforms.My;
+            var proc = plat.GetProcs();
+            IVmCommand vCmd = isYes ? new RequestOffVCmd() : new ForceOffVCmd();
+            proc.Send(mach.Tag!, vCmd);
         }
 
         private void KillThis_OnClick(object? sender, RoutedEventArgs e)
@@ -279,12 +309,27 @@ namespace RetroBox.Manager.Views
 
         private void ResumeThis_OnClick(object? sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            // There is no difference between pause and resume at the moment
+            PauseThis_OnClick(sender, e);
         }
 
-        private void ResetThis_OnClick(object? sender, RoutedEventArgs e)
+        private async void ResetThis_OnClick(object? sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (GetEmuAndRom() is not { } current)
+                return;
+            var mach = current.mach;
+            if (mach.Status != MachineState.Running)
+                return;
+            var res = await Dialogs.ShowMessageBox("Press Ctrl-Alt-Del?", "Soft or hard reset",
+                MIcon.Question, ButtonEnum.YesNoCancel);
+            var isYes = res == ButtonResult.Yes;
+            var isNo = res == ButtonResult.No;
+            if (!isYes && !isNo)
+                return;
+            var plat = Platforms.My;
+            var proc = plat.GetProcs();
+            IVmCommand vCmd = isYes ? new SoftResetVCmd() : new HardResetVCmd();
+            proc.Send(mach.Tag!, vCmd);
         }
     }
 }

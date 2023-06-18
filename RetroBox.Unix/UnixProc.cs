@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using CliWrap;
+using RetroBox.Common.Messages;
 using RetroBox.Common.Xplat;
 
 namespace RetroBox.Unix
@@ -29,6 +30,33 @@ namespace RetroBox.Unix
         public override void CleanUp(string tag)
         {
             UnixSockets.Destroy(tag);
+        }
+
+        public override void Send(string tag, IVmCommand cmd)
+        {
+            var cmdTxt = ConvertToTxt(cmd);
+            UnixSockets.Write(tag, cmdTxt);
+        }
+
+        private static string ConvertToTxt(IVmCommand cmd)
+        {
+            switch (cmd)
+            {
+                case SettingsVCmd:
+                    return "showsettings";
+                case PauseVCmd:
+                    return "pause";
+                case SoftResetVCmd:
+                    return "cad";
+                case HardResetVCmd:
+                    return "reset";
+                case RequestOffVCmd:
+                    return "shutdown";
+                case ForceOffVCmd:
+                    return "shutdownnoprompt";
+                default:
+                    throw new InvalidOperationException($"{cmd} ?!");
+            }
         }
     }
 }

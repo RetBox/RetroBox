@@ -1,3 +1,4 @@
+using RetroBox.Common.Messages;
 using RetroBox.Common.Xplat;
 
 namespace RetroBox.Windows
@@ -7,6 +8,11 @@ namespace RetroBox.Windows
         public override void CleanUp(string tag)
         {
             throw new System.NotImplementedException(tag);
+        }
+
+        public override void Send(string tag, IVmCommand cmd)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
