@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using CliWrap;
 using RetroBox.Common.Commands;
 using RetroBox.Common.Messages;
+using RetroBox.Common.Special;
 using RetroBox.Common.Xplat;
 using RetroBox.Windows.Core;
 
@@ -14,7 +15,7 @@ namespace RetroBox.Windows
 
         public WinProcs()
         {
-            _loop = new WinLoop(Receive);
+            _loop = new WinLoop();
         }
 
         public override Command Build(StartBoxArg a)
@@ -42,15 +43,16 @@ namespace RetroBox.Windows
             WinHandles.Destroy(tag);
         }
 
-        private void Receive(object sender, IVmMessage message)
-        {
-            // TODO
-        }
-
         public override void Send(string tag, IVmCommand cmd)
         {
             var cmdByte = ConvertToMsg(cmd);
             WinHandles.Write(tag, cmdByte);
+        }
+
+        public override void Send(IntPtr hWnd, IMgrCommand cmd)
+        {
+            var cmdText = ConvertToMsg(cmd);
+            WinHandles.Write(hWnd, cmdText);
         }
 
         private static (int, IntPtr, IntPtr) ConvertToMsg(IVmCommand cmd)
@@ -72,6 +74,27 @@ namespace RetroBox.Windows
                 default:
                     throw new InvalidOperationException($"{cmd} ?!");
             }
+        }
+
+        private static string ConvertToMsg(IMgrCommand cmd)
+        {
+            switch (cmd)
+            {
+                case LinkStartMCmd lc:
+                    return lc.VmName;
+                default:
+                    throw new InvalidOperationException($"{cmd} ?!");
+            }
+        }
+
+        public override void Receive(EventHandler<IVmMessage> action)
+        {
+            _loop.CallbackV = action;
+        }
+
+        public override void Receive(EventHandler<IMgrMessage> action)
+        {
+            _loop.CallbackM = action;
         }
     }
 }

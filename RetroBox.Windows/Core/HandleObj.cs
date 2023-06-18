@@ -1,8 +1,9 @@
 using System;
+using RetroBox.API;
 
 namespace RetroBox.Windows.Core
 {
-    internal sealed class HandleObj : IDisposable
+    internal sealed class HandleObj : IDisposable, IHasTag
     {
         public string? Tag { get; set; }
 

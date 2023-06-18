@@ -1,7 +1,10 @@
+using System;
 using System.Collections.Generic;
 using CliWrap;
 using RetroBox.API.Xplat;
 using RetroBox.Common.Commands;
+using RetroBox.Common.Messages;
+using RetroBox.Common.Special;
 
 namespace RetroBox.Common.Xplat
 {
@@ -65,5 +68,9 @@ namespace RetroBox.Common.Xplat
         public abstract void CleanUp(string tag);
 
         public abstract void Send(string tag, IVmCommand cmd);
+        public abstract void Receive(EventHandler<IVmMessage> msg);
+
+        public abstract void Send(IntPtr tag, IMgrCommand cmd);
+        public abstract void Receive(EventHandler<IMgrMessage> msg);
     }
 }

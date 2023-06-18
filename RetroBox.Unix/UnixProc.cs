@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using CliWrap;
 using RetroBox.Common.Commands;
+using RetroBox.Common.Messages;
+using RetroBox.Common.Special;
 using RetroBox.Common.Xplat;
 
 namespace RetroBox.Unix
@@ -57,6 +59,21 @@ namespace RetroBox.Unix
                 default:
                     throw new InvalidOperationException($"{cmd} ?!");
             }
+        }
+
+        public override void Send(IntPtr tag, IMgrCommand cmd)
+        {
+            throw new NotImplementedException(); // TODO
+        }
+
+        public override void Receive(EventHandler<IVmMessage> msg)
+        {
+            throw new NotImplementedException(); // TODO
+        }
+
+        public override void Receive(EventHandler<IMgrMessage> msg)
+        {
+            throw new NotImplementedException(); // TODO
         }
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using static RetroBox.Windows.Core.WinImports;
 
 namespace RetroBox.Windows.Core
 {
@@ -35,7 +36,16 @@ namespace RetroBox.Windows.Core
                 return;
             var client = so.Client.Value;
             var (wMsg, wParam, lParam) = pair.Value;
-            WinImports.PostMessage(client, wMsg, wParam, lParam);
+            PostMessage(client, wMsg, wParam, lParam);
+        }
+
+        public static void Write(IntPtr hWnd, string text)
+        {
+            COPYDATASTRUCT cds;
+            cds.dwData = IntPtr.Zero;
+            cds.lpData = Marshal.StringToHGlobalAnsi(text);
+            cds.cbData = text.Length;
+            SendMessage(hWnd, WM_COPYDATA, IntPtr.Zero, ref cds);
         }
 
         internal static uint GetTempId(string vmPath)

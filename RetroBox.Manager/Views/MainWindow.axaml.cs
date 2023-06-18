@@ -8,8 +8,11 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using CliWrap.EventStream;
 using MessageBox.Avalonia.Enums;
+using RetroBox.API;
 using RetroBox.API.Data;
 using RetroBox.Common.Commands;
+using RetroBox.Common.Messages;
+using RetroBox.Common.Special;
 using RetroBox.Common.Xplat;
 using RetroBox.Fabric;
 using RetroBox.Fabric.Boxes;
@@ -32,7 +35,16 @@ namespace RetroBox.Manager.Views
 
         private void Main_OnOpened(object? sender, EventArgs e)
         {
+            RegisterListen();
             RegisterDragDrop();
+        }
+
+        private void RegisterListen()
+        {
+            var plat = Platforms.My;
+            var proc = plat.GetProcs();
+            proc.Receive(OnManagerMessage);
+            proc.Receive(OnMachineMessage);
         }
 
         private void RegisterDragDrop()
@@ -154,7 +166,7 @@ namespace RetroBox.Manager.Views
 
         private void AddExist_OnClick(object? sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException(); // TODO
+            // TODO
         }
 
         private async void CreateNew_OnClick(object? sender, RoutedEventArgs e)
@@ -177,6 +189,13 @@ namespace RetroBox.Manager.Views
                 && RomCombo.SelectedItem is FoundRom r)
                 return (m, e, r);
             return null;
+        }
+
+        private async Task<MetaMachine?> GetMachineByTag(string tag)
+        {
+            var machines = await Events.Invoke<IEnumerable<MetaMachine>>(() => Model.AllMachines);
+            var mach = machines.FirstOrDefault(m => m.Tag == tag);
+            return mach;
         }
 
         private void ConfigureThis_OnClick(object? sender, RoutedEventArgs e)
@@ -217,8 +236,7 @@ namespace RetroBox.Manager.Views
 
         private async void ConfigureThis_OnEvent(object sender, string tag, CommandEvent d)
         {
-            var machines = await Events.Invoke<IEnumerable<MetaMachine>>(() => Model.AllMachines);
-            var mach = machines.FirstOrDefault(m => m.Tag == tag);
+            var mach = await GetMachineByTag(tag);
             if (mach?.Tag == null)
                 return;
             if (d is StartedCommandEvent or InitEvent)
@@ -270,8 +288,7 @@ namespace RetroBox.Manager.Views
 
         private async void StartThis_OnEvent(object sender, string tag, CommandEvent d)
         {
-            var machines = await Events.Invoke<IEnumerable<MetaMachine>>(() => Model.AllMachines);
-            var mach = machines.FirstOrDefault(m => m.Tag == tag);
+            var mach = await GetMachineByTag(tag);
             if (mach?.Tag == null)
                 return;
             if (d is StartedCommandEvent or InitEvent)
@@ -375,6 +392,50 @@ namespace RetroBox.Manager.Views
             var proc = plat.GetProcs();
             IVmCommand vCmd = isYes ? new SoftResetVCmd() : new HardResetVCmd();
             proc.Send(mach.Tag!, vCmd);
+        }
+
+        private void OnManagerMessage(object? sender, IMgrMessage message)
+        {
+            throw new InvalidOperationException();
+        }
+
+        private async void OnMachineMessage(object? rawSender, IVmMessage message)
+        {
+            var sender = ((IHasTag)rawSender!).Tag!;
+            var mach = await GetMachineByTag(sender);
+            if (mach?.Tag == null)
+                return;
+            if (message is EmuInitVMsg)
+            {
+                mach.Status = MachineState.Running;
+                return;
+            }
+            if (message is EmuShutdownVMsg)
+            {
+                mach.Status = MachineState.Stopped;
+                return;
+            }
+            if (message is VmPausedVMsg)
+            {
+                mach.Status = MachineState.Paused;
+                return;
+            }
+            if (message is VmResumedVMsg)
+            {
+                mach.Status = MachineState.Running;
+                return;
+            }
+            if (message is DialogOpenedVMsg)
+            {
+                mach.Status = MachineState.Waiting;
+                return;
+            }
+            if (message is DialogClosedVMsg)
+            {
+                mach.Status = MachineState.Running;
+                return;
+            }
+            throw new InvalidOperationException(message.GetType().FullName);
         }
     }
 }

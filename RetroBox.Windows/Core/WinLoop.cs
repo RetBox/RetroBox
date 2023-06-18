@@ -1,6 +1,8 @@
+using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using RetroBox.Common.Messages;
+using RetroBox.Common.Special;
 using static RetroBox.Windows.Core.WinImports;
 using I = System.IntPtr;
 
@@ -10,16 +12,17 @@ namespace RetroBox.Windows.Core
 {
     internal class WinLoop
     {
-        private readonly WinMsgHandler? _callback;
         private readonly WndProc? _wndDelegate;
 
-        public WinLoop(WinMsgHandler? callback, string title = "RetroBox Manager Secret")
+        public WinLoop(bool skipHandle = false, string title = "RetroBox Manager Secret")
         {
-            _callback = callback;
-            if (_callback == null)
+            if (skipHandle)
                 return;
             Handle = CreateMessageWindow(title, _wndDelegate = WndProc);
         }
+
+        public EventHandler<IVmMessage>? CallbackV;
+        public EventHandler<IMgrMessage>? CallbackM;
 
         public I Handle { get; }
 
@@ -33,7 +36,7 @@ namespace RetroBox.Windows.Core
                     if (WinHandles.GetByVmId(vmId) is { } vmObj)
                     {
                         vmObj.Client = lParam;
-                        _callback?.Invoke(vmObj, new EmuInitVMsg());
+                        CallbackV?.Invoke(vmObj, new EmuInitVMsg());
                     }
                 }
             }
@@ -42,12 +45,12 @@ namespace RetroBox.Windows.Core
                 if (wParam.ToInt32() == 1)
                 {
                     if (WinHandles.GetByWinHandle(lParam) is { } vmObj)
-                        _callback?.Invoke(vmObj, new VmPausedVMsg());
+                        CallbackV?.Invoke(vmObj, new VmPausedVMsg());
                 }
                 else if (wParam.ToInt32() == 0)
                 {
                     if (WinHandles.GetByWinHandle(lParam) is { } vmObj)
-                        _callback?.Invoke(vmObj, new VmResumedVMsg());
+                        CallbackV?.Invoke(vmObj, new VmResumedVMsg());
                 }
             }
             if (msg == 0x8896)
@@ -55,24 +58,24 @@ namespace RetroBox.Windows.Core
                 if (wParam.ToInt32() == 1)
                 {
                     if (WinHandles.GetByWinHandle(lParam) is { } vmObj)
-                        _callback?.Invoke(vmObj, new DialogOpenedVMsg());
+                        CallbackV?.Invoke(vmObj, new DialogOpenedVMsg());
                 }
                 else if (wParam.ToInt32() == 0)
                 {
                     if (WinHandles.GetByWinHandle(lParam) is { } vmObj)
-                        _callback?.Invoke(vmObj, new DialogClosedVMsg());
+                        CallbackV?.Invoke(vmObj, new DialogClosedVMsg());
                 }
             }
             if (msg == 0x8897)
             {
                 if (WinHandles.GetByWinHandle(lParam) is { } vmObj)
-                    _callback?.Invoke(vmObj, new EmuShutdownVMsg());
+                    CallbackV?.Invoke(vmObj, new EmuShutdownVMsg());
             }
             if (msg == WM_COPYDATA)
             {
                 var ds = lParam.ConvertTo<COPYDATASTRUCT>();
                 var vmName = Marshal.PtrToStringAnsi(ds.lpData, ds.cbData);
-                _callback?.Invoke(this, new LinkStartVMsg(vmName));
+                CallbackM?.Invoke(this, new LinkStartVMsg(vmName));
             }
             return DefWindowProc(hWnd, msg, wParam, lParam);
         }

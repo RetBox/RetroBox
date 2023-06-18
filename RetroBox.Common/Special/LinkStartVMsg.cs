@@ -1,6 +1,6 @@
-namespace RetroBox.Common.Messages
+namespace RetroBox.Common.Special
 {
-    public sealed class LinkStartVMsg : IVmMessage
+    public sealed class LinkStartVMsg : IMgrMessage
     {
         public LinkStartVMsg(string vmName)
         {
