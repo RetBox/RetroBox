@@ -10,15 +10,12 @@ namespace RetroBox.Windows.Core
 
         public IntPtr? HWnd { get; set; }
 
-        public WinLoop? Loop { get; set; }
-
         public IntPtr? Client { get; set; }
 
         public void Dispose()
         {
             HWnd = null;
             Client = null;
-            Loop = null;
         }
     }
 }

@@ -30,7 +30,7 @@ namespace RetroBox.Windows
             var handle = _loop.Handle;
             var hWndHex = $"{handle.ToInt64():X}".PadLeft(16, '0');
 
-            WinHandles.Create(a.CallId, id, handle, _loop);
+            WinHandles.Create(a.CallId, id, handle);
 
             a.ExtraArgs = new List<string> { "--hwnd", $"{idString},{hWndHex}" };
             var cmd = base.Build(a);

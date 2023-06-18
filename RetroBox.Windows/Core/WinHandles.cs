@@ -9,18 +9,12 @@ namespace RetroBox.Windows.Core
     {
         private static readonly IDictionary<string, HandleObj> Sub = new Dictionary<string, HandleObj>();
 
-        public static void Create(string? key, uint id, IntPtr hWnd, WinLoop loop)
+        public static void Create(string? key, uint id, IntPtr hWnd)
         {
             if (string.IsNullOrWhiteSpace(key))
                 return;
 
-            var so = new HandleObj
-            {
-                Tag = key,
-                VmId = id,
-                HWnd = hWnd,
-                Loop = loop
-            };
+            var so = new HandleObj { Tag = key, VmId = id, HWnd = hWnd };
             Sub[key] = so;
         }
 

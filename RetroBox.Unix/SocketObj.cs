@@ -5,7 +5,7 @@ namespace RetroBox.Unix
 {
     public sealed class SocketObj : IDisposable
     {
-        public string? Tag { get; set; }
+        public string? Tag { get; set; } 
 
         public Socket? Server { get; set; }
 

@@ -19,10 +19,7 @@ namespace RetroBox.Unix
             socket.Bind(endpoint);
             socket.Listen(0);
 
-            var so = new SocketObj
-            {
-                Tag = key, Server = socket
-            };
+            var so = new SocketObj { Tag = key, Server = socket };
             Sub[key] = so;
 
             Task.Factory.StartNew(async () =>
