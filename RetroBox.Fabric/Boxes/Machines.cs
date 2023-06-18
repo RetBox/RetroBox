@@ -33,7 +33,7 @@ namespace RetroBox.Fabric.Boxes
 
         public const string None = "None";
 
-        private static Machine ReadConfig(string vmName, string vmFile)
+        public static Machine ReadConfig(string vmName, string vmFile)
         {
             var ini = new IniFile();
             ini.Load(vmFile, Encoding.UTF8);

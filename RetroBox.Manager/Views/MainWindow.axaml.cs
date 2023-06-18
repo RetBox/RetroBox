@@ -204,9 +204,14 @@ namespace RetroBox.Manager.Views
                 {
                     mach.Tag = tag;
                     if (d is StartedCommandEvent or InitEvent)
+                    {
                         mach.Status = MachineState.Waiting;
+                    }
                     else if (d is ExitedCommandEvent or CompleteEvent)
+                    {
                         mach.Status = MachineState.Stopped;
+                        ReloadFromConfig(mach);
+                    }
                 });
                 return;
             }
@@ -218,6 +223,14 @@ namespace RetroBox.Manager.Views
                 var vCmd = new SettingsVCmd();
                 proc.Send(mach.Tag!, vCmd);
             }
+        }
+
+        private static void ReloadFromConfig(MetaMachine mach)
+        {
+            var former = mach.M;
+            if (former == null)
+                return;
+            mach.M = Machines.ReadConfig(former.Name, former.File);
         }
 
         private void StartThis_OnClick(object? sender, RoutedEventArgs e)
