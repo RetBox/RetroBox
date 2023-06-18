@@ -40,6 +40,16 @@ namespace RetroBox.Manager.Views
             Title = Apps.MainTitle;
             RegisterListen();
             RegisterDragDrop();
+            HandleOptions();
+        }
+
+        private void HandleOptions()
+        {
+            if (Program.Opt is not { } opt)
+                return;
+            if (string.IsNullOrWhiteSpace(opt.VmName))
+                return;
+            DoStartVmByName(opt.VmName);
         }
 
         private void RegisterListen()
@@ -337,7 +347,7 @@ namespace RetroBox.Manager.Views
             if (mach.Status != MachineState.Running)
                 return;
             var res = await Dialogs.ShowMessageBox("Invoke normal shutdown?", "Request or force off",
-                MIcon.Question, ButtonEnum.YesNoCancel);
+                MIcon.Question, ButtonEnum.YesNoCancel, this);
             var isYes = res == ButtonResult.Yes;
             var isNo = res == ButtonResult.No;
             if (!isYes && !isNo)
@@ -389,7 +399,7 @@ namespace RetroBox.Manager.Views
             if (mach.Status != MachineState.Running)
                 return;
             var res = await Dialogs.ShowMessageBox("Press Ctrl-Alt-Del?", "Soft or hard reset",
-                MIcon.Question, ButtonEnum.YesNoCancel);
+                MIcon.Question, ButtonEnum.YesNoCancel, this);
             var isYes = res == ButtonResult.Yes;
             var isNo = res == ButtonResult.No;
             if (!isYes && !isNo)
@@ -400,9 +410,31 @@ namespace RetroBox.Manager.Views
             proc.Send(mach.Tag!, vCmd);
         }
 
-        private void OnManagerMessage(object? sender, IMgrMessage message)
+        private async void OnManagerMessage(object? sender, IMgrMessage message)
         {
-            throw new InvalidOperationException();
+            if (message is LinkStartVMsg lm)
+            {
+                await Events.Invoke(() =>
+                {
+                    DoStartVmByName(lm.VmName);
+                    return true;
+                });
+                return;
+            }
+            throw new InvalidOperationException(message.GetType().FullName);
+        }
+
+        private async void DoStartVmByName(string vmName)
+        {
+            var mach = Model.AllMachines.FirstOrDefault(m => m.Name == vmName);
+            if (mach == null)
+            {
+                await Dialogs.ShowMessageBox($"Machine '{vmName}' not found!", "Error",
+                    MIcon.Error, ButtonEnum.Ok, this);
+                return;
+            }
+            VmList.SelectedItem = Model.CurrentMachine = mach;
+            StartThis_OnClick(null, new RoutedEventArgs());
         }
 
         private async void OnMachineMessage(object? rawSender, IVmMessage message)

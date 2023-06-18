@@ -11,10 +11,12 @@ namespace RetroBox.Manager
 {
     internal static class Program
     {
+        public static Options? Opt;
+
         [STAThread]
         public static void Main(string[] args)
         {
-            var opt = CmdUtil.Parse(args);
+            var opt = Opt = CmdUtil.Parse(args);
             var proc = Platforms.My.GetProcs();
             if (!proc.IsFirstInstance())
             {

@@ -108,7 +108,7 @@
         </StackPanel>
         <DockPanel>
             <ScrollViewer DockPanel.Dock="Left" Margin="10,0,10,0" Width="163">
-                <ListBox Items="{Binding AllMachines}"
+                <ListBox Items="{Binding AllMachines}" Name="VmList"
                          SelectionChanged="Machines_OnSelectionChanged" SelectedIndex="0">
                     <ListBox.Styles>
                         <Style Selector="ListBoxItem">
