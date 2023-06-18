@@ -269,6 +269,8 @@ namespace RetroBox.Manager.Views
 
                 var vCmd = new PauseVCmd();
                 proc.Send(mach.Tag!, vCmd);
+
+                mach.Status = MachineState.Paused;
             }
         }
 
@@ -309,8 +311,19 @@ namespace RetroBox.Manager.Views
 
         private void ResumeThis_OnClick(object? sender, RoutedEventArgs e)
         {
-            // There is no difference between pause and resume at the moment
-            PauseThis_OnClick(sender, e);
+            if (GetEmuAndRom() is not { } current)
+                return;
+            var mach = current.mach;
+            if (mach.Status == MachineState.Paused)
+            {
+                var plat = Platforms.My;
+                var proc = plat.GetProcs();
+
+                var vCmd = new PauseVCmd();
+                proc.Send(mach.Tag!, vCmd);
+
+                mach.Status = MachineState.Running;
+            }
         }
 
         private async void ResetThis_OnClick(object? sender, RoutedEventArgs e)
