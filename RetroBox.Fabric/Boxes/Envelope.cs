@@ -12,6 +12,9 @@ namespace RetroBox.Fabric.Boxes
 
         public string? Preview { get; set; }
 
+        public string? IdEmu { get; set; }
+        public string? IdRom { get; set; }
+
         public void Save()
         {
             Serials.WriteJsonFile(this, InternalFile!);

@@ -155,6 +155,17 @@ namespace RetroBox.Manager.Boxes
             }
         }
 
+        public (string emuId, string romId) LastEmuUsed
+        {
+            set
+            {
+                if (E is not { } envelope) return;
+                envelope.IdEmu = value.emuId;
+                envelope.IdRom = value.romId;
+                envelope.Save();
+            }
+        }
+
         #endregion
 
         public string? Tag { get; set; }

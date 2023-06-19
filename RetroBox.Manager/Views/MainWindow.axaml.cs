@@ -90,7 +90,7 @@ namespace RetroBox.Manager.Views
 
         private void OnPreviewDragDrop(string fileName)
         {
-            if (Model.CurrentMachine is not { } machine) 
+            if (Model.CurrentMachine is not { } machine)
                 return;
             var machineDir = machine.GetFolder()!;
             const string previewName = "preview.png";
@@ -134,6 +134,7 @@ namespace RetroBox.Manager.Views
             if (added == null)
                 return;
             Model.CurrentMachine = (MetaMachine?)added;
+            RestoreLastEmu();
         }
 
         private MainWindowViewModel Model => (MainWindowViewModel)DataContext!;
@@ -298,6 +299,7 @@ namespace RetroBox.Manager.Views
                 var proc = plat.GetProcs();
                 var core = proc.Build(arg);
                 mach.Tag = id;
+                RememberLastEmu(current);
                 core.RunThis(id, StartThis_OnEvent);
             }
         }
@@ -493,6 +495,27 @@ namespace RetroBox.Manager.Views
             var proc = plat.GetProcs();
             IVmCommand vCmd = new ForceOffVCmd();
             proc.Send(mach.Tag!, vCmd);
+        }
+
+        private void RememberLastEmu((MetaMachine mach, FoundExe exe, FoundRom rom) current)
+        {
+            var exeVer = current.exe.Version.ReleaseId!;
+            var romVer = current.rom.ReleaseId;
+            current.mach.LastEmuUsed = (emuId: exeVer, romId: romVer);
+        }
+
+        private void RestoreLastEmu()
+        {
+            if (GetEmuAndRom() is not { } current)
+                return;
+            if (current.mach.E is not { IdEmu: { } emuId, IdRom: { } romId })
+                return;
+            var foundExe = Model.AllEmus.FirstOrDefault(m => m.Version.ReleaseId == emuId);
+            var foundRom = Model.AllRoms.FirstOrDefault(m => m.ReleaseId == romId);
+            if (foundExe == null || foundRom == null)
+                return;
+            EmuCombo.SelectedItem = foundExe;
+            RomCombo.SelectedItem = foundRom;
         }
     }
 }
