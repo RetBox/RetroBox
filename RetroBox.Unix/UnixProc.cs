@@ -9,10 +9,14 @@ using RetroBox.Common.Messages;
 using RetroBox.Common.Special;
 using RetroBox.Common.Xplat;
 
+// ReSharper disable NotAccessedField.Local
+
 namespace RetroBox.Unix
 {
     public abstract class UnixProc : CommonProc
     {
+        protected readonly UnixLoop _loop = new();
+
         public override Command Build(StartBoxArg a)
         {
             if (a.Settings)
@@ -65,17 +69,24 @@ namespace RetroBox.Unix
 
         public override void Send(IntPtr tag, IMgrCommand cmd)
         {
-            throw new NotImplementedException(); // TODO
+            switch (cmd)
+            {
+                case LinkStartMCmd lc:
+                    _loop.WriteStartVm(tag, lc.VmName);
+                    break;
+                default:
+                    throw new InvalidOperationException($"{cmd} ?!");
+            }
         }
 
-        public override void Receive(EventHandler<IVmMessage> msg)
+        public override void Receive(EventHandler<IVmMessage> action)
         {
-            throw new NotImplementedException(); // TODO
+            _loop.CallbackV = action;
         }
 
-        public override void Receive(EventHandler<IMgrMessage> msg)
+        public override void Receive(EventHandler<IMgrMessage> action)
         {
-            throw new NotImplementedException(); // TODO
+            _loop.CallbackM = action;
         }
 
         private IntPtr _lastEnemy;
@@ -86,8 +97,8 @@ namespace RetroBox.Unix
             if (entry != null)
             {
                 var exeName = Path.GetFileNameWithoutExtension(entry);
-                var myProcId = Environment.ProcessId;
                 var processes = Process.GetProcessesByName(exeName);
+                var myProcId = Environment.ProcessId;
                 foreach (var proc in processes)
                     if (proc.Id != myProcId)
                     {
@@ -105,7 +116,7 @@ namespace RetroBox.Unix
 
         public override string Setup()
         {
-            throw new NotImplementedException(); // TODO
+            return $"{Environment.ProcessId:X2}";
         }
     }
 }
