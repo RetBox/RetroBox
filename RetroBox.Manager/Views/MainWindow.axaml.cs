@@ -339,22 +339,16 @@ namespace RetroBox.Manager.Views
             }
         }
 
-        private async void StopThis_OnClick(object? sender, RoutedEventArgs e)
+        private void StopThis_OnClick(object? sender, RoutedEventArgs e)
         {
             if (GetEmuAndRom() is not { } current)
                 return;
             var mach = current.mach;
             if (mach.Status != MachineState.Running)
                 return;
-            var res = await Dialogs.ShowMessageBox("Invoke normal shutdown?", "Request or force off",
-                MIcon.Question, ButtonEnum.YesNoCancel, this);
-            var isYes = res == ButtonResult.Yes;
-            var isNo = res == ButtonResult.No;
-            if (!isYes && !isNo)
-                return;
             var plat = Platforms.My;
             var proc = plat.GetProcs();
-            IVmCommand vCmd = isYes ? new RequestOffVCmd() : new ForceOffVCmd();
+            IVmCommand vCmd = new RequestOffVCmd();
             proc.Send(mach.Tag!, vCmd);
         }
 
@@ -391,22 +385,16 @@ namespace RetroBox.Manager.Views
             }
         }
 
-        private async void ResetThis_OnClick(object? sender, RoutedEventArgs e)
+        private void ResetThis_OnClick(object? sender, RoutedEventArgs e)
         {
             if (GetEmuAndRom() is not { } current)
                 return;
             var mach = current.mach;
             if (mach.Status != MachineState.Running)
                 return;
-            var res = await Dialogs.ShowMessageBox("Press Ctrl-Alt-Del?", "Soft or hard reset",
-                MIcon.Question, ButtonEnum.YesNoCancel, this);
-            var isYes = res == ButtonResult.Yes;
-            var isNo = res == ButtonResult.No;
-            if (!isYes && !isNo)
-                return;
             var plat = Platforms.My;
             var proc = plat.GetProcs();
-            IVmCommand vCmd = isYes ? new SoftResetVCmd() : new HardResetVCmd();
+            IVmCommand vCmd = new HardResetVCmd();
             proc.Send(mach.Tag!, vCmd);
         }
 
@@ -474,6 +462,37 @@ namespace RetroBox.Manager.Views
                 return;
             }
             throw new InvalidOperationException(message.GetType().FullName);
+        }
+
+        private void CloneThis_OnClick(object? sender, RoutedEventArgs e)
+        {
+            // TODO
+        }
+
+        private void RebootThis_OnClick(object? sender, RoutedEventArgs e)
+        {
+            if (GetEmuAndRom() is not { } current)
+                return;
+            var mach = current.mach;
+            if (mach.Status != MachineState.Running)
+                return;
+            var plat = Platforms.My;
+            var proc = plat.GetProcs();
+            IVmCommand vCmd = new SoftResetVCmd();
+            proc.Send(mach.Tag!, vCmd);
+        }
+
+        private void HardStop_OnClick(object? sender, RoutedEventArgs e)
+        {
+            if (GetEmuAndRom() is not { } current)
+                return;
+            var mach = current.mach;
+            if (mach.Status != MachineState.Running)
+                return;
+            var plat = Platforms.My;
+            var proc = plat.GetProcs();
+            IVmCommand vCmd = new ForceOffVCmd();
+            proc.Send(mach.Tag!, vCmd);
         }
     }
 }

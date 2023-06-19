@@ -65,6 +65,11 @@
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
+                    <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Clone this machine"
+                            VerticalAlignment="Center" Margin="4,0,0,0" Click="CloneThis_OnClick"
+                            IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Stopped', Converter={StaticResource EnumCmp}}">
+                        <Image Source="/Assets/icon-clone.png" />
+                    </Button>
                     <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Configure this machine"
                             VerticalAlignment="Center" Margin="4,0,0,0" Click="ConfigureThis_OnClick"
                             IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Stopped|Running', Converter={StaticResource EnumCmp}}">
@@ -85,6 +90,11 @@
                             IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Running', Converter={StaticResource EnumCmp}}">
                         <Image Source="/Assets/icon-pause.png" />
                     </Button>
+                    <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Reboot this machine"
+                            VerticalAlignment="Center" Margin="4,0,0,0" Click="RebootThis_OnClick"
+                            IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Running', Converter={StaticResource EnumCmp}}">
+                        <Image Source="/Assets/icon-reboot.png" />
+                    </Button>
                     <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Reset this machine"
                             VerticalAlignment="Center" Margin="4,0,0,0" Click="ResetThis_OnClick"
                             IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Running', Converter={StaticResource EnumCmp}}">
@@ -94,6 +104,11 @@
                             VerticalAlignment="Center" Margin="4,0,0,0" Click="StopThis_OnClick"
                             IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Paused|Running', Converter={StaticResource EnumCmp}}">
                         <Image Source="/Assets/icon-stop.png" />
+                    </Button>
+                    <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Turn off this machine"
+                            VerticalAlignment="Center" Margin="4,0,0,0" Click="HardStop_OnClick"
+                            IsVisible="{Binding CurrentMachine.Status, ConverterParameter='Paused|Running', Converter={StaticResource EnumCmp}}">
+                        <Image Source="/Assets/icon-power.png" />
                     </Button>
                     <Button Background="Transparent" Padding="0" Width="32" ToolTip.Tip="Kill this machine"
                             VerticalAlignment="Center" Margin="4,0,0,0" Click="KillThis_OnClick"
